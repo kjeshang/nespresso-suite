@@ -1,4 +1,24 @@
-<div class="flex flex-col flex-auto flex-wrap">
-    <p class="text-lg font-semibold text-center mt-4 py-2">Credit Card & Debit Card Reconciliation</p>
-    
-</div>
+<form [formGroup]="cardReconciliationForm">
+    <table class="mx-2">
+        <tr formGroupName="salesDeskA">
+            <div class="flex flex-row flex-wrap space-x-4">
+                <div class="flex sm:flex-col space-y-2">
+                    <p class="text-right px-2">Sales Desk: A</p>
+                    <p class="text-right px-2">Till No: 1</p>
+                </div>
+                <mat-form-field>
+                    <mat-label>POS 1 Amount</mat-label>
+                    <input matInput type="number" placeholder="POS 1 Amount" formControlName="posAmount"/>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Register 1 Amount</mat-label>
+                    <input matInput type="number" placeholder="Register 1 Amount" formControlName="registerAmount"/>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Terminal 1 Amount</mat-label>
+                    <input matInput type="number" placeholder="Terminal 1 Amount" formControlName="terminalAmount"/>
+                </mat-form-field>
+            </div>
+        </tr>
+    </table>
+</form>
