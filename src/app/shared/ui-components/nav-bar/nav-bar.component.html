@@ -1,5 +1,20 @@
-<mat-toolbar class="!flex !shadow-xl">
-    <a routerLink="/">
-        <p class="font-semibold">Nespresso Suite</p>
-    </a>
+<mat-toolbar class="!shadow-xl">
+    <div class="flex items-center justify-between align-center flex-auto">
+        <div class="hover:text-slate-500">
+            <a routerLink="/">
+                <p class="font-semibold">Nespresso Suite</p>
+            </a>
+        </div>
+        <div>
+            <button matIconButton [matMenuTriggerFor]="menu" class="hover:text-slate-500">
+            <mat-icon class="my-2">apps</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/card-reconciliation">
+                    <mat-icon>credit_card</mat-icon>
+                    <span>Card Reconciliation</span>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
 </mat-toolbar>
