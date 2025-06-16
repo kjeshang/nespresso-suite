@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReconciliationTableComponent } from './reconciliation-table.component';
+import { CardReconciliationTableComponent } from './card-reconciliation-table.component';
 
 describe('ReconciliationTableComponent', () => {
-  let component: ReconciliationTableComponent;
-  let fixture: ComponentFixture<ReconciliationTableComponent>;
+  let component: CardReconciliationTableComponent;
+  let fixture: ComponentFixture<CardReconciliationTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReconciliationTableComponent]
+      imports: [CardReconciliationTableComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ReconciliationTableComponent);
+    fixture = TestBed.createComponent(CardReconciliationTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
