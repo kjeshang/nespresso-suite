@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CardReconciliationStore } from './apps/card-reconciliation/card-reconciliation.store';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,13 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'nespresso-suite';
+  cardReconciliationStore = inject(CardReconciliationStore);
+
+  ngOnInit(): void {
+    this.loadData().then(() => console.log("Data Loaded!"));
+  }
+
+  async loadData(): Promise<void> {
+    this.cardReconciliationStore.loadStoreConfiguration();
+  }
 }
