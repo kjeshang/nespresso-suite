@@ -4,6 +4,7 @@ export interface StoreConfiguration {
 }
 
 export interface SalesDesk {
+    formGroupName: string;
     salesDesk: string;
     tillNumber: number;
     pos: {
@@ -16,7 +17,7 @@ export interface SalesDesk {
     },
     terminal: {
         label: string;
-        registerAmount: number;
+        terminalAmount: number;
     }
     difference: number;
     outcome: string;
