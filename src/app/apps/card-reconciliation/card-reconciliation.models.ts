@@ -4,7 +4,6 @@ export interface StoreConfiguration {
 }
 
 export interface SalesDesk {
-    formGroupName: string;
     salesDesk: string;
     tillNumber: number;
     pos: {

@@ -11,7 +11,6 @@ export class CardReconciliationDbService {
         if(storeName === 'B86 BIM Metrotown') {
             const pointsOfSale: SalesDesk[] = [
                 {
-                    formGroupName: "salesDeskA",
                     salesDesk: "A",
                     tillNumber: 1,
                     pos: {
@@ -30,7 +29,6 @@ export class CardReconciliationDbService {
                     outcome: "Balanced"
                 },
                 {
-                    formGroupName: "salesDeskB",
                     salesDesk: "B",
                     tillNumber: 2,
                     pos: {
@@ -49,7 +47,6 @@ export class CardReconciliationDbService {
                     outcome: "Balanced"
                 },
                 {
-                    formGroupName: "salesDeskD",
                     salesDesk: "D",
                     tillNumber: 4,
                     pos: {
