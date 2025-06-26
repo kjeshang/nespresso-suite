@@ -25,6 +25,24 @@ export class CardReconciliationDbService {
                 },
                 difference: 0,
                 outcome: "Balanced"
+            },
+            B: {
+                salesDesk: 'B',
+                tillNumber: 2,
+                pos: {
+                    label: "POS Amount B",
+                    posAmount: 0,
+                },
+                register: {
+                    label: "Register Amount B",
+                    registerAmount: 0
+                },
+                terminal: {
+                    label: "Terminl Amount B",
+                    terminalAmount: 0
+                },
+                difference: 0,
+                outcome: "Balanced"
             }
         };
         return storeConfiguration;

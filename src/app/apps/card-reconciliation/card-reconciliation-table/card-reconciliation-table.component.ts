@@ -61,7 +61,51 @@ export class CardReconciliationTableComponent {
     }),
   });
 
-  calculateDifference(formGroupName: string): {
+  onInputUpdateStoreConfiguration(): void {
+    let newStoreConfiguration =
+      this.cardReconciliationStore.storeConfiguration();
+    newStoreConfiguration = {
+      A: {
+        ...newStoreConfiguration['A']!,
+        pos: {
+          ...newStoreConfiguration['A']!.pos,
+          posAmount: 0,
+        },
+        register: {
+          ...newStoreConfiguration['A']!.register,
+          registerAmount: 0,
+        },
+        terminal: {
+          ...newStoreConfiguration['A']!.terminal,
+          terminalAmount: 0,
+        },
+        difference: this.calculateDifference('salesDeskA').difference,
+        outcome: this.calculateDifference('salesDeskA').outcome,
+      },
+      B: {
+        ...newStoreConfiguration['B']!,
+        pos: {
+          ...newStoreConfiguration['B']!.pos,
+          posAmount: 0,
+        },
+        register: {
+          ...newStoreConfiguration['B']!.register,
+          registerAmount: 0,
+        },
+        terminal: {
+          ...newStoreConfiguration['B']!.terminal,
+          terminalAmount: 0,
+        },
+        difference: this.calculateDifference('salesDeskB').difference,
+        outcome: this.calculateDifference('salesDeskB').outcome,
+      },
+    };
+    this.cardReconciliationStore.updateStoreConfiguration(
+      newStoreConfiguration
+    );
+  }
+
+  private calculateDifference(formGroupName: string): {
     difference: number;
     outcome: string;
   } {
@@ -87,32 +131,5 @@ export class CardReconciliationTableComponent {
       outcome = 'Balanced';
     }
     return { difference, outcome };
-  }
-
-  onInputUpdateStoreConfiguration(): void {
-    let newStoreConfiguration =
-      this.cardReconciliationStore.storeConfiguration();
-    newStoreConfiguration = {
-      A: {
-        ...newStoreConfiguration['A']!,
-        pos: {
-          ...newStoreConfiguration['A']!.pos,
-          posAmount: 0,
-        },
-        register: {
-          ...newStoreConfiguration['A']!.register,
-          registerAmount: 0,
-        },
-        terminal: {
-          ...newStoreConfiguration['A']!.terminal,
-          terminalAmount: 0,
-        },
-        difference: this.calculateDifference('salesDeskA').difference,
-        outcome: this.calculateDifference('salesDeskA').outcome,
-      },
-    };
-    this.cardReconciliationStore.updateStoreConfiguration(
-      newStoreConfiguration
-    );
   }
 }
