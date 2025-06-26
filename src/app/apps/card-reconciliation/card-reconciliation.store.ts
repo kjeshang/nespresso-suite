@@ -10,12 +10,10 @@ import { StoreConfiguration } from './card-reconciliation.models';
 import { CardReconciliationDbService } from './card-reconciliation.db.service';
 
 type CardReconciliationState = {
-  storeName: string;
   storeConfiguration: Partial<StoreConfiguration>;
 };
 
 const initialCardReconciliationState: CardReconciliationState = {
-  storeName: "B86 BIM Metrotown",
   storeConfiguration: {},
 };
 
@@ -24,7 +22,7 @@ export const CardReconciliationStore = signalStore(
   withState(initialCardReconciliationState),
   withMethods((store, db: CardReconciliationDbService = inject(CardReconciliationDbService)) => ({
     async loadStoreConfiguration(): Promise<void> {
-        const storeConfiguration: Partial<StoreConfiguration> = await db.getStoreConfiguration(store.storeName());
+        const storeConfiguration: Partial<StoreConfiguration> = await db.getStoreConfiguration();
         patchState(store, (state: CardReconciliationState) => ({
             storeConfiguration: storeConfiguration,
         }))

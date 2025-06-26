@@ -1,31 +1,39 @@
 <form [formGroup]="cardReconciliationForm">
-    <table class="mx-2">
+    <table>
+        <tr>
+            <th>Sales Desk & Till</th>
+            <th>POS Amount</th>
+            <th>Register Amount</th>
+            <th>Terminal Amount</th>
+            <th>Difference</th>
+        </tr>
         <!-- Sales Desk A -->
         <tr formGroupName="salesDeskA">
-            <div class="flex flex-row flex-wrap space-x-4">
-                <div class="flex sm:flex-col space-y-2">
-                    <p class="text-right px-2">Sales Desk: A</p>
-                    <p class="text-right px-2">Till No: 1</p>
-                </div>
+            <td class="flex flex-col">
+                <p>Sales Desk: {{ cardReconciliationStore.storeConfiguration()['A']?.salesDesk }}</p>
+                <p>Till No: {{ cardReconciliationStore.storeConfiguration()['A']?.tillNumber }}</p>
+            </td>
+            <td>
                 <mat-form-field>
-                    <mat-label>POS 1 Amount</mat-label>
-                    <input matInput type="number" placeholder="POS 1 Amount" formControlName="posAmount"/>
+                    <mat-label>POS Amount A</mat-label>
+                    <input matInput class="w-full" type="number" [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.pos?.label!" formControlName="posAmount" />
                 </mat-form-field>
+            </td>
+            <td>
                 <mat-form-field>
-                    <mat-label>Register 1 Amount</mat-label>
-                    <input matInput type="number" placeholder="Register 1 Amount" formControlName="registerAmount"/>
+                    <mat-label>Register Amount A</mat-label>
+                    <input matInput class="w-full" type="number" [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.register?.label!" formControlName="registerAmount" />
                 </mat-form-field>
+            </td>
+            <td>
                 <mat-form-field>
-                    <mat-label>Terminal 1 Amount</mat-label>
-                    <input matInput type="number" placeholder="Terminal 1 Amount" formControlName="terminalAmount"/>
+                    <mat-label>Terminal Amount A</mat-label>
+                    <input matInput class="w-full" type="number" [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.terminal?.label!" formControlName="terminalAmount" />
                 </mat-form-field>
-            </div>
+            </td>
+            <td>
+                {{ calculateDifference('salesDeskA') | currency }}
+            </td>
         </tr>
-        <!-- Sales Desk B -->
-        
     </table>
 </form>
-
-<p>
-    {{ cardReconciliationStore.storeConfiguration() | json }}
-</p>

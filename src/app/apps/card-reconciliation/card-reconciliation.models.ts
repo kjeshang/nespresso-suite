@@ -1,6 +1,5 @@
 export interface StoreConfiguration {
-    storeName: string;
-    pointsOfSale: SalesDesk[]
+    [id: string]: SalesDesk;
 }
 
 export interface SalesDesk {
