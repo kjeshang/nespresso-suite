@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
-import { SalesDesk, StoreConfiguration } from "./card-reconciliation.models";
+import { StoreConfiguration } from "./card-reconciliation.models";
 
 @Injectable({ providedIn: 'root' })
 export class CardReconciliationDbService {
@@ -20,7 +20,7 @@ export class CardReconciliationDbService {
                     registerAmount: 0
                 },
                 terminal: {
-                    label: "Terminl Amount A",
+                    label: "Terminal Amount A",
                     terminalAmount: 0
                 },
                 difference: 0,
@@ -38,7 +38,7 @@ export class CardReconciliationDbService {
                     registerAmount: 0
                 },
                 terminal: {
-                    label: "Terminl Amount B",
+                    label: "Terminal Amount B",
                     terminalAmount: 0
                 },
                 difference: 0,

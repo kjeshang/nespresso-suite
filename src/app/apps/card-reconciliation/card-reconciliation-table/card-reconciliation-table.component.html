@@ -1,86 +1,91 @@
 <form [formGroup]="cardReconciliationForm">
     <table>
-        <tr>
-            <th>Sales Desk & Till</th>
-            <th>POS Amount</th>
-            <th>Register Amount</th>
-            <th>Terminal Amount</th>
-            <th>Difference</th>
-            <th>Outcome</th>
-        </tr>
-        <!-- Sales Desk A -->
-        <tr formGroupName="salesDeskA">
-            <td class="flex flex-col">
-                <p>Sales Desk: {{ cardReconciliationStore.storeConfiguration()['A']?.salesDesk }}</p>
-                <p>Till No: {{ cardReconciliationStore.storeConfiguration()['A']?.tillNumber }}</p>
-            </td>
-            <td>
-                <mat-form-field>
-                    <mat-label>{{ cardReconciliationStore.storeConfiguration()['A']?.pos?.label! }}</mat-label>
-                    <input matInput class="w-full" type="number"
-                        [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.pos?.label!"
-                        formControlName="posAmount" (input)="onInputUpdateStoreConfiguration()" />
-                </mat-form-field>
-            </td>
-            <td>
-                <mat-form-field>
-                    <mat-label>{{ cardReconciliationStore.storeConfiguration()['A']?.register?.label! }}</mat-label>
-                    <input matInput class="w-full" type="number"
-                        [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.register?.label!"
-                        formControlName="registerAmount" (input)="onInputUpdateStoreConfiguration()" />
-                </mat-form-field>
-            </td>
-            <td>
-                <mat-form-field>
-                    <mat-label>{{ cardReconciliationStore.storeConfiguration()['A']?.terminal?.label! }}</mat-label>
-                    <input matInput class="w-full" type="number"
-                        [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.terminal?.label!"
-                        formControlName="terminalAmount" (input)="onInputUpdateStoreConfiguration()" />
-                </mat-form-field>
-            </td>
-            <td>
-                {{ cardReconciliationStore.storeConfiguration()['A']?.difference | currency }}
-            </td>
-            <td>
-                {{ cardReconciliationStore.storeConfiguration()['A']?.outcome }}
-            </td>
-        </tr>
-        <!-- Sales Desk B -->
-        <tr formGroupName="salesDeskB">
-            <td class="flex flex-col">
-                <p>Sales Desk: {{ cardReconciliationStore.storeConfiguration()['B']?.salesDesk }}</p>
-                <p>Till No: {{ cardReconciliationStore.storeConfiguration()['B']?.tillNumber }}</p>
-            </td>
-            <td>
-                <mat-form-field>
-                    <mat-label>{{ cardReconciliationStore.storeConfiguration()['B']?.pos?.label! }}</mat-label>
-                    <input matInput class="w-full" type="number"
-                        [placeholder]="cardReconciliationStore.storeConfiguration()['B']?.pos?.label!"
-                        formControlName="posAmount" (input)="onInputUpdateStoreConfiguration()" />
-                </mat-form-field>
-            </td>
-            <td>
-                <mat-form-field>
-                    <mat-label>{{ cardReconciliationStore.storeConfiguration()['B']?.register?.label! }}</mat-label>
-                    <input matInput class="w-full" type="number"
-                        [placeholder]="cardReconciliationStore.storeConfiguration()['B']?.register?.label!"
-                        formControlName="registerAmount" (input)="onInputUpdateStoreConfiguration()" />
-                </mat-form-field>
-            </td>
-            <td>
-                <mat-form-field>
-                    <mat-label>{{ cardReconciliationStore.storeConfiguration()['B']?.terminal?.label! }}</mat-label>
-                    <input matInput class="w-full" type="number"
-                        [placeholder]="cardReconciliationStore.storeConfiguration()['B']?.terminal?.label!"
-                        formControlName="terminalAmount" (input)="onInputUpdateStoreConfiguration()" />
-                </mat-form-field>
-            </td>
-            <td>
-                {{ cardReconciliationStore.storeConfiguration()['B']?.difference | currency }}
-            </td>
-            <td>
-                {{ cardReconciliationStore.storeConfiguration()['B']?.outcome }}
-            </td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Sales Desk & Till</th>
+                <th>POS Amount</th>
+                <th>Register Amount</th>
+                <th>Terminal Amount</th>
+                <th>Difference</th>
+                <th>Outcome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Sales Desk A -->
+            <tr formGroupName="salesDeskA">
+                <td class="flex flex-col">
+                    <p>Sales Desk: {{ cardReconciliationStore.storeConfiguration()['A']?.salesDesk }}</p>
+                    <p>Till No: {{ cardReconciliationStore.storeConfiguration()['A']?.tillNumber }}</p>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>{{ cardReconciliationStore.storeConfiguration()['A']?.pos?.label! }}</mat-label>
+                        <input matInput class="w-full" type="number"
+                            [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.pos?.label!"
+                            formControlName="posAmount" (input)="onInputUpdateStoreConfiguration()" />
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>{{ cardReconciliationStore.storeConfiguration()['A']?.register?.label! }}</mat-label>
+                        <input matInput class="w-full" type="number"
+                            [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.register?.label!"
+                            formControlName="registerAmount" (input)="onInputUpdateStoreConfiguration()" />
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>{{ cardReconciliationStore.storeConfiguration()['A']?.terminal?.label! }}</mat-label>
+                        <input matInput class="w-full" type="number"
+                            [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.terminal?.label!"
+                            formControlName="terminalAmount" (input)="onInputUpdateStoreConfiguration()" />
+                    </mat-form-field>
+                </td>
+                <td>
+                    {{ cardReconciliationStore.storeConfiguration()['A']?.difference | currency }}
+                </td>
+                <td>
+                    {{ cardReconciliationStore.storeConfiguration()['A']?.outcome }}
+                </td>
+            </tr>
+            <!-- Sales Desk B -->
+            <tr formGroupName="salesDeskB">
+                <td class="flex flex-col">
+                    <p>Sales Desk: {{ cardReconciliationStore.storeConfiguration()['B']?.salesDesk }}</p>
+                    <p>Till No: {{ cardReconciliationStore.storeConfiguration()['B']?.tillNumber }}</p>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>{{ cardReconciliationStore.storeConfiguration()['B']?.pos?.label! }}</mat-label>
+                        <input matInput class="w-full" type="number"
+                            [placeholder]="cardReconciliationStore.storeConfiguration()['B']?.pos?.label!"
+                            formControlName="posAmount" (input)="onInputUpdateStoreConfiguration()" />
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>{{ cardReconciliationStore.storeConfiguration()['B']?.register?.label! }}</mat-label>
+                        <input matInput class="w-full" type="number"
+                            [placeholder]="cardReconciliationStore.storeConfiguration()['B']?.register?.label!"
+                            formControlName="registerAmount" (input)="onInputUpdateStoreConfiguration()" />
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>{{ cardReconciliationStore.storeConfiguration()['B']?.terminal?.label! }}</mat-label>
+                        <input matInput class="w-full" type="number"
+                            [placeholder]="cardReconciliationStore.storeConfiguration()['B']?.terminal?.label!"
+                            formControlName="terminalAmount" (input)="onInputUpdateStoreConfiguration()" />
+                    </mat-form-field>
+                </td>
+                <td>
+                    {{ cardReconciliationStore.storeConfiguration()['B']?.difference | currency }}
+                </td>
+                <td>
+                    {{ cardReconciliationStore.storeConfiguration()['B']?.outcome }}
+                </td>
+            </tr>
+        </tbody>
+
     </table>
 </form>
