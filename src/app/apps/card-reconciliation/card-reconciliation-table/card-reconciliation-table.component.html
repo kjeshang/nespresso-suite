@@ -6,6 +6,7 @@
             <th>Register Amount</th>
             <th>Terminal Amount</th>
             <th>Difference</th>
+            <th>Outcome</th>
         </tr>
         <!-- Sales Desk A -->
         <tr formGroupName="salesDeskA">
@@ -16,23 +17,32 @@
             <td>
                 <mat-form-field>
                     <mat-label>POS Amount A</mat-label>
-                    <input matInput class="w-full" type="number" [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.pos?.label!" formControlName="posAmount" />
+                    <input matInput class="w-full" type="number"
+                        [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.pos?.label!"
+                        formControlName="posAmount" (input)="onInputUpdateStoreConfiguration()" />
                 </mat-form-field>
             </td>
             <td>
                 <mat-form-field>
                     <mat-label>Register Amount A</mat-label>
-                    <input matInput class="w-full" type="number" [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.register?.label!" formControlName="registerAmount" />
+                    <input matInput class="w-full" type="number"
+                        [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.register?.label!"
+                        formControlName="registerAmount" (input)="onInputUpdateStoreConfiguration()" />
                 </mat-form-field>
             </td>
             <td>
                 <mat-form-field>
                     <mat-label>Terminal Amount A</mat-label>
-                    <input matInput class="w-full" type="number" [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.terminal?.label!" formControlName="terminalAmount" />
+                    <input matInput class="w-full" type="number"
+                        [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.terminal?.label!"
+                        formControlName="terminalAmount" (input)="onInputUpdateStoreConfiguration()" />
                 </mat-form-field>
             </td>
             <td>
-                {{ calculateDifference('salesDeskA') | currency }}
+                {{ cardReconciliationStore.storeConfiguration()['A']?.difference | currency }}
+            </td>
+            <td>
+                {{ cardReconciliationStore.storeConfiguration()['A']?.outcome }}
             </td>
         </tr>
     </table>

@@ -26,6 +26,11 @@ export const CardReconciliationStore = signalStore(
         patchState(store, (state: CardReconciliationState) => ({
             storeConfiguration: storeConfiguration,
         }))
+    },
+    async updateStoreConfiguration(storeConfiguration: Partial<StoreConfiguration>): Promise<void> {
+      patchState(store, (state: CardReconciliationState) => ({
+            storeConfiguration: storeConfiguration,
+      }))
     }
   })),
   withComputed(() => ({
