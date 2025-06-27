@@ -74,18 +74,18 @@ export class CardReconciliationTableComponent {
         ...newStoreConfiguration['A']!,
         pos: {
           ...newStoreConfiguration['A']!.pos,
-          posAmount: parentFormGroup.get('salesDeskA')?.value['posAmount'],
+          posAmount: resetValue ?? parentFormGroup.get('salesDeskA')?.value['posAmount'],
         },
         register: {
           ...newStoreConfiguration['A']!.register,
-          registerAmount: parentFormGroup.get('salesDeskA')?.value['registerAmount'],
+          registerAmount: resetValue ?? parentFormGroup.get('salesDeskA')?.value['registerAmount'],
         },
         terminal: {
           ...newStoreConfiguration['A']!.terminal,
-          terminalAmount: parentFormGroup.get('salesDeskA')?.value['terminalAmount'],
+          terminalAmount: resetValue ?? parentFormGroup.get('salesDeskA')?.value['terminalAmount'],
         },
-        difference: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskA').difference,
-        outcome: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskA').outcome,
+        difference: resetValue ?? this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskA').difference,
+        outcome: resetOutcome ?? this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskA').outcome,
       },
       // Sales Desk B
       B: {
@@ -186,5 +186,6 @@ export class CardReconciliationTableComponent {
   resetForm(): void {
     this.cardReconciliationForm.reset();
     this.onInputUpdateStoreConfiguration(0, 'Balanced');
+    console.log(this.cardReconciliationStore.storeConfiguration());
   }
 }
