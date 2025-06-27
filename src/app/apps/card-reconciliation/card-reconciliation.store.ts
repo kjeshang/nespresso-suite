@@ -8,6 +8,7 @@ import {
 import { computed, inject } from '@angular/core';
 import { StoreConfiguration } from './card-reconciliation.models';
 import { CardReconciliationDbService } from './card-reconciliation.db.service';
+import { CardReconciliationCalcsService } from './card-reconciliation.calcs.service';
 
 type CardReconciliationState = {
   storeConfiguration: Partial<StoreConfiguration>;
@@ -33,7 +34,9 @@ export const CardReconciliationStore = signalStore(
       }))
     }
   })),
-  withComputed(() => ({
-    
+  withComputed(({ storeConfiguration }, calcs: CardReconciliationCalcsService = inject(CardReconciliationCalcsService)) => ({
+    cumulativeTotals: computed(() => {
+      return calcs.calculateCumulativeTotals(storeConfiguration());
+    }),
   }))
 )
