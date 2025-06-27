@@ -139,6 +139,24 @@ export class CardReconciliationTableComponent {
         difference: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskE').difference,
         outcome: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskE').outcome,
       },
+      // Sales Desk F
+      F: {
+        ...newStoreConfiguration['F']!,
+        pos: {
+          ...newStoreConfiguration['F']!.pos,
+          posAmount: parentFormGroup.get('salesDeskF')?.value['posAmount'],
+        },
+        register: {
+          ...newStoreConfiguration['F']!.register,
+          registerAmount: parentFormGroup.get('salesDeskF')?.value['registerAmount'],
+        },
+        terminal: {
+          ...newStoreConfiguration['F']!.terminal,
+          terminalAmount: parentFormGroup.get('salesDeskF')?.value['terminalAmount'],
+        },
+        difference: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskF').difference,
+        outcome: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskF').outcome,
+      },
     };
     this.cardReconciliationStore.updateStoreConfiguration(
       newStoreConfiguration

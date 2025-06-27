@@ -221,6 +221,57 @@
                     </td>
                 </tr>
                 <!-- Sales Desk F -->
+                <tr class="bg-gray-50" formGroupName="salesDeskF">
+                    <td class="p-3 text-gray-700 flex flex-col whitespace-nowrap text-lg">
+                        <p>Sales Desk: <span class="text-blue-500 font-medium">{{ cardReconciliationStore.storeConfiguration()['F']?.salesDesk }}</span></p>
+                        <p>Till No: <span class="text-blue-500 font-medium">{{ cardReconciliationStore.storeConfiguration()['F']?.tillNumber }}</span></p>
+                    </td>
+                    <td class="p-3 text-gray-700 whitespace-nowrap">
+                        <mat-form-field class="w-full">
+                            <mat-label>{{ cardReconciliationStore.storeConfiguration()['F']?.pos?.label! }}</mat-label>
+                            <input matInput class="w-full" type="number"
+                                [placeholder]="cardReconciliationStore.storeConfiguration()['F']?.pos?.label!"
+                                formControlName="posAmount" (input)="onInputUpdateStoreConfiguration()" />
+                        </mat-form-field>
+                    </td>
+                    <td class="p-3 text-gray-700 whitespace-nowrap">
+                        <mat-form-field class="w-full">
+                            <mat-label>{{ cardReconciliationStore.storeConfiguration()['F']?.register?.label!
+                                }}</mat-label>
+                            <input matInput class="w-full" type="number"
+                                [placeholder]="cardReconciliationStore.storeConfiguration()['F']?.register?.label!"
+                                formControlName="registerAmount" (input)="onInputUpdateStoreConfiguration()" />
+                        </mat-form-field>
+                    </td>
+                    <td class="p-3 text-gray-700 whitespace-nowrap">
+                        <mat-form-field class="w-full">
+                            <mat-label>{{ cardReconciliationStore.storeConfiguration()['F']?.terminal?.label!
+                                }}</mat-label>
+                            <input matInput class="w-full" type="number"
+                                [placeholder]="cardReconciliationStore.storeConfiguration()['F']?.terminal?.label!"
+                                formControlName="terminalAmount" (input)="onInputUpdateStoreConfiguration()" />
+                        </mat-form-field>
+                    </td>
+                    <td class="p-3 text-gray-700 text-right whitespace-nowrap">
+                        {{ cardReconciliationStore.storeConfiguration()['F']?.difference | currency }}
+                    </td>
+                    <td class="p-3 text-gray-700 whitespace-nowrap">
+                        <div class="text-sm font-medium uppercase tracking-wider">
+                            @if(cardReconciliationStore.storeConfiguration()['F']?.outcome === 'Short'){
+                            <span class="text-red-800 bg-red-200 rounded-lg bg-opacity-50 p-1.5">{{
+                                cardReconciliationStore.storeConfiguration()['F']?.outcome }}</span>
+                            }
+                            @else if(cardReconciliationStore.storeConfiguration()['F']?.outcome === 'Over'){
+                            <span class="text-blue-800 bg-blue-200 rounded-lg bg-opacity-50 p-1.5">{{
+                                cardReconciliationStore.storeConfiguration()['F']?.outcome }}</span>
+                            }
+                            @else {
+                            <span class="text-green-800 bg-green-200 rounded-lg bg-opacity-50 p-1.5">{{
+                                cardReconciliationStore.storeConfiguration()['F']?.outcome }}</span>
+                            }
+                        </div>
+                    </td>
+                </tr>
                 <!-- Sales Desk G -->
             </tbody>
         </table>
