@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { CardReconciliationStore } from '../card-reconciliation.store';
 import { CommonModule } from '@angular/common';
 import { CardReconciliationCalcsService } from '../card-reconciliation.calcs.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-card-reconciliation-table',
@@ -18,6 +19,7 @@ import { CardReconciliationCalcsService } from '../card-reconciliation.calcs.ser
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
+    MatButtonModule,
     FormsModule,
     CommonModule,
   ],
@@ -62,7 +64,7 @@ export class CardReconciliationTableComponent {
     }),
   });
 
-  onInputUpdateStoreConfiguration(): void {
+  onInputUpdateStoreConfiguration(resetValue?: number, resetOutcome?: string): void {
     const parentFormGroup: AbstractControl = this.cardReconciliationForm;
     let newStoreConfiguration =
       this.cardReconciliationStore.storeConfiguration();
@@ -179,5 +181,10 @@ export class CardReconciliationTableComponent {
     this.cardReconciliationStore.updateStoreConfiguration(
       newStoreConfiguration
     );
+  }
+
+  resetForm(): void {
+    this.cardReconciliationForm.reset();
+    this.onInputUpdateStoreConfiguration(0, 'Balanced');
   }
 }
