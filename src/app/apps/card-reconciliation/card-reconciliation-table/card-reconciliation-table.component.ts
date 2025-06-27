@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import {
+  AbstractControl,
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
@@ -62,6 +63,7 @@ export class CardReconciliationTableComponent {
   });
 
   onInputUpdateStoreConfiguration(): void {
+    const parentFormGroup: AbstractControl = this.cardReconciliationForm;
     let newStoreConfiguration =
       this.cardReconciliationStore.storeConfiguration();
     newStoreConfiguration = {
@@ -69,15 +71,15 @@ export class CardReconciliationTableComponent {
         ...newStoreConfiguration['A']!,
         pos: {
           ...newStoreConfiguration['A']!.pos,
-          posAmount: 0,
+          posAmount: parentFormGroup.get('salesDeskA')?.value['posAmount'],
         },
         register: {
           ...newStoreConfiguration['A']!.register,
-          registerAmount: 0,
+          registerAmount: parentFormGroup.get('salesDeskA')?.value['registerAmount'],
         },
         terminal: {
           ...newStoreConfiguration['A']!.terminal,
-          terminalAmount: 0,
+          terminalAmount: parentFormGroup.get('salesDeskA')?.value['terminalAmount'],
         },
         difference: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskA').difference,
         outcome: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskA').outcome,
@@ -86,15 +88,15 @@ export class CardReconciliationTableComponent {
         ...newStoreConfiguration['B']!,
         pos: {
           ...newStoreConfiguration['B']!.pos,
-          posAmount: 0,
+          posAmount: parentFormGroup.get('salesDeskB')?.value['posAmount'],
         },
         register: {
           ...newStoreConfiguration['B']!.register,
-          registerAmount: 0,
+          registerAmount: parentFormGroup.get('salesDeskB')?.value['registerAmount'],
         },
         terminal: {
           ...newStoreConfiguration['B']!.terminal,
-          terminalAmount: 0,
+          terminalAmount: parentFormGroup.get('salesDeskB')?.value['terminalAmount'],
         },
         difference: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskB').difference,
         outcome: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskB').outcome,
@@ -103,5 +105,6 @@ export class CardReconciliationTableComponent {
     this.cardReconciliationStore.updateStoreConfiguration(
       newStoreConfiguration
     );
+    console.log(this.cardReconciliationStore.storeConfiguration());
   }
 }
