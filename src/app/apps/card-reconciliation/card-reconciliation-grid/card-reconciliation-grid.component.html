@@ -1,7 +1,7 @@
 <form [formGroup]="cardReconciliationForm">
     <div class="grid grid-cols-1 gap-4">
         <!-- Sales Desk A -->
-        <div class="flex flex-col space-y-2 p-3 border-2 border-xl shadow-lg border-gray-300 rounded-xl" formGroupName="salesDeskA">
+        <div class="flex flex-col space-y-2 p-3 border-2 border-xl shadow-lg border-gray-300 rounded-lg" formGroupName="salesDeskA">
             <div class="flex flex-row justify-center items-center space-x-2 bg-gray-50 border-2 border-gray-200">
                 <p>Sales Desk: <span class="font-medium text-blue-500">{{ cardReconciliationStore.storeConfiguration()['A']?.salesDesk }}</span></p>
                 <p>Till No: <span class="font-medium text-blue-500">{{ cardReconciliationStore.storeConfiguration()['A']?.tillNumber }}</span></p>
@@ -49,7 +49,7 @@
             </div>
         </div>
         <!-- Sales Desk B -->
-        <div class="flex flex-col space-y-2 p-3 border-2 border-xl shadow-lg border-gray-300 rounded-xl" formGroupName="salesDeskB">
+        <div class="flex flex-col space-y-2 p-3 border-2 border-xl shadow-lg border-gray-300 rounded-lg" formGroupName="salesDeskB">
             <div class="flex flex-row justify-center items-center space-x-2 bg-gray-50 border-2 border-gray-200">
                 <p>Sales Desk: <span class="font-medium text-blue-500">{{ cardReconciliationStore.storeConfiguration()['B']?.salesDesk }}</span></p>
                 <p>Till No: <span class="font-medium text-blue-500">{{ cardReconciliationStore.storeConfiguration()['B']?.tillNumber }}</span></p>

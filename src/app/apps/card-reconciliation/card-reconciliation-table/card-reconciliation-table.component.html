@@ -14,7 +14,7 @@
             <tbody class="divide-y divide-gray-300">
                 <!-- Sales Desk A -->
                 <tr class="bg-white" formGroupName="salesDeskA">
-                    <td class="p-3 text-gray-700 flex flex-col space-y-2 whitespace-nowrap">
+                    <td class="p-3 text-gray-700 flex flex-col space-y-2 whitespace-nowrap text-lg">
                         <p>Sales Desk: <span class="font-medium text-blue-500">{{ cardReconciliationStore.storeConfiguration()['A']?.salesDesk }}</span></p>
                         <p>Till No: <span class="font-medium text-blue-500">{{ cardReconciliationStore.storeConfiguration()['A']?.tillNumber }}</span></p>
                     </td>
@@ -66,7 +66,7 @@
                 </tr>
                 <!-- Sales Desk B -->
                 <tr class="bg-gray-50" formGroupName="salesDeskB">
-                    <td class="p-3 text-gray-700 flex flex-col whitespace-nowrap">
+                    <td class="p-3 text-gray-700 flex flex-col whitespace-nowrap text-lg">
                         <p>Sales Desk: <span class="text-blue-500 font-medium">{{ cardReconciliationStore.storeConfiguration()['B']?.salesDesk }}</span></p>
                         <p>Till No: <span class="text-blue-500 font-medium">{{ cardReconciliationStore.storeConfiguration()['B']?.tillNumber }}</span></p>
                     </td>
