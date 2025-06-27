@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import {
-  AbstractControl,
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
@@ -10,7 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { CardReconciliationStore } from '../card-reconciliation.store';
 import { CommonModule } from '@angular/common';
-import currency from 'currency.js';
+import { CardReconciliationCalcsService } from '../card-reconciliation.calcs.service';
 
 @Component({
   selector: 'app-card-reconciliation-table',
@@ -27,6 +26,7 @@ import currency from 'currency.js';
 export class CardReconciliationTableComponent {
   private fb: FormBuilder = inject(FormBuilder);
   cardReconciliationStore = inject(CardReconciliationStore);
+  cardReconciliationCalcsService = inject(CardReconciliationCalcsService);
 
   cardReconciliationForm: FormGroup = this.fb.group({
     salesDeskA: this.fb.group({
@@ -79,8 +79,8 @@ export class CardReconciliationTableComponent {
           ...newStoreConfiguration['A']!.terminal,
           terminalAmount: 0,
         },
-        difference: this.calculateDifference('salesDeskA').difference,
-        outcome: this.calculateDifference('salesDeskA').outcome,
+        difference: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskA').difference,
+        outcome: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskA').outcome,
       },
       B: {
         ...newStoreConfiguration['B']!,
@@ -96,40 +96,12 @@ export class CardReconciliationTableComponent {
           ...newStoreConfiguration['B']!.terminal,
           terminalAmount: 0,
         },
-        difference: this.calculateDifference('salesDeskB').difference,
-        outcome: this.calculateDifference('salesDeskB').outcome,
+        difference: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskB').difference,
+        outcome: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskB').outcome,
       },
     };
     this.cardReconciliationStore.updateStoreConfiguration(
       newStoreConfiguration
     );
-  }
-
-  private calculateDifference(formGroupName: string): {
-    difference: number;
-    outcome: string;
-  } {
-    const formGroup: AbstractControl =
-      this.cardReconciliationForm.get(formGroupName)!;
-    const terminalAmount: number = currency(
-      formGroup.value['terminalAmount']
-    ).value;
-    const posAmount: number = currency(formGroup.value['posAmount']).value;
-    const registerAmount: number = currency(
-      formGroup.value['registerAmount']
-    ).value;
-    const cashJournalAmount: number =
-      currency(posAmount).add(registerAmount).value;
-    const difference: number =
-      currency(terminalAmount).subtract(cashJournalAmount).value;
-    let outcome: string = '';
-    if (difference < 0) {
-      outcome = 'Short';
-    } else if (difference > 0) {
-      outcome = 'Over';
-    } else {
-      outcome = 'Balanced';
-    }
-    return { difference, outcome };
   }
 }
