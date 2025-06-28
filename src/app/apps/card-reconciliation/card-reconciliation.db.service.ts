@@ -12,15 +12,15 @@ export class CardReconciliationDbService {
                 salesDesk: 'A',
                 tillNumber: 1,
                 pos: {
-                    label: "POS Amount A",
+                    label: "POS 1 Amount",
                     posAmount: 0,
                 },
                 register: {
-                    label: "Register Amount A",
+                    label: "Register 1 Amount",
                     registerAmount: 0
                 },
                 terminal: {
-                    label: "Terminal Amount A",
+                    label: "Terminal 1 Amount",
                     terminalAmount: 0
                 },
                 difference: 0,
@@ -30,15 +30,15 @@ export class CardReconciliationDbService {
                 salesDesk: 'B',
                 tillNumber: 2,
                 pos: {
-                    label: "POS Amount B",
+                    label: "POS 2 Amount",
                     posAmount: 0,
                 },
                 register: {
-                    label: "Register Amount B",
+                    label: "Register 2 Amount",
                     registerAmount: 0
                 },
                 terminal: {
-                    label: "Terminal Amount B",
+                    label: "Terminal 2 Amount",
                     terminalAmount: 0
                 },
                 difference: 0,
@@ -48,15 +48,15 @@ export class CardReconciliationDbService {
                 salesDesk: 'D',
                 tillNumber: 4,
                 pos: {
-                    label: "POS Amount D",
+                    label: "POS 4 Amount",
                     posAmount: 0,
                 },
                 register: {
-                    label: "Register Amount D",
+                    label: "Register 4 Amount",
                     registerAmount: 0
                 },
                 terminal: {
-                    label: "Terminal Amount D",
+                    label: "Terminal 4 Amount",
                     terminalAmount: 0
                 },
                 difference: 0,
@@ -66,15 +66,15 @@ export class CardReconciliationDbService {
                 salesDesk: 'E',
                 tillNumber: 7,
                 pos: {
-                    label: "POS Amount E",
+                    label: "POS 7 Amount",
                     posAmount: 0,
                 },
                 register: {
-                    label: "Register Amount E",
+                    label: "Register 7 Amount",
                     registerAmount: 0
                 },
                 terminal: {
-                    label: "Terminal Amount E",
+                    label: "Terminal 7 Amount",
                     terminalAmount: 0
                 },
                 difference: 0,
@@ -84,15 +84,15 @@ export class CardReconciliationDbService {
                 salesDesk: 'F',
                 tillNumber: 6,
                 pos: {
-                    label: "POS Amount F",
+                    label: "POS 6 Amount",
                     posAmount: 0,
                 },
                 register: {
-                    label: "Register Amount F",
+                    label: "Register 6 Amount",
                     registerAmount: 0
                 },
                 terminal: {
-                    label: "Terminal Amount F",
+                    label: "Terminal 6 Amount",
                     terminalAmount: 0
                 },
                 difference: 0,
@@ -102,15 +102,15 @@ export class CardReconciliationDbService {
                 salesDesk: 'G',
                 tillNumber: 5,
                 pos: {
-                    label: "POS Amount G",
+                    label: "POS 5 Amount",
                     posAmount: 0,
                 },
                 register: {
-                    label: "Register Amount G",
+                    label: "Register 5 Amount",
                     registerAmount: 0
                 },
                 terminal: {
-                    label: "Terminal Amount G",
+                    label: "Terminal 5 Amount",
                     terminalAmount: 0
                 },
                 difference: 0,
