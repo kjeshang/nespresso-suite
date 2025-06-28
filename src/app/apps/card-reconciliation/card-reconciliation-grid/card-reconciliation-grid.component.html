@@ -1,100 +1,57 @@
 <form [formGroup]="cardReconciliationForm">
+    <div class="flex flex-row justify-between items-center my-2 py-2">
+        <p class="font-semibold">Credit Card & Debit Card Reconciliation</p>
+        <button class="!bg-black !text-white" mat-flat-button (click)="resetForm()">Reset</button>
+    </div>
     <div class="grid grid-cols-1 gap-4">
-        <!-- Sales Desk A -->
-        <div class="flex flex-col space-y-2 p-3 border-2 border-xl shadow-lg border-gray-300 rounded-lg" formGroupName="salesDeskA">
+        @for(item of cardReconciliationStore.storeConfiguration() | keyvalue; track item.key; let i = $index) {
+            <div class="flex flex-col space-y-2 p-3 border-2 border-xl shadow-lg border-gray-300 rounded-lg" formGroupName="salesDesk{{ item.key.toString() }}">
             <div class="flex flex-row justify-center items-center space-x-2 bg-gray-50 border-2 border-gray-200">
-                <p>Sales Desk: <span class="font-medium text-blue-500">{{ cardReconciliationStore.storeConfiguration()['A']?.salesDesk }}</span></p>
-                <p>Till No: <span class="font-medium text-blue-500">{{ cardReconciliationStore.storeConfiguration()['A']?.tillNumber }}</span></p>
+                <p>Sales Desk: <span class="font-medium text-blue-500">{{ item.value?.salesDesk }}</span></p>
+                <p>Till No: <span class="font-medium text-blue-500">{{ item.value?.tillNumber }}</span></p>
             </div>
             <div class="flex flex-col">
                 <mat-form-field class="w-full">
-                    <mat-label>{{ cardReconciliationStore.storeConfiguration()['A']?.pos?.label! }}</mat-label>
+                    <mat-label>{{ item.value?.pos?.label }}</mat-label>
                     <input matInput class="w-full" type="number"
-                        [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.pos?.label!"
+                        [placeholder]="item.value?.pos?.label!"
                         formControlName="posAmount" (input)="onInputUpdateStoreConfiguration()" />
                 </mat-form-field>
                 <mat-form-field class="w-full">
-                    <mat-label>{{ cardReconciliationStore.storeConfiguration()['A']?.register?.label!
+                    <mat-label>{{ item.value?.register?.label!
                         }}</mat-label>
                     <input matInput class="w-full" type="number"
-                        [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.register?.label!"
+                        [placeholder]="item.value?.register?.label!"
                         formControlName="registerAmount" (input)="onInputUpdateStoreConfiguration()" />
                 </mat-form-field>
                 <mat-form-field class="w-full">
-                    <mat-label>{{ cardReconciliationStore.storeConfiguration()['A']?.terminal?.label!
+                    <mat-label>{{ item.value?.terminal?.label!
                         }}</mat-label>
                     <input matInput class="w-full" type="number"
-                        [placeholder]="cardReconciliationStore.storeConfiguration()['A']?.terminal?.label!"
+                        [placeholder]="item.value?.terminal?.label!"
                         formControlName="terminalAmount" (input)="onInputUpdateStoreConfiguration()" />
                 </mat-form-field>
             </div>
             <div class="flex flex-row justify-between items-stretch">
                 <p class="text-gray-700">
-                    {{ cardReconciliationStore.storeConfiguration()['A']?.difference | currency }}
+                    {{ item.value?.difference | currency }}
                 </p>
                 <div class="text-sm font-medium uppercase tracking-wider text-gray-700">
-                    @if(cardReconciliationStore.storeConfiguration()['A']?.outcome === 'Short'){
+                    @if(item.value?.outcome === 'Short'){
                     <span class="text-red-800 bg-red-200 rounded-lg bg-opacity-50 p-1.5">{{
-                        cardReconciliationStore.storeConfiguration()['A']?.outcome }}</span>
+                        item.value?.outcome }}</span>
                     }
-                    @else if(cardReconciliationStore.storeConfiguration()['A']?.outcome === 'Over'){
+                    @else if(item.value?.outcome === 'Over'){
                     <span class="text-blue-800 bg-blue-200 rounded-lg bg-opacity-50 p-1.5">{{
-                        cardReconciliationStore.storeConfiguration()['A']?.outcome }}</span>
+                        item.value?.outcome }}</span>
                     }
                     @else {
                     <span class="text-green-800 bg-green-200 rounded-lg bg-opacity-50 p-1.5">{{
-                        cardReconciliationStore.storeConfiguration()['A']?.outcome }}</span>
+                        item.value?.outcome }}</span>
                     }
                 </div>
             </div>
         </div>
-        <!-- Sales Desk B -->
-        <div class="flex flex-col space-y-2 p-3 border-2 border-xl shadow-lg border-gray-300 rounded-lg" formGroupName="salesDeskB">
-            <div class="flex flex-row justify-center items-center space-x-2 bg-gray-50 border-2 border-gray-200">
-                <p>Sales Desk: <span class="font-medium text-blue-500">{{ cardReconciliationStore.storeConfiguration()['B']?.salesDesk }}</span></p>
-                <p>Till No: <span class="font-medium text-blue-500">{{ cardReconciliationStore.storeConfiguration()['B']?.tillNumber }}</span></p>
-            </div>
-            <div class="flex flex-col">
-                <mat-form-field class="w-full">
-                    <mat-label>{{ cardReconciliationStore.storeConfiguration()['B']?.pos?.label! }}</mat-label>
-                    <input matInput class="w-full" type="number"
-                        [placeholder]="cardReconciliationStore.storeConfiguration()['B']?.pos?.label!"
-                        formControlName="posAmount" (input)="onInputUpdateStoreConfiguration()" />
-                </mat-form-field>
-                <mat-form-field class="w-full">
-                    <mat-label>{{ cardReconciliationStore.storeConfiguration()['B']?.register?.label!
-                        }}</mat-label>
-                    <input matInput class="w-full" type="number"
-                        [placeholder]="cardReconciliationStore.storeConfiguration()['B']?.register?.label!"
-                        formControlName="registerAmount" (input)="onInputUpdateStoreConfiguration()" />
-                </mat-form-field>
-                <mat-form-field class="w-full">
-                    <mat-label>{{ cardReconciliationStore.storeConfiguration()['B']?.terminal?.label!
-                        }}</mat-label>
-                    <input matInput class="w-full" type="number"
-                        [placeholder]="cardReconciliationStore.storeConfiguration()['B']?.terminal?.label!"
-                        formControlName="terminalAmount" (input)="onInputUpdateStoreConfiguration()" />
-                </mat-form-field>
-            </div>
-            <div class="flex flex-row justify-between items-stretch">
-                <p class="text-gray-700">
-                    {{ cardReconciliationStore.storeConfiguration()['B']?.difference | currency }}
-                </p>
-                <div class="text-sm font-medium uppercase tracking-wider text-gray-700">
-                    @if(cardReconciliationStore.storeConfiguration()['B']?.outcome === 'Short'){
-                    <span class="text-red-800 bg-red-200 rounded-lg bg-opacity-50 p-1.5">{{
-                        cardReconciliationStore.storeConfiguration()['B']?.outcome }}</span>
-                    }
-                    @else if(cardReconciliationStore.storeConfiguration()['B']?.outcome === 'Over'){
-                    <span class="text-blue-800 bg-blue-200 rounded-lg bg-opacity-50 p-1.5">{{
-                        cardReconciliationStore.storeConfiguration()['B']?.outcome }}</span>
-                    }
-                    @else {
-                    <span class="text-green-800 bg-green-200 rounded-lg bg-opacity-50 p-1.5">{{
-                        cardReconciliationStore.storeConfiguration()['B']?.outcome }}</span>
-                    }
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </form>
