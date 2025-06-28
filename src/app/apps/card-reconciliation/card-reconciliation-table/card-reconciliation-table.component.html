@@ -17,7 +17,8 @@
             </thead>
             <tbody>
                 @for(item of cardReconciliationStore.storeConfiguration() | keyvalue; track item.key; let i = $index) {
-                <tr [class]="$index % 2 ? 'bg-gray-50' : 'bg-white' " formGroupName="salesDesk{{ item.key.toString() }}">
+                <tr [class]="$index % 2 ? 'bg-gray-50' : 'bg-white' "
+                    formGroupName="salesDesk{{ item.key.toString() }}">
                     <td class="p-3 text-gray-700 flex flex-col whitespace-nowrap text-lg">
                         <p>Sales Desk: <span class="text-blue-500 font-medium">{{ item.value?.salesDesk }}</span></p>
                         <p>Till No: <span class="text-blue-500 font-medium">{{ item.value?.tillNumber }}</span></p>

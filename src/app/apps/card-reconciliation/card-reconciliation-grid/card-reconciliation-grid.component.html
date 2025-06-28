@@ -5,7 +5,8 @@
     </div>
     <div class="grid grid-cols-1 gap-4">
         @for(item of cardReconciliationStore.storeConfiguration() | keyvalue; track item.key; let i = $index) {
-            <div class="flex flex-col space-y-2 p-3 border-2 border-xl shadow-lg border-gray-300 rounded-lg" formGroupName="salesDesk{{ item.key.toString() }}">
+        <div class="flex flex-col space-y-2 p-3 border-2 border-xl shadow-lg border-gray-300 rounded-lg"
+            formGroupName="salesDesk{{ item.key.toString() }}">
             <div class="flex flex-row justify-center items-center space-x-2 bg-gray-50 border-2 border-gray-200">
                 <p>Sales Desk: <span class="font-medium text-blue-500">{{ item.value?.salesDesk }}</span></p>
                 <p>Till No: <span class="font-medium text-blue-500">{{ item.value?.tillNumber }}</span></p>
@@ -13,22 +14,19 @@
             <div class="flex flex-col">
                 <mat-form-field class="w-full">
                     <mat-label>{{ item.value?.pos?.label }}</mat-label>
-                    <input matInput class="w-full" type="number"
-                        [placeholder]="item.value?.pos?.label!"
+                    <input matInput class="w-full" type="number" [placeholder]="item.value?.pos?.label!"
                         formControlName="posAmount" (input)="onInputUpdateStoreConfiguration()" />
                 </mat-form-field>
                 <mat-form-field class="w-full">
                     <mat-label>{{ item.value?.register?.label!
                         }}</mat-label>
-                    <input matInput class="w-full" type="number"
-                        [placeholder]="item.value?.register?.label!"
+                    <input matInput class="w-full" type="number" [placeholder]="item.value?.register?.label!"
                         formControlName="registerAmount" (input)="onInputUpdateStoreConfiguration()" />
                 </mat-form-field>
                 <mat-form-field class="w-full">
                     <mat-label>{{ item.value?.terminal?.label!
                         }}</mat-label>
-                    <input matInput class="w-full" type="number"
-                        [placeholder]="item.value?.terminal?.label!"
+                    <input matInput class="w-full" type="number" [placeholder]="item.value?.terminal?.label!"
                         formControlName="terminalAmount" (input)="onInputUpdateStoreConfiguration()" />
                 </mat-form-field>
             </div>

@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { CardReconciliationStore } from '../card-reconciliation.store';
 import { CardReconciliationCalcsService } from '../card-reconciliation.calcs.service';
 import { MatButtonModule } from '@angular/material/button';
+import { CardReconciliationDbService } from '../card-reconciliation.db.service';
 
 @Component({
   selector: 'app-card-reconciliation-grid',
@@ -21,42 +22,11 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './card-reconciliation-grid.component.scss'
 })
 export class CardReconciliationGridComponent {
-  private fb: FormBuilder = inject(FormBuilder);
   cardReconciliationStore = inject(CardReconciliationStore);
-  cardReconciliationCalcsService = inject(CardReconciliationCalcsService);
-
-  cardReconciliationForm: FormGroup = this.fb.group({
-    salesDeskA: this.fb.group({
-      posAmount: [''],
-      registerAmount: [''],
-      terminalAmount: [''],
-    }),
-    salesDeskB: this.fb.group({
-      posAmount: [''],
-      registerAmount: [''],
-      terminalAmount: [''],
-    }),
-    salesDeskD: this.fb.group({
-      posAmount: [''],
-      registerAmount: [''],
-      terminalAmount: [''],
-    }),
-    salesDeskE: this.fb.group({
-      posAmount: [''],
-      registerAmount: [''],
-      terminalAmount: [''],
-    }),
-    salesDeskF: this.fb.group({
-      posAmount: [''],
-      registerAmount: [''],
-      terminalAmount: [''],
-    }),
-    salesDeskG: this.fb.group({
-      posAmount: [''],
-      registerAmount: [''],
-      terminalAmount: [''],
-    }),
-  });
+    cardReconciliationCalcsService = inject(CardReconciliationCalcsService);
+    cardReconciliationDbService: CardReconciliationDbService = inject(CardReconciliationDbService);
+  
+    cardReconciliationForm: FormGroup = this.cardReconciliationDbService.getCardReconciliationForm();
 
   onInputUpdateStoreConfiguration(resetValue?: 0, resetOutcome?: 'Balanced'): void {
     const parentFormGroup: AbstractControl = this.cardReconciliationForm;
@@ -89,7 +59,6 @@ export class CardReconciliationGridComponent {
   resetForm(): void {
     this.cardReconciliationForm.reset();
     this.onInputUpdateStoreConfiguration(0, 'Balanced');
-    console.log(this.cardReconciliationStore.storeConfiguration());
   }
 
 }
