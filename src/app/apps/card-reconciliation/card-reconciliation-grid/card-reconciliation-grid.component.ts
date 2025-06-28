@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  AbstractControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CardReconciliationStore } from '../card-reconciliation.store';
@@ -19,36 +24,64 @@ import { CardReconciliationDbService } from '../card-reconciliation.db.service';
     CommonModule,
   ],
   templateUrl: './card-reconciliation-grid.component.html',
-  styleUrl: './card-reconciliation-grid.component.scss'
+  styleUrl: './card-reconciliation-grid.component.scss',
 })
 export class CardReconciliationGridComponent {
   cardReconciliationStore = inject(CardReconciliationStore);
-    cardReconciliationCalcsService = inject(CardReconciliationCalcsService);
-    cardReconciliationDbService: CardReconciliationDbService = inject(CardReconciliationDbService);
-  
-    cardReconciliationForm: FormGroup = this.cardReconciliationDbService.getCardReconciliationForm();
+  cardReconciliationCalcsService = inject(CardReconciliationCalcsService);
+  cardReconciliationDbService: CardReconciliationDbService = inject(
+    CardReconciliationDbService
+  );
 
-  onInputUpdateStoreConfiguration(resetValue?: 0, resetOutcome?: 'Balanced'): void {
+  cardReconciliationForm: FormGroup =
+    this.cardReconciliationDbService.getCardReconciliationForm();
+
+  onInputUpdateStoreConfiguration(
+    resetValue?: 0,
+    resetOutcome?: 'Balanced'
+  ): void {
     const parentFormGroup: AbstractControl = this.cardReconciliationForm;
     let newStoreConfiguration =
       this.cardReconciliationStore.storeConfiguration();
-    for(const [key, value] of Object.entries(newStoreConfiguration)){
+    for (const [key, value] of Object.entries(newStoreConfiguration)) {
       newStoreConfiguration[key] = {
         ...value!,
         pos: {
           ...value?.pos!,
-          posAmount: resetValue ?? parentFormGroup.get(`salesDesk${key.toString()}`)?.value['posAmount'],
+          posAmount:
+            resetValue ??
+            parentFormGroup.get(`salesDesk${key.toString()}`)?.value[
+              'posAmount'
+            ],
         },
         register: {
           ...value?.register!,
-          registerAmount: resetValue ?? parentFormGroup.get(`salesDesk${key.toString()}`)?.value['registerAmount'],
+          registerAmount:
+            resetValue ??
+            parentFormGroup.get(`salesDesk${key.toString()}`)?.value[
+              'registerAmount'
+            ],
         },
         terminal: {
           ...value?.terminal!,
-          terminalAmount: resetValue ?? parentFormGroup.get(`salesDesk${key.toString()}`)?.value['terminalAmount'],
+          terminalAmount:
+            resetValue ??
+            parentFormGroup.get(`salesDesk${key.toString()}`)?.value[
+              'terminalAmount'
+            ],
         },
-        difference: resetValue ?? this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, `salesDesk${key.toString()}`).difference,
-        outcome: resetOutcome ?? this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, `salesDesk${key.toString()}`).outcome,
+        difference:
+          resetValue ??
+          this.cardReconciliationCalcsService.calculateDifference(
+            this.cardReconciliationForm,
+            `salesDesk${key.toString()}`
+          ).difference,
+        outcome:
+          resetOutcome ??
+          this.cardReconciliationCalcsService.calculateDifference(
+            this.cardReconciliationForm,
+            `salesDesk${key.toString()}`
+          ).outcome,
       };
     }
     this.cardReconciliationStore.updateStoreConfiguration(
@@ -60,5 +93,4 @@ export class CardReconciliationGridComponent {
     this.cardReconciliationForm.reset();
     this.onInputUpdateStoreConfiguration(0, 'Balanced');
   }
-
 }

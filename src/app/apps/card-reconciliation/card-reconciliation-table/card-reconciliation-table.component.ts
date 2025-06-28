@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import {
   AbstractControl,
-  FormBuilder,
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';
@@ -30,31 +29,59 @@ import { CardReconciliationDbService } from '../card-reconciliation.db.service';
 export class CardReconciliationTableComponent {
   cardReconciliationStore = inject(CardReconciliationStore);
   cardReconciliationCalcsService = inject(CardReconciliationCalcsService);
-  cardReconciliationDbService: CardReconciliationDbService = inject(CardReconciliationDbService);
+  cardReconciliationDbService: CardReconciliationDbService = inject(
+    CardReconciliationDbService
+  );
 
-  cardReconciliationForm: FormGroup = this.cardReconciliationDbService.getCardReconciliationForm();
+  cardReconciliationForm: FormGroup =
+    this.cardReconciliationDbService.getCardReconciliationForm();
 
-  onInputUpdateStoreConfiguration(resetValue?: 0, resetOutcome?: 'Balanced'): void {
+  onInputUpdateStoreConfiguration(
+    resetValue?: 0,
+    resetOutcome?: 'Balanced'
+  ): void {
     const parentFormGroup: AbstractControl = this.cardReconciliationForm;
     let newStoreConfiguration =
       this.cardReconciliationStore.storeConfiguration();
-    for(const [key, value] of Object.entries(newStoreConfiguration)){
+    for (const [key, value] of Object.entries(newStoreConfiguration)) {
       newStoreConfiguration[key] = {
         ...value!,
         pos: {
           ...value?.pos!,
-          posAmount: resetValue ?? parentFormGroup.get(`salesDesk${key.toString()}`)?.value['posAmount'],
+          posAmount:
+            resetValue ??
+            parentFormGroup.get(`salesDesk${key.toString()}`)?.value[
+              'posAmount'
+            ],
         },
         register: {
           ...value?.register!,
-          registerAmount: resetValue ?? parentFormGroup.get(`salesDesk${key.toString()}`)?.value['registerAmount'],
+          registerAmount:
+            resetValue ??
+            parentFormGroup.get(`salesDesk${key.toString()}`)?.value[
+              'registerAmount'
+            ],
         },
         terminal: {
           ...value?.terminal!,
-          terminalAmount: resetValue ?? parentFormGroup.get(`salesDesk${key.toString()}`)?.value['terminalAmount'],
+          terminalAmount:
+            resetValue ??
+            parentFormGroup.get(`salesDesk${key.toString()}`)?.value[
+              'terminalAmount'
+            ],
         },
-        difference: resetValue ?? this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, `salesDesk${key.toString()}`).difference,
-        outcome: resetOutcome ?? this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, `salesDesk${key.toString()}`).outcome,
+        difference:
+          resetValue ??
+          this.cardReconciliationCalcsService.calculateDifference(
+            this.cardReconciliationForm,
+            `salesDesk${key.toString()}`
+          ).difference,
+        outcome:
+          resetOutcome ??
+          this.cardReconciliationCalcsService.calculateDifference(
+            this.cardReconciliationForm,
+            `salesDesk${key.toString()}`
+          ).outcome,
       };
     }
     this.cardReconciliationStore.updateStoreConfiguration(
