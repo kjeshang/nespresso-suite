@@ -64,120 +64,29 @@ export class CardReconciliationTableComponent {
     }),
   });
 
-  onInputUpdateStoreConfiguration(resetValue?: number, resetOutcome?: string): void {
+  onInputUpdateStoreConfiguration(resetValue?: 0, resetOutcome?: 'Balanced'): void {
     const parentFormGroup: AbstractControl = this.cardReconciliationForm;
     let newStoreConfiguration =
       this.cardReconciliationStore.storeConfiguration();
-    newStoreConfiguration = {
-      // Sales Desk A
-      A: {
-        ...newStoreConfiguration['A']!,
+    for(const [key, value] of Object.entries(newStoreConfiguration)){
+      newStoreConfiguration[key] = {
+        ...value!,
         pos: {
-          ...newStoreConfiguration['A']!.pos,
-          posAmount: resetValue ?? parentFormGroup.get('salesDeskA')?.value['posAmount'],
+          ...value?.pos!,
+          posAmount: resetValue ?? parentFormGroup.get(`salesDesk${key.toString()}`)?.value['posAmount'],
         },
         register: {
-          ...newStoreConfiguration['A']!.register,
-          registerAmount: resetValue ?? parentFormGroup.get('salesDeskA')?.value['registerAmount'],
+          ...value?.register!,
+          registerAmount: resetValue ?? parentFormGroup.get(`salesDesk${key.toString()}`)?.value['registerAmount'],
         },
         terminal: {
-          ...newStoreConfiguration['A']!.terminal,
-          terminalAmount: resetValue ?? parentFormGroup.get('salesDeskA')?.value['terminalAmount'],
+          ...value?.terminal!,
+          terminalAmount: resetValue ?? parentFormGroup.get(`salesDesk${key.toString()}`)?.value['terminalAmount'],
         },
-        difference: resetValue ?? this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskA').difference,
-        outcome: resetOutcome ?? this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskA').outcome,
-      },
-      // Sales Desk B
-      B: {
-        ...newStoreConfiguration['B']!,
-        pos: {
-          ...newStoreConfiguration['B']!.pos,
-          posAmount: parentFormGroup.get('salesDeskB')?.value['posAmount'],
-        },
-        register: {
-          ...newStoreConfiguration['B']!.register,
-          registerAmount: parentFormGroup.get('salesDeskB')?.value['registerAmount'],
-        },
-        terminal: {
-          ...newStoreConfiguration['B']!.terminal,
-          terminalAmount: parentFormGroup.get('salesDeskB')?.value['terminalAmount'],
-        },
-        difference: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskB').difference,
-        outcome: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskB').outcome,
-      },
-      // Sales Desk D
-      D: {
-        ...newStoreConfiguration['D']!,
-        pos: {
-          ...newStoreConfiguration['D']!.pos,
-          posAmount: parentFormGroup.get('salesDeskD')?.value['posAmount'],
-        },
-        register: {
-          ...newStoreConfiguration['D']!.register,
-          registerAmount: parentFormGroup.get('salesDeskD')?.value['registerAmount'],
-        },
-        terminal: {
-          ...newStoreConfiguration['D']!.terminal,
-          terminalAmount: parentFormGroup.get('salesDeskD')?.value['terminalAmount'],
-        },
-        difference: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskD').difference,
-        outcome: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskD').outcome,
-      },
-      // Sales Desk E
-      E: {
-        ...newStoreConfiguration['E']!,
-        pos: {
-          ...newStoreConfiguration['E']!.pos,
-          posAmount: parentFormGroup.get('salesDeskE')?.value['posAmount'],
-        },
-        register: {
-          ...newStoreConfiguration['D']!.register,
-          registerAmount: parentFormGroup.get('salesDeskE')?.value['registerAmount'],
-        },
-        terminal: {
-          ...newStoreConfiguration['D']!.terminal,
-          terminalAmount: parentFormGroup.get('salesDeskE')?.value['terminalAmount'],
-        },
-        difference: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskE').difference,
-        outcome: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskE').outcome,
-      },
-      // Sales Desk F
-      F: {
-        ...newStoreConfiguration['F']!,
-        pos: {
-          ...newStoreConfiguration['F']!.pos,
-          posAmount: parentFormGroup.get('salesDeskF')?.value['posAmount'],
-        },
-        register: {
-          ...newStoreConfiguration['F']!.register,
-          registerAmount: parentFormGroup.get('salesDeskF')?.value['registerAmount'],
-        },
-        terminal: {
-          ...newStoreConfiguration['F']!.terminal,
-          terminalAmount: parentFormGroup.get('salesDeskF')?.value['terminalAmount'],
-        },
-        difference: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskF').difference,
-        outcome: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskF').outcome,
-      },
-      // Sales Desk G
-      G: {
-        ...newStoreConfiguration['G']!,
-        pos: {
-          ...newStoreConfiguration['G']!.pos,
-          posAmount: parentFormGroup.get('salesDeskG')?.value['posAmount'],
-        },
-        register: {
-          ...newStoreConfiguration['G']!.register,
-          registerAmount: parentFormGroup.get('salesDeskG')?.value['registerAmount'],
-        },
-        terminal: {
-          ...newStoreConfiguration['G']!.terminal,
-          terminalAmount: parentFormGroup.get('salesDeskG')?.value['terminalAmount'],
-        },
-        difference: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskG').difference,
-        outcome: this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, 'salesDeskG').outcome,
-      },
-    };
+        difference: resetValue ?? this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, `salesDesk${key.toString()}`).difference,
+        outcome: resetOutcome ?? this.cardReconciliationCalcsService.calculateDifference(this.cardReconciliationForm, `salesDesk${key.toString()}`).outcome,
+      };
+    }
     this.cardReconciliationStore.updateStoreConfiguration(
       newStoreConfiguration
     );
