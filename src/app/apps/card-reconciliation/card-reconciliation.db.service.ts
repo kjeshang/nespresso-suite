@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { StoreConfiguration } from './card-reconciliation.models';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
+import { CardReconciliationCalcsService } from './card-reconciliation.calcs.service';
 
 @Injectable({ providedIn: 'root' })
 export class CardReconciliationDbService {
   http: HttpClient = inject(HttpClient);
   private fb: FormBuilder = inject(FormBuilder);
+  cardReconciliationCalcsService = inject(CardReconciliationCalcsService);
 
   async getStoreConfiguration(): Promise<Partial<StoreConfiguration>> {
     let storeConfiguration: Partial<StoreConfiguration> = {
@@ -157,5 +159,54 @@ export class CardReconciliationDbService {
     });
   }
 
-  
+  onInputUpdateStoreConfiguration(
+    parentFormGroup: FormGroup,
+    storeConfiguration: Partial<StoreConfiguration>,
+    resetValue?: 0,
+    resetOutcome?: 'Balanced'
+  ): Partial<StoreConfiguration> {
+    let newStoreConfiguration = storeConfiguration;
+    for (const [key, value] of Object.entries(newStoreConfiguration)) {
+      newStoreConfiguration[key] = {
+        ...value!,
+        pos: {
+          ...value?.pos!,
+          posAmount:
+            resetValue ??
+            parentFormGroup.get(`salesDesk${key.toString()}`)?.value[
+              'posAmount'
+            ],
+        },
+        register: {
+          ...value?.register!,
+          registerAmount:
+            resetValue ??
+            parentFormGroup.get(`salesDesk${key.toString()}`)?.value[
+              'registerAmount'
+            ],
+        },
+        terminal: {
+          ...value?.terminal!,
+          terminalAmount:
+            resetValue ??
+            parentFormGroup.get(`salesDesk${key.toString()}`)?.value[
+              'terminalAmount'
+            ],
+        },
+        difference:
+          resetValue ??
+          this.cardReconciliationCalcsService.calculateDifference(
+            parentFormGroup,
+            `salesDesk${key.toString()}`
+          ).difference,
+        outcome:
+          resetOutcome ??
+          this.cardReconciliationCalcsService.calculateDifference(
+            parentFormGroup,
+            `salesDesk${key.toString()}`
+          ).outcome,
+      };
+    }
+    return newStoreConfiguration;
+  }
 }
