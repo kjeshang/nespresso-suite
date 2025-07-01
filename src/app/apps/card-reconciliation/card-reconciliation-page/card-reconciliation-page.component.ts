@@ -4,7 +4,7 @@ import { CardReconciliationTableComponent } from '../card-reconciliation-table/c
 import { CardReconciliationGridComponent } from '../card-reconciliation-grid/card-reconciliation-grid.component';
 import { FormGroup } from '@angular/forms';
 import { CardReconciliationDbService } from '../card-reconciliation.db.service';
-import { MatButtonModule } from '@angular/material/button';
+import { CardReconciliationSummaryComponent } from "../card-reconciliation-summary/card-reconciliation-summary.component";
 
 @Component({
   selector: 'app-card-reconciliation-page',
@@ -12,8 +12,8 @@ import { MatButtonModule } from '@angular/material/button';
     FeatureContainerComponent,
     CardReconciliationTableComponent,
     CardReconciliationGridComponent,
-    MatButtonModule
-  ],
+    CardReconciliationSummaryComponent
+],
   templateUrl: './card-reconciliation-page.component.html',
   styleUrl: './card-reconciliation-page.component.scss',
 })

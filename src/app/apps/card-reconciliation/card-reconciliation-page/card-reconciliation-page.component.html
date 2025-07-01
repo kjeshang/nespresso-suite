@@ -1,11 +1,12 @@
 <app-feature-container>
     <div class="flex flex-col justify-center items-stretch flex-auto flex-wrap mx-5">
         <div class="hidden sm:block">
-            <app-card-reconciliation-table [cardReconciliationForm]="cardReconciliationForm" />
+            <app-card-reconciliation-table />
         </div>
         <div class="block sm:hidden">
-            <app-card-reconciliation-grid [cardReconciliationForm]="cardReconciliationForm" />
+            <app-card-reconciliation-grid />
         </div>
+        <app-card-reconciliation-summary />
     </div>
 </app-feature-container>
 

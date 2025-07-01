@@ -32,7 +32,7 @@ export class CardReconciliationTableComponent {
   cardReconciliationCalcsService = inject(CardReconciliationCalcsService);
   cardReconciliationDbService: CardReconciliationDbService = inject(CardReconciliationDbService);
 
-  @Input() cardReconciliationForm!: FormGroup;
+  cardReconciliationForm: FormGroup = this.cardReconciliationDbService.getCardReconciliationForm();
 
   onInputUpdateStoreConfiguration(): void {
     const newStoreConfiguration: Partial<StoreConfiguration> = this.cardReconciliationDbService.onInputUpdateStoreConfiguration(

@@ -165,7 +165,7 @@ export class CardReconciliationDbService {
     resetValue?: 0,
     resetOutcome?: 'Balanced'
   ): Partial<StoreConfiguration> {
-    let newStoreConfiguration = storeConfiguration;
+    let newStoreConfiguration = { ...storeConfiguration };
     for (const [key, value] of Object.entries(newStoreConfiguration)) {
       newStoreConfiguration[key] = {
         ...value!,

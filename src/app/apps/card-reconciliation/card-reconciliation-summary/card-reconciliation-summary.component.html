@@ -1,1 +1,4 @@
-<p>card-reconciliation-summary works!</p>
+<div class="grid grid-cols-2 gap-4">
+    <p>Cash Journal Amount</p>
+    <p>{{ cardReconciliationStore.cumulativeTotals().cashJournalAmount | currency }}</p>
+</div>
