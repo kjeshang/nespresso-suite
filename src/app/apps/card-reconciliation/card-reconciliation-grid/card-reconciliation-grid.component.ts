@@ -12,6 +12,7 @@ import { CardReconciliationStore } from '../card-reconciliation.store';
 import { CardReconciliationCalcsService } from '../card-reconciliation.calcs.service';
 import { MatButtonModule } from '@angular/material/button';
 import { CardReconciliationDbService } from '../card-reconciliation.db.service';
+import { StoreConfiguration } from '../card-reconciliation.models';
 
 @Component({
   selector: 'app-card-reconciliation-grid',
@@ -29,57 +30,18 @@ import { CardReconciliationDbService } from '../card-reconciliation.db.service';
 export class CardReconciliationGridComponent {
   cardReconciliationStore = inject(CardReconciliationStore);
   cardReconciliationCalcsService = inject(CardReconciliationCalcsService);
+  cardReconciliationDbService: CardReconciliationDbService = inject(
+    CardReconciliationDbService
+  );
 
   @Input() cardReconciliationForm!: FormGroup;
 
-  onInputUpdateStoreConfiguration(
-    resetValue?: 0,
-    resetOutcome?: 'Balanced'
-  ): void {
-    const parentFormGroup: AbstractControl = this.cardReconciliationForm;
-    let newStoreConfiguration =
-      this.cardReconciliationStore.storeConfiguration();
-    for (const [key, value] of Object.entries(newStoreConfiguration)) {
-      newStoreConfiguration[key] = {
-        ...value!,
-        pos: {
-          ...value?.pos!,
-          posAmount:
-            resetValue ??
-            parentFormGroup.get(`salesDesk${key.toString()}`)?.value[
-              'posAmount'
-            ],
-        },
-        register: {
-          ...value?.register!,
-          registerAmount:
-            resetValue ??
-            parentFormGroup.get(`salesDesk${key.toString()}`)?.value[
-              'registerAmount'
-            ],
-        },
-        terminal: {
-          ...value?.terminal!,
-          terminalAmount:
-            resetValue ??
-            parentFormGroup.get(`salesDesk${key.toString()}`)?.value[
-              'terminalAmount'
-            ],
-        },
-        difference:
-          resetValue ??
-          this.cardReconciliationCalcsService.calculateDifference(
-            this.cardReconciliationForm,
-            `salesDesk${key.toString()}`
-          ).difference,
-        outcome:
-          resetOutcome ??
-          this.cardReconciliationCalcsService.calculateDifference(
-            this.cardReconciliationForm,
-            `salesDesk${key.toString()}`
-          ).outcome,
-      };
-    }
+  onInputUpdateStoreConfiguration(): void {
+    const newStoreConfiguration: Partial<StoreConfiguration> =
+      this.cardReconciliationDbService.onInputUpdateStoreConfiguration(
+        this.cardReconciliationForm,
+        this.cardReconciliationStore.storeConfiguration()
+      );
     this.cardReconciliationStore.updateStoreConfiguration(
       newStoreConfiguration
     );
@@ -87,6 +49,15 @@ export class CardReconciliationGridComponent {
 
   resetForm(): void {
     this.cardReconciliationForm.reset();
-    this.onInputUpdateStoreConfiguration(0, 'Balanced');
+    const newStoreConfiguration: Partial<StoreConfiguration> =
+      this.cardReconciliationDbService.onInputUpdateStoreConfiguration(
+        this.cardReconciliationForm,
+        this.cardReconciliationStore.storeConfiguration(),
+        0,
+        'Balanced'
+      );
+    this.cardReconciliationStore.updateStoreConfiguration(
+      newStoreConfiguration
+    );
   }
 }

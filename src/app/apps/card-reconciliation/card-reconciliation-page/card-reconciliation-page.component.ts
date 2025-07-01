@@ -23,6 +23,6 @@ export class CardReconciliationPageComponent {
   );
   cardReconciliationForm: FormGroup =
     this.cardReconciliationDbService.getCardReconciliationForm();
-
+  
   
 }
