@@ -122,7 +122,7 @@ export class CardReconciliationDbService {
     return storeConfiguration;
   }
 
-  getCardReconciliationForm() {
+  getCardReconciliationForm(): FormGroup {
     return this.fb.group({
       salesDeskA: this.fb.group({
         posAmount: [''],
@@ -156,4 +156,6 @@ export class CardReconciliationDbService {
       }),
     });
   }
+
+  
 }

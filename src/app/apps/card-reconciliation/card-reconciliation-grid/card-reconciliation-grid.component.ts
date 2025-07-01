@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import {
   AbstractControl,
   FormGroup,
@@ -29,12 +29,8 @@ import { CardReconciliationDbService } from '../card-reconciliation.db.service';
 export class CardReconciliationGridComponent {
   cardReconciliationStore = inject(CardReconciliationStore);
   cardReconciliationCalcsService = inject(CardReconciliationCalcsService);
-  cardReconciliationDbService: CardReconciliationDbService = inject(
-    CardReconciliationDbService
-  );
 
-  cardReconciliationForm: FormGroup =
-    this.cardReconciliationDbService.getCardReconciliationForm();
+  @Input() cardReconciliationForm!: FormGroup;
 
   onInputUpdateStoreConfiguration(
     resetValue?: 0,
