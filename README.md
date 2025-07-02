@@ -4,6 +4,15 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
 
+## Packages
+
+Below are a list of software packages that helped to create this project.
+* Tailwind CSS
+* Angular Material
+* Signal Store
+* Lodash
+* Currency JS
+
 ## Apps
 
 ### Card Reconciliation App
