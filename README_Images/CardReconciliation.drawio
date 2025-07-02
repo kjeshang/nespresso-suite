@@ -1,0 +1,76 @@
+<mxfile host="65bd71144e">
+    <diagram id="RxPv6xupyiPjXx5Fq1Mp" name="Card Reconciliation - Desktop View">
+        <mxGraphModel dx="756" dy="425" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Navigation Bar" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="20" width="780" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Footer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="560" width="780" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="rbakoWBd-FfG9HpFcR_M-4" value="Table to input the following for all Sales Desks/Till Numbers: POS Amount, Register Amount, Terminal Amount, Difference, and Outcome" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="180" width="780" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="rbakoWBd-FfG9HpFcR_M-5" value="Heading" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="100" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="rbakoWBd-FfG9HpFcR_M-6" value="Reset Button to clear form fields in table" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="680" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="rbakoWBd-FfG9HpFcR_M-7" value="Reconciliation Results Table" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="380" width="270" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="rbakoWBd-FfG9HpFcR_M-8" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="740" y="30" width="50" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="rbakoWBd-FfG9HpFcR_M-9" value="Nespresso Suite Title &amp;amp; Logo" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="30" width="230" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="rbakoWBd-FfG9HpFcR_M-11" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rbakoWBd-FfG9HpFcR_M-10" target="rbakoWBd-FfG9HpFcR_M-8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rbakoWBd-FfG9HpFcR_M-10" value="Grid icon to navigate to different apps" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="100" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="rbakoWBd-FfG9HpFcR_M-12" value="Click &quot;Nespresso Suite&quot; to go to dashboard page" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="115" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="rbakoWBd-FfG9HpFcR_M-13" style="edgeStyle=none;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.548;entryY=0.975;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="rbakoWBd-FfG9HpFcR_M-12" target="rbakoWBd-FfG9HpFcR_M-9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="fxsCdmerDWngy6YxazjO-3" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="130" width="250" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="fxsCdmerDWngy6YxazjO-4" value="POS Amount" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="900" y="200" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="fxsCdmerDWngy6YxazjO-6" value="Register Amount" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="900" y="250" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="fxsCdmerDWngy6YxazjO-7" value="Terminal Amount" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="890" y="310" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="fxsCdmerDWngy6YxazjO-9" value="Sales Desk Letter&lt;div&gt;Till Number&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="920" y="140" width="170" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="fxsCdmerDWngy6YxazjO-13" value="Difference" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="890" y="370" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="fxsCdmerDWngy6YxazjO-14" value="Outcome" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="370" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="fxsCdmerDWngy6YxazjO-16" value="Card for each Sales Desk/Till Number when in mobile view to input the following:&amp;nbsp;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;POS Amount, Register Amount, Terminal Amount, Difference, and Outcome&lt;/span&gt;&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="890" y="70" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="fxsCdmerDWngy6YxazjO-17" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.002;entryY=0.45;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="rbakoWBd-FfG9HpFcR_M-4" target="fxsCdmerDWngy6YxazjO-3">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="780" y="320" as="sourcePoint"/>
+                        <mxPoint x="870" y="300" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

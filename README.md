@@ -4,6 +4,13 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
 
+## Apps
+
+### Card Reconciliation App
+The purpose of this application is to perform Credit Card & Debit Card Cash Journal Reconciliation.
+
+![Card Reconciliation App WireFrame](README_Images\CardReconciliation.png)
+
 ## Development server
 
 To start a local development server, run:
