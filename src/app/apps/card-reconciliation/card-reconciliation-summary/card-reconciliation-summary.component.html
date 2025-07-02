@@ -1,4 +1,41 @@
-<div class="grid grid-cols-2 gap-4">
-    <p>Cash Journal Amount</p>
-    <p>{{ cardReconciliationStore.cumulativeTotals().cashJournalAmount | currency }}</p>
+<div class="my-2 flex flex-row items-stretch justify-center">
+    <table class="w-full sm:w-fit bg-gray-200 border-2 border-xl shadow-lg border-gray-300 rounded-lg">
+        <caption class="py-2 text-xl">Reconciliation Results</caption>
+        <tbody class="text-lg">
+            <tr class="bg-gray-50">
+                <td class="p-4 text-gray-700 font-semibold">Total Cash Journal Amount</td>
+                <td class="p-4 text-gray-700 text-right">{{ cardReconciliationStore.cumulativeTotals().cashJournalAmount | currency }}</td>
+            </tr>
+            <tr class="bg-white">
+                <td class="p-4 text-gray-700 font-semibold">Total Terminal Amount</td>
+                <td class="p-4 text-gray-700 text-right">{{ cardReconciliationStore.cumulativeTotals().terminalAmount | currency }}</td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="p-4 text-gray-700 font-semibold">Cumulative Difference</td>
+                <td class="p-4 text-gray-700 text-right">{{ cardReconciliationStore.cumulativeTotals().difference | currency }}</td>
+            </tr>
+            <tr class="bg-white">
+                <td class="p-4 text-gray-700 font-semibold">Final Outcome</td>
+                <td class="p-4 text-gray-700">
+                    <div class="text-sm font-medium uppercase tracking-wider">
+                        @if(cardReconciliationStore.cumulativeTotals().outcome === 'Short'){
+                            <span class="text-red-800 bg-red-200 rounded-lg bg-opacity-50 p-1.5">
+                                {{ cardReconciliationStore.cumulativeTotals().outcome }}
+                            </span>
+                        }
+                        @else if (cardReconciliationStore.cumulativeTotals().outcome === 'Over') {
+                            <span class="text-blue-800 bg-blue-200 rounded-lg bg-opacity-50 p-1.5">
+                                {{ cardReconciliationStore.cumulativeTotals().outcome }}
+                            </span>
+                        }
+                        @else {
+                            <span class="text-green-800 bg-green-200 rounded-lg bg-opacity-50 p-1.5">
+                                {{ cardReconciliationStore.cumulativeTotals().outcome }}
+                            </span>
+                        }
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

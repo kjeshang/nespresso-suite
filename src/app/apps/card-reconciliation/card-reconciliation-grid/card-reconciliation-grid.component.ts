@@ -34,7 +34,6 @@ export class CardReconciliationGridComponent {
     CardReconciliationDbService
   );
 
-  // @Input() cardReconciliationForm!: FormGroup;
   cardReconciliationForm: FormGroup = this.cardReconciliationDbService.getCardReconciliationForm();
 
   onInputUpdateStoreConfiguration(): void {
