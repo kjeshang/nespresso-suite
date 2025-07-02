@@ -1,41 +1,120 @@
-<div class="my-2 flex flex-row items-stretch justify-center">
-    <table class="w-full sm:w-fit bg-gray-200 border-2 border-xl shadow-lg border-gray-300 rounded-lg">
-        <caption class="py-2 text-xl">Reconciliation Results</caption>
-        <tbody>
-            <tr class="bg-gray-50">
-                <td class="px-10 py-6 text-gray-700 font-semibold">Total Cash Journal Amount</td>
-                <td class="px-10 py-6 text-gray-700 text-right">{{ cardReconciliationStore.cumulativeTotals().cashJournalAmount | currency }}</td>
-            </tr>
-            <tr class="bg-white">
-                <td class="px-10 py-6 text-gray-700 font-semibold">Total Terminal Amount</td>
-                <td class="px-10 py-6 text-gray-700 text-right">{{ cardReconciliationStore.cumulativeTotals().terminalAmount | currency }}</td>
-            </tr>
-            <tr class="bg-gray-50">
-                <td class="px-10 py-6 text-gray-700 font-semibold">Cumulative Difference</td>
-                <td class="px-10 py-6 text-gray-700 text-right">{{ cardReconciliationStore.cumulativeTotals().difference | currency }}</td>
-            </tr>
-            <tr class="bg-white">
-                <td class="px-10 py-6 text-gray-700 font-semibold">Final Outcome</td>
-                <td class="px-10 py-6 text-gray-700">
-                    <div class="text-sm font-medium uppercase tracking-wider">
-                        @if(cardReconciliationStore.cumulativeTotals().outcome === 'Short'){
+<div class="hidden sm:block">
+    <div class="my-2 flex flex-row items-stretch justify-center">
+        <table class="w-fit bg-gray-200 border-2 border-xl shadow-lg border-gray-300 rounded-lg">
+            <caption class="py-2 text-xl">
+                Reconciliation Results
+            </caption>
+            <tbody>
+                <tr class="bg-gray-50">
+                    <td class="px-10 py-6 text-gray-700 font-semibold">
+                        Total Cash Journal Amount
+                    </td>
+                    <td class="px-10 py-6 text-gray-700 text-right">
+                        {{
+                        cardReconciliationStore.cumulativeTotals().cashJournalAmount
+                        | currency
+                        }}
+                    </td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="px-10 py-6 text-gray-700 font-semibold">
+                        Total Terminal Amount
+                    </td>
+                    <td class="px-10 py-6 text-gray-700 text-right">
+                        {{
+                        cardReconciliationStore.cumulativeTotals().terminalAmount
+                        | currency
+                        }}
+                    </td>
+                </tr>
+                <tr class="bg-gray-50">
+                    <td class="px-10 py-6 text-gray-700 font-semibold">
+                        Cumulative Difference
+                    </td>
+                    <td class="px-10 py-6 text-gray-700 text-right">
+                        {{
+                        cardReconciliationStore.cumulativeTotals().difference | currency
+                        }}
+                    </td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="px-10 py-6 text-gray-700 font-semibold">Final Outcome</td>
+                    <td class="px-10 py-6 text-gray-700">
+                        <div class="text-sm font-medium uppercase tracking-wider">
+                            @if(cardReconciliationStore.cumulativeTotals().outcome ===
+                            'Short'){
                             <span class="text-red-800 bg-red-200 rounded-lg bg-opacity-50 p-1.5">
                                 {{ cardReconciliationStore.cumulativeTotals().outcome }}
                             </span>
-                        }
-                        @else if (cardReconciliationStore.cumulativeTotals().outcome === 'Over') {
+                            } @else if (cardReconciliationStore.cumulativeTotals().outcome ===
+                            'Over') {
                             <span class="text-blue-800 bg-blue-200 rounded-lg bg-opacity-50 p-1.5">
                                 {{ cardReconciliationStore.cumulativeTotals().outcome }}
                             </span>
-                        }
-                        @else {
+                            } @else {
                             <span class="text-green-800 bg-green-200 rounded-lg bg-opacity-50 p-1.5">
                                 {{ cardReconciliationStore.cumulativeTotals().outcome }}
                             </span>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="block sm:hidden">
+    <div class="py-4 mt-3 flex flex-col space-y-2">
+        <p class="text-xl text-center">Reconciliation Results</p>
+        <div class="my-2 flex flex-row items-stretch justify-center">
+            <div class="flex flex-col space-y-5 border-2 border-xl shadow-lg border-gray-300 rounded-lg p-3">
+                <div class="bg-gray-50 flex flex-row justify-between space-x-5 py-3">
+                    <p class="ml-1 font-semibold">Total Cash Journal Amount</p>
+                    <p class="text-right mr-1">
+                        {{
+                        cardReconciliationStore.cumulativeTotals().cashJournalAmount
+                        | currency
+                        }}
+                    </p>
+                </div>
+                <div class="bg-white flex flex-row justify-between space-x-5 py-3">
+                    <p class="ml-1 font-semibold">Total Terminal Amount</p>
+                    <p class="text-right mr-1">
+                        {{
+                        cardReconciliationStore.cumulativeTotals().terminalAmount
+                        | currency
+                        }}
+                    </p>
+                </div>
+                <div class="bg-gray-50 flex flex-row justify-between space-x-5 py-3">
+                    <p class="ml-1 font-semibold">Overall Difference</p>
+                    <p class="text-right mr-1">
+                        {{
+                        cardReconciliationStore.cumulativeTotals().difference | currency
+                        }}
+                    </p>
+                </div>
+                <div class="bg-white flex flex-row justify-between space-x-5 py-3">
+                    <p class="ml-1 font-semibold">Final Outcome</p>
+                    <div class="text-sm font-medium uppercase tracking-wider mr-1">
+                        @if(cardReconciliationStore.cumulativeTotals().outcome === 'Short'){
+                        <span class="text-red-800 bg-red-200 rounded-lg bg-opacity-50 p-1.5">
+                            {{ cardReconciliationStore.cumulativeTotals().outcome }}
+                        </span>
+                        } @else if (cardReconciliationStore.cumulativeTotals().outcome ===
+                        'Over') {
+                        <span class="text-blue-800 bg-blue-200 rounded-lg bg-opacity-50 p-1.5">
+                            {{ cardReconciliationStore.cumulativeTotals().outcome }}
+                        </span>
+                        } @else {
+                        <span class="text-green-800 bg-green-200 rounded-lg bg-opacity-50 p-1.5">
+                            {{ cardReconciliationStore.cumulativeTotals().outcome }}
+                        </span>
                         }
                     </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
