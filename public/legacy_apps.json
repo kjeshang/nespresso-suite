@@ -1,22 +1,46 @@
 [
     {
-        "type":"App",
         "name":"Nespresso Metropolis Cash Journal Reconciliation",
-        "link":""
+        "link":"https://nespressometropoliscashjournalreconcilia.onrender.com/"
     },
     {
-        "type":"Project",
         "name":"Nespresso Metropolis Coffee Flavour Reference Guide",
-        "link":""
+        "link":"https://github.com/kjeshang/NespressoMetropolisCoffeeFlavourReferenceGuide"
     },
     {
-        "type":"App",
-        "name":"Nespreso Cash Denomination Exchange Spreadsheet",
-        "link":""
+        "name":"Nespresso Metropolis Machine Reference Guides",
+        "link":"https://www.dropbox.com/home/Nespresso/Machine%20Guides"
     },
     {
-        "type":"App",
+        "name":"Nespresso Cash Denomination Exchange Spreadsheet",
+        "link":"https://www.dropbox.com/scl/fi/4c9xkzh1ohquwqd261e71/Money-Exchange.xlsx?rlkey=25mduopitkj54joxsnbaufpfs&st=klxq35zb&dl=0"
+    },
+    {
         "name":"Nespresso Metropolis Training App",
-        "link":""
+        "link":"https://github.com/kjeshang/NespressoMetropolisTrainingApp"
+    },
+    {
+        "name":"First Aid Reference Guide",
+        "link":"https://www.dropbox.com/scl/fi/cntqfwcxsvakmgaovhey7/First-Aid-Matrix-Guide.pdf?rlkey=fl6ni7rnis5njzug7buubalc8&e=1&dl=0"
+    },
+    {
+        "name":"How to taste coffee in the perspective of a Coffee Specialist",
+        "link":"https://www.dropbox.com/scl/fi/4gqd527l48fuigeybj0ws/How-to-Taste-Nespresso-Coffee.pdf?rlkey=lzxmbnr2nkfyhaz1hj8u36pox&e=1&dl=0"
+    },
+    {
+        "name":"Nespresso Metropolis Training Matrix Summarization",
+        "link":"https://github.com/kjeshang/NespressoMetropolisTrainingMatrixSummarization"
+    },
+    {
+        "name":"Nespresso Metropolis Customer Review Analysis",
+        "link":"https://github.com/kjeshang/NespressoMetropolisCustomerReviewAnalysis"
+    },
+    {
+        "name":"Nespresso Metropolis Cash Journal Reconciliation Spreadsheet",
+        "link":"https://www.dropbox.com/scl/fo/2euyu10rptqhfo2ano3l2/h?rlkey=vhabf8hkyx4k8bro0y7rdfmep&st=jd6a6mx4&dl=0"
+    },
+    {
+        "name":"Nespresso Metropolis Cash Denomination Exchange Spreadsheet",
+        "link":"https://www.dropbox.com/scl/fi/4c9xkzh1ohquwqd261e71/Money-Exchange.xlsx?rlkey=25mduopitkj54joxsnbaufpfs&st=qlga5j3d&dl=0"
     }
 ]
