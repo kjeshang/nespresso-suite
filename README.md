@@ -15,6 +15,11 @@ Below are a list of software packages that helped to create this project.
 
 ## Apps
 
+## Dashboard
+The purpose of the dashboard is to serve as landing page to navigate to different apps in the software suite.
+
+![Dashboard](README_Images\Dashboard.png)
+
 ### Card Reconciliation App
 The purpose of this application is to perform Credit Card & Debit Card Cash Journal Reconciliation.
 
