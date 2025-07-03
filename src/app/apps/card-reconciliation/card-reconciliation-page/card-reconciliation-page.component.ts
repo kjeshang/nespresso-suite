@@ -5,6 +5,8 @@ import { CardReconciliationGridComponent } from '../card-reconciliation-grid/car
 import { FormGroup } from '@angular/forms';
 import { CardReconciliationDbService } from '../card-reconciliation.db.service';
 import { CardReconciliationSummaryComponent } from "../card-reconciliation-summary/card-reconciliation-summary.component";
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-card-reconciliation-page',
@@ -12,7 +14,9 @@ import { CardReconciliationSummaryComponent } from "../card-reconciliation-summa
     FeatureContainerComponent,
     CardReconciliationTableComponent,
     CardReconciliationGridComponent,
-    CardReconciliationSummaryComponent
+    CardReconciliationSummaryComponent,
+    MatButtonModule,
+    MatIconModule
 ],
   templateUrl: './card-reconciliation-page.component.html',
   styleUrl: './card-reconciliation-page.component.scss',
@@ -24,5 +28,7 @@ export class CardReconciliationPageComponent {
   cardReconciliationForm: FormGroup =
     this.cardReconciliationDbService.getCardReconciliationForm();
   
-  
+  printPage(): void {
+    window.print();
+  }
 }

@@ -2,3 +2,10 @@
 @use "tailwindcss";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media print {
+    .app-nav-bar,
+    .app-footer {
+    display: none !important; /* Use !important to ensure override */
+    }
+}
