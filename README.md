@@ -15,7 +15,7 @@ Below are a list of software packages that helped to create this project.
 
 ## Apps
 
-## Dashboard
+### Dashboard
 The purpose of the dashboard is to serve as landing page to navigate to different apps in the software suite.
 
 ![Dashboard](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/Dashboard.png)
