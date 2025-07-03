@@ -1,10 +1,31 @@
-<div class="m-2 p-2 flex flex-col space-y-4">
-    <p class="text-xl font-semibold text-center uppercase">Legacy Apps & Projects</p>
-    <ul class="border-2 border-gray-400 rounded-xl shadow-md p-3">
-        @for(item of dashboardStore.legacyApps(); track $index){
-            <li class="py-2 text-sm">
-                <a class="hover:font-semibold" [href]="item.link" target="_blank">{{ item.name }}</a>
-            </li>
-        }
-    </ul>
+<div class="hidden sm:block">
+    <div class="m-2 p-2 flex flex-col space-y-4">
+        <p class="text-xl font-semibold text-center uppercase">Legacy Apps & Projects</p>
+        <ul class="border-2 border-gray-400 rounded-xl shadow-md p-3">
+            @for(item of dashboardStore.legacyApps(); track $index){
+                <li class="py-2 text-sm">
+                    <a class="hover:font-semibold" [href]="item.link" target="_blank">{{ item.name }}</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="block px-2 sm:hidden">
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title class="flex items-center justify-center">
+                    <p class="text-lg font-semibold uppercase">Legacy Apps & Projects</p>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul class="px-1">
+                @for(item of dashboardStore.legacyApps(); track $index){
+                    <li class="py-2 my-1 text-base">
+                        <a class="hover:font-semibold" [href]="item.link" target="_blank">{{ item.name }}</a>
+                    </li>
+                }
+            </ul>
+        </mat-expansion-panel>
+    </mat-accordion>
 </div>
