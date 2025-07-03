@@ -3,9 +3,20 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+
 @media print {
-    .app-nav-bar,
-    .app-footer {
-    display: none !important; /* Use !important to ensure override */
-    }
+  body * {
+    visibility: hidden;
+  }
+
+  #print-only, #print-only * {
+    visibility: visible;
+  }
+
+  #print-only {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 }
