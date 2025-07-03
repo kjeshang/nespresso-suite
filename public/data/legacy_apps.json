@@ -1,19 +1,15 @@
 [
     {
-        "name":"Nespresso Metropolis Cash Journal Reconciliation",
+        "name":"Legacy Cash Journal Reconciliation Web App",
         "link":"https://nespressometropoliscashjournalreconcilia.onrender.com/"
     },
     {
-        "name":"Nespresso Metropolis Coffee Flavour Reference Guides",
+        "name":"Coffee Flavour Reference Guides",
         "link":"https://github.com/kjeshang/NespressoMetropolisCoffeeFlavourReferenceGuide"
     },
     {
-        "name":"Nespresso Metropolis Machine Reference Guides",
+        "name":"Old Machine Reference Guides",
         "link":"https://www.dropbox.com/home/Nespresso/Machine%20Guides"
-    },
-    {
-        "name":"Nespresso Cash Denomination Exchange Spreadsheet",
-        "link":"https://www.dropbox.com/scl/fi/4c9xkzh1ohquwqd261e71/Money-Exchange.xlsx?rlkey=25mduopitkj54joxsnbaufpfs&st=klxq35zb&dl=0"
     },
     {
         "name":"Nespresso Metropolis Training App",
@@ -36,11 +32,11 @@
         "link":"https://github.com/kjeshang/NespressoMetropolisCustomerReviewAnalysis"
     },
     {
-        "name":"Nespresso Metropolis Cash Journal Reconciliation Spreadsheet",
+        "name":"Cash Journal Reconciliation Spreadsheet",
         "link":"https://www.dropbox.com/scl/fo/2euyu10rptqhfo2ano3l2/h?rlkey=vhabf8hkyx4k8bro0y7rdfmep&st=jd6a6mx4&dl=0"
     },
     {
-        "name":"Nespresso Metropolis Cash Denomination Exchange Spreadsheet",
+        "name":"Cash Denomination Exchange Spreadsheet",
         "link":"https://www.dropbox.com/scl/fi/4c9xkzh1ohquwqd261e71/Money-Exchange.xlsx?rlkey=25mduopitkj54joxsnbaufpfs&st=qlga5j3d&dl=0"
     }
 ]
