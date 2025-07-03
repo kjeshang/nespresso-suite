@@ -1,14 +1,10 @@
 <div class="m-2 p-2 flex flex-col space-y-4">
-    <p class="text-xl font-semibold">Legacy Apps & Projects</p>
-    <ul class="mt-2">
-        <li class="flex flex-row items-center space-x-4">
-            <p>TEST 1</p>
-            <p>TEST 2</p>
-        </li>
-        <li class="flex flex-row items-center space-x-4">
-            <p>TEST 1</p>
-            <p>TEST 2</p>
-        </li>
+    <p class="text-xl font-semibold text-center uppercase">Legacy Apps & Projects</p>
+    <ul class="border-2 border-gray-400 rounded-xl shadow-md p-3">
+        @for(item of dashboardStore.legacyApps(); track $index){
+            <li class="py-2 text-sm">
+                <a class="hover:font-semibold" [href]="item.link" target="_blank">{{ item.name }}</a>
+            </li>
+        }
     </ul>
-    
 </div>

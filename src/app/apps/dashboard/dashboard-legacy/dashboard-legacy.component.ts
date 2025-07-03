@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { DashboardStore } from '../dashboard.store';
 
 @Component({
   selector: 'app-dashboard-legacy',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard-legacy.component.scss'
 })
 export class DashboardLegacyComponent {
-
+  dashboardStore = inject(DashboardStore);
 }
