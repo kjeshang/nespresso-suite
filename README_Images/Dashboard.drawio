@@ -8,7 +8,7 @@
                     <mxGeometry x="20" y="20" width="780" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="3" value="Footer" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="20" y="700" width="795" height="60" as="geometry"/>
+                    <mxGeometry x="20" y="760" width="795" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="rbakoWBd-FfG9HpFcR_M-8" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="740" y="30" width="50" height="40" as="geometry"/>
@@ -28,11 +28,29 @@
                 <mxCell id="rbakoWBd-FfG9HpFcR_M-13" style="edgeStyle=none;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.548;entryY=0.975;entryDx=0;entryDy=0;entryPerimeter=0;labelBorderColor=#FFFFFF;textShadow=1;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" source="rbakoWBd-FfG9HpFcR_M-12" target="rbakoWBd-FfG9HpFcR_M-9" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="Legacy Apps &amp;amp; Projects" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="5" value="Legacy Apps &amp;amp; Projects:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Nespresso Metropolis Cash Journal Reconciliation&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Nespresso Metropolis Coffee Flavour Reference Guide&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Nespresso Cash Denomination Exchange Spreadsheet&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Nespresso Metropolis Training App&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Nespresso Metropolis Training Matrix Summarization&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Nespresso Metropolis Customer Review Analysis&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="20" y="170" width="200" height="490" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="Grid showing apps that are available in the software suite" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="6" value="Grid showing apps that are available in the software suite" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="250" y="170" width="560" height="490" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="770" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="740" y="770" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Nespresso Logo that opens tab to Nespresso Canada website" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="690" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="11" target="8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="GitHub logo that opens tab to project repository" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="700" width="130" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
