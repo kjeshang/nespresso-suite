@@ -20,6 +20,27 @@ The purpose of the dashboard is to serve as landing page to navigate to differen
 
 ![Dashboard](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/Dashboard.png)
 
+### Apps in Software Suite
+
+* Card Reconciliation
+* Cash Reconciliation (coming soon)
+* Cash Denomination Exchange (coming soon)
+* Coffee Flavour Guide (coming soon)
+* Machine Guide (coming soon)
+
+### Legacy Apps & Projects
+
+* [Legacy Cash Journal Reconciliation App](https://nespressometropoliscashjournalreconcilia.onrender.com/)
+* [Coffee Flavour Reference Guides](https://github.com/kjeshang/NespressoMetropolisCoffeeFlavourReferenceGuide) - Potential to be used in Software Suite but information needs to be updated and new coffees need to be added
+* [Old Machine Reference Guides](https://www.dropbox.com/home/Nespresso/Machine%20Guides) - Potential to be used in Software Suite but information needs to be updated
+* [Nespresso Metropolis Training App](https://github.com/kjeshang/NespressoMetropolisTrainingApp)
+* [First Aid Reference Guide](https://www.dropbox.com/scl/fi/cntqfwcxsvakmgaovhey7/First-Aid-Matrix-Guide.pdf?rlkey=fl6ni7rnis5njzug7buubalc8&e=1&dl=0) - Potential to be used in Software Suite
+* [How to taste coffee in the perspective of a Coffee Specialist](https://www.dropbox.com/scl/fi/4gqd527l48fuigeybj0ws/How-to-Taste-Nespresso-Coffee.pdf?rlkey=lzxmbnr2nkfyhaz1hj8u36pox&e=1&dl=0) - Potential to be used in Software Suite
+* [Nespresso Metropolis Training Matrix Summarization](https://github.com/kjeshang/NespressoMetropolisTrainingMatrixSummarization)
+* [Nespresso Metropolis Customer Review Analysis](https://github.com/kjeshang/NespressoMetropolisCustomerReviewAnalysis)
+* [Cash Journal Reconciliation Spreadsheet](https://www.dropbox.com/scl/fo/2euyu10rptqhfo2ano3l2/h?rlkey=vhabf8hkyx4k8bro0y7rdfmep&st=jd6a6mx4&dl=0)
+* [Cash Denominiation Exchange Spreadsheet](https://www.dropbox.com/scl/fi/4c9xkzh1ohquwqd261e71/Money-Exchange.xlsx?rlkey=25mduopitkj54joxsnbaufpfs&st=qlga5j3d&dl=0) - Need to get a version that is not corrupted
+
 ### Card Reconciliation App
 The purpose of this application is to perform Credit Card & Debit Card Cash Journal Reconciliation.
 
