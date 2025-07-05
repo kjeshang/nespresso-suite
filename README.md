@@ -49,7 +49,7 @@ The purpose of this application is to perform Credit Card & Debit Card Cash Jour
 ## Cash Reconciliation App
 The purpose of this application is to perform Cash Journal Reconciliation for Physical Cash Transactions.
 
-![Cash Reconciliation App WireFrame](README_Images\CashReconciliation.png)
+![Cash Reconciliation App WireFrame](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/CashReconciliation.png)
 
 ## Development server
 
