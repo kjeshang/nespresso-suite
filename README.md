@@ -18,7 +18,7 @@ Below are a list of software packages that helped to create this project.
 ### Dashboard
 The purpose of the dashboard is to serve as landing page to navigate to different apps in the software suite.
 
-![Dashboard](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/Dashboard.png)
+![Dashboard Wireframe](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/Dashboard.png)
 
 ### Apps in Software Suite
 
@@ -45,6 +45,11 @@ The purpose of the dashboard is to serve as landing page to navigate to differen
 The purpose of this application is to perform Credit Card & Debit Card Cash Journal Reconciliation.
 
 ![Card Reconciliation App WireFrame](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/CardReconciliation.png)
+
+## Cash Reconciliation App
+The purpose of this application is to perform Cash Journal Reconciliation for Physical Cash Transactions.
+
+![Cash Reconciliation App WireFrame](README_Images\CashReconciliation.png)
 
 ## Development server
 

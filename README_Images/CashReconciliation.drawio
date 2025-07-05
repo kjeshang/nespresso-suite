@@ -1,5 +1,5 @@
 <mxfile host="65bd71144e">
-    <diagram id="RxPv6xupyiPjXx5Fq1Mp" name="Card Reconciliation">
+    <diagram id="RxPv6xupyiPjXx5Fq1Mp" name="Cash Reconciliation">
         <mxGraphModel dx="780" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#CCCCCC" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
@@ -28,12 +28,6 @@
                 <mxCell id="rbakoWBd-FfG9HpFcR_M-13" style="edgeStyle=none;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.548;entryY=0.975;entryDx=0;entryDy=0;entryPerimeter=0;labelBorderColor=#FFFFFF;textShadow=1;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" source="rbakoWBd-FfG9HpFcR_M-12" target="rbakoWBd-FfG9HpFcR_M-9" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="Desktop View - Legacy Apps &amp;amp; Projects:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Nespresso Metropolis Cash Journal Reconciliation&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Nespresso Metropolis Coffee Flavour Reference Guide&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Nespresso Cash Denomination Exchange Spreadsheet&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Nespresso Metropolis Training App&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;First Aid Reference Guide&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;How to taste Coffee in the perspective of a Coffee Specialist&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Nespresso Metropolis Training Matrix Summarization&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Nespresso Metropolis Customer Review Analysis&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="20" y="170" width="200" height="490" as="geometry"/>
-                </mxCell>
-                <mxCell id="6" value="Desktop View - Grid showing apps that are available in the software suite" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="250" y="170" width="560" height="490" as="geometry"/>
-                </mxCell>
                 <mxCell id="7" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="30" y="770" width="90" height="40" as="geometry"/>
                 </mxCell>
@@ -52,17 +46,44 @@
                 <mxCell id="11" value="GitHub logo that opens tab to project repository" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#FFFFFF;" parent="1" vertex="1">
                     <mxGeometry x="630" y="700" width="130" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" edge="1">
-                    <mxGeometry width="100" height="100" relative="1" as="geometry">
-                        <mxPoint x="830" y="410" as="sourcePoint"/>
-                        <mxPoint x="940" y="410" as="targetPoint"/>
-                    </mxGeometry>
+                <mxCell id="15" value="Grid showing input fields to enter count of bill/coin for each cash denomination&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;3 columns: Cash Denomination, Count of Bill/Coin, Cash Value&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="180" width="380" height="470" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Mobile View - 1 column grid showing apps that are available in the software suite&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="970" y="190" width="300" height="210" as="geometry"/>
+                <mxCell id="16" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="200" width="380" height="450" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="Mobile View - Expansion panel to show 1 column grid showing list of legacy apps &amp;amp; projects" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="970" y="430" width="300" height="220" as="geometry"/>
+                <mxCell id="17" value="Grid showing reconciliation results" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="170" width="310" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Cash Journal Amount Input Field" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+                    <mxGeometry x="495" y="280" width="220" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Comments text area" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="500" width="220" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="Total Amount" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="350" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Difference" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="400" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="Outcome" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="450" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="Shift Selection" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="210" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="Space for signatures (when this is printed)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="560" width="310" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="Print button" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="350" y="670" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="Heading" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="100" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="Reset Button to clear form fields in table" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="680" y="100" width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
