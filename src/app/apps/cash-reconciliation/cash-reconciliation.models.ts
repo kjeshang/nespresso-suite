@@ -48,5 +48,5 @@ export interface CashDesk {
         label: 'Count of $0.05 Coins';
         multiplier: 0.05;
         amount: number;
-    }
+    },
 }
