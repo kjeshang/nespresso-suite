@@ -1,3 +1,10 @@
 <app-feature-container>
-    <p>card-reconciliation-page works!</p>
+    <div class="m-2 p-2 flex flex-col sm:flex-row justify-between items-center space-x-4 space-y-4">
+        <div class="w-full sm:w-1/2">
+            <app-cash-reconciliation-table />
+        </div>
+        <div class="w-full sm:w-1/2">
+            <app-cash-reconciliation-summary />
+        </div>
+    </div>
 </app-feature-container>
