@@ -1,0 +1,12 @@
+import { Component } from '@angular/core';
+import { FeatureContainerComponent } from '../../../shared/page-components/feature-container/feature-container.component';
+
+@Component({
+  selector: 'app-cash-reconciliation-page',
+  imports: [FeatureContainerComponent],
+  templateUrl: './cash-reconciliation-page.component.html',
+  styleUrl: './cash-reconciliation-page.component.scss'
+})
+export class CashReconciliationPageComponent {
+
+}
