@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { FormBuilder, FormGroup } from "@angular/forms";
 import { CashDesk } from "./cash-reconciliation.models";
 
 @Injectable({ providedIn: 'root' })
@@ -9,7 +9,7 @@ export class CashReconciliationDbService {
     private fb: FormBuilder = inject(FormBuilder);
 
 
-    async getCashDesk() {
+    async getCashDesk(): Promise<Partial<CashDesk>> {
         let cashDesk: Partial<CashDesk> = {
             hundreds: {
                 label: 'Count of $100 Bills',
@@ -63,5 +63,40 @@ export class CashReconciliationDbService {
             },
         };
         return cashDesk;
+    }
+
+    getCashReconciliationForm(): FormGroup {
+        return this.fb.group({
+            hundreds: this.fb.group({
+                amount: ['']
+            }),
+            fifties: this.fb.group({
+                amount: ['']
+            }),
+            twenties: this.fb.group({
+                amount: ['']
+            }),
+            tens: this.fb.group({
+                amount: ['']
+            }),
+            fives: this.fb.group({
+                amount: ['']
+            }),
+            toonies: this.fb.group({
+                amount: ['']
+            }),
+            loonies: this.fb.group({
+                amount: ['']
+            }),
+            quarters: this.fb.group({
+                amount: ['']
+            }),
+            dimes: this.fb.group({
+                amount: ['']
+            }),
+            nickels: this.fb.group({
+                amount: ['']
+            })
+        });
     }
 }

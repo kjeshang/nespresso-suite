@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { CashReconciliationDbService } from '../cash-reconciliation.db.service';
+import { CashReconciliationStore } from '../cash-reconciliation.store';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-cash-reconciliation-table',
@@ -8,5 +11,10 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './cash-reconciliation-table.component.scss'
 })
 export class CashReconciliationTableComponent {
+  cashReconciliationStore = inject(CashReconciliationStore);
+  cashReconciliationDbService = inject(CashReconciliationDbService);
 
+  cardReconciliationForm: FormGroup = this.cashReconciliationDbService.getCashReconciliationForm();
+
+  
 }
