@@ -6,6 +6,7 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import currency from 'currency.js';
 
 @Component({
   selector: 'app-cash-reconciliation-table',
@@ -33,6 +34,10 @@ export class CashReconciliationTableComponent implements OnInit {
     multiplier: number;
     amount: number;
   }[] = [];
+
+  onCountOfBillCoinInput(formGroupName: string, multiplier: number): number {
+    return currency(this.cashReconciliationForm.get(formGroupName)?.get('amount')?.value).multiply(multiplier).value;
+  }
 
   ngOnInit(): void {
     this.sortedCashDeskEntries = Object.entries(

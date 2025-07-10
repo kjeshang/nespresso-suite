@@ -25,7 +25,8 @@
                         </mat-form-field>
                     </td>
                     <td class="p-2 text-gray-700 text-right">
-                        {{ item.amount | currency }}
+                        <!-- {{ item.amount | currency }} -->
+                        {{ onCountOfBillCoinInput(item.key, item.multiplier) | currency }}
                     </td>
                 </tr>
                 }
