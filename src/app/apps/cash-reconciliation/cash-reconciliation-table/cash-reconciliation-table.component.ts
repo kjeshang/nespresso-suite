@@ -9,21 +9,36 @@ import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-cash-reconciliation-table',
-  imports: [MatButtonModule, CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  imports: [
+    MatButtonModule,
+    CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+  ],
   templateUrl: './cash-reconciliation-table.component.html',
-  styleUrl: './cash-reconciliation-table.component.scss'
+  styleUrl: './cash-reconciliation-table.component.scss',
 })
 export class CashReconciliationTableComponent implements OnInit {
   cashReconciliationStore = inject(CashReconciliationStore);
   cashReconciliationDbService = inject(CashReconciliationDbService);
 
-  cashReconciliationForm: FormGroup = this.cashReconciliationDbService.getCashReconciliationForm();
+  cashReconciliationForm: FormGroup =
+    this.cashReconciliationDbService.getCashReconciliationForm();
 
-  sortedCashDeskEntries: { key: string; label: string; multiplier: number; amount: number }[] = [];
+  sortedCashDeskEntries: {
+    key: string;
+    label: string;
+    multiplier: number;
+    amount: number;
+  }[] = [];
 
   ngOnInit(): void {
-    this.sortedCashDeskEntries = Object.entries(this.cashReconciliationStore.cashDesk())
-    .map(([key, val]) => ({ key, ...val! }))
-    .sort((a, b) => b.multiplier - a.multiplier);
+    this.sortedCashDeskEntries = Object.entries(
+      this.cashReconciliationStore.cashDesk()
+    )
+      .map(([key, val]) => ({ key, ...val! }))
+      .sort((a, b) => b.multiplier - a.multiplier);
   }
 }
