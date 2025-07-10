@@ -1,7 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CardReconciliationStore } from './apps/card-reconciliation/card-reconciliation.store';
+import { CashReconciliationStore } from './apps/cash-reconciliation/cash-reconciliation.store';
 import { DashboardStore } from './apps/dashboard/dashboard.store';
+
 
 @Component({
   selector: 'app-root',
@@ -13,6 +15,7 @@ export class AppComponent {
   title = 'nespresso-suite';
   cardReconciliationStore = inject(CardReconciliationStore);
   dashboardStore = inject(DashboardStore);
+  cashReconciliationStore = inject(CashReconciliationStore)
 
   ngOnInit(): void {
     this.loadData().then(() => console.log("Data Loaded!"));
@@ -21,5 +24,6 @@ export class AppComponent {
   async loadData(): Promise<void> {
     this.cardReconciliationStore.loadStoreConfiguration();
     this.dashboardStore.loadLegacyApps();
+    this.cashReconciliationStore.loadCashDesk();
   }
 }
