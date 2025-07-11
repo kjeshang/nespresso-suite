@@ -1,14 +1,18 @@
-import { patchState, signalStore, withMethods, withState } from "@ngrx/signals";
+import { patchState, signalStore, withComputed, withMethods, withState } from "@ngrx/signals";
 import { CashDesk } from "./cash-reconciliation.models";
 import { CashReconciliationDbService } from "./cash-reconciliation.db.service";
 import { inject } from "@angular/core";
 
 type CashReconciliationState = {
-    cashDesk: Partial<CashDesk>
+    cashDesk: Partial<CashDesk>;
+    selectedShift: 'Opening' | 'Closing';
+    cashJournalAmount: number;
 }
 
 const initialCashReconciliationState: CashReconciliationState = {
-    cashDesk: {}
+    cashDesk: {},
+    selectedShift: 'Opening',
+    cashJournalAmount: 0
 }
 
 export const CashReconciliationStore = signalStore(
@@ -22,9 +26,28 @@ export const CashReconciliationStore = signalStore(
             }));
         },
         async updateCashDesk(cashDesk: Partial<CashDesk>) {
-            patchState(store, (store: CashReconciliationState) => ({
+            patchState(store, (state: CashReconciliationState) => ({
                 cashDesk: cashDesk,
-            }))
+            }));
+        },
+        async updateSelectedShift(selectedShift: 'Opening' | 'Closing') {
+            if(selectedShift === 'Opening'){
+                patchState(store, (state: CashReconciliationState) => ({
+                    selectedShift: selectedShift,
+                    cashJournalAmount: 300,
+                }));
+            }
+            patchState(store, (state: CashReconciliationState) => ({
+                selectedShift: selectedShift,
+            }));
+        },
+        async updateCashJournalAmount(cashJournalAmount: number) {
+            patchState(store, (state: CashReconciliationState) => ({
+                cashJournalAmount: cashJournalAmount,
+            }));
         }
+    })),
+    withComputed(() => ({
+        
     })),
 )
