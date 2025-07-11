@@ -18,4 +18,8 @@ export class CashReconciliationPageComponent {
     this.cashReconciliationTableComponent.resetCashReconciliationForm();
     this.cashReconciliationSummaryComponent.onSelectShift();
   }
+
+  printPage(): void {
+    window.print();
+  }
 }
