@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import currency from 'currency.js';
+import { CashDesk, DenominationKey } from '../cash-reconciliation.models';
 
 @Component({
   selector: 'app-cash-reconciliation-table',
@@ -32,11 +33,40 @@ export class CashReconciliationTableComponent implements OnInit {
     key: string;
     label: string;
     multiplier: number;
+    count: number;
     amount: number;
   }[] = [];
 
   onCountOfBillCoinInput(formGroupName: string, multiplier: number): number {
-    return currency(this.cashReconciliationForm.get(formGroupName)?.get('amount')?.value).multiply(multiplier).value;
+    return currency(
+      this.cashReconciliationForm.get(formGroupName)?.get('count')?.value
+    ).multiply(multiplier).value;
+  }
+
+  detectCountOfBillCoinInput(): void {
+    const newCashDesk: Partial<
+      Record<DenominationKey, CashDesk[DenominationKey]>
+    > = {
+      ...this.cashReconciliationStore.cashDesk(),
+    };
+
+    for (const key of Object.keys(newCashDesk) as DenominationKey[]) {
+      if (newCashDesk[key]) {
+        const count: number = this.cashReconciliationForm
+          .get(key)
+          ?.get('count')?.value;
+        const amount: number = currency(count).multiply(
+          newCashDesk[key].multiplier
+        ).value;
+        newCashDesk[key] = {
+          ...newCashDesk[key],
+          count: count,
+          amount: amount,
+        };
+      }
+    }
+    this.cashReconciliationStore.updateCashDesk(newCashDesk as Partial<CashDesk>);
+    this.cashReconciliationStore.cashDesk()['hundreds']?.amount
   }
 
   ngOnInit(): void {

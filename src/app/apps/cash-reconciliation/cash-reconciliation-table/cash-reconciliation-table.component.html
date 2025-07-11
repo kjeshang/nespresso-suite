@@ -21,11 +21,10 @@
                         <mat-form-field class="w-full">
                             <mat-label>{{ item.label }}</mat-label>
                             <input class="w-full" matInput type="number" [placeholder]="item.label!"
-                                formControlName="amount" />
+                                formControlName="count" (input)="detectCountOfBillCoinInput()" />
                         </mat-form-field>
                     </td>
                     <td class="p-2 text-gray-700 text-right">
-                        <!-- {{ item.amount | currency }} -->
                         {{ onCountOfBillCoinInput(item.key, item.multiplier) | currency }}
                     </td>
                 </tr>
@@ -34,3 +33,4 @@
         </table>
     </div>
 </form>
+<p>{{ cashReconciliationStore.cashDesk() | json}}</p>
