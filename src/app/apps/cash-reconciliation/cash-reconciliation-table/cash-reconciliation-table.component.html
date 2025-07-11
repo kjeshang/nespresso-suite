@@ -1,30 +1,29 @@
 <form [formGroup]="cashReconciliationForm">
     <div class="overflow-auto bg-gray-200 shadow-md">
         <table class="w-full table">
-            <thead class="bg-gray-50 border-2 border-gray-200">
+            <thead class="bg-gray-50 border-2 border-gray-200 text-sm">
                 <tr>
-                    <th class="w-1/4 text-sm font-semibold tracking-wide">
-                        <span class="hidden sm:block">Cash Denomination</span>
-                        <span class="block sm:hidden">$</span>
+                    <th class="w-2/10 text-sm font-semibold tracking-wide">
+                        $
                     </th>
-                    <th class="w-1/4 text-sm font-semibold tracking-wide">Count of Bill/Coin</th>
-                    <th class="w-2/4 text-sm font-semibold tracking-wide">Cash Value</th>
+                    <th class="w-4/10 text-sm font-semibold tracking-wide">Count of Bill/Coin</th>
+                    <th class="w-4/10 text-sm font-semibold tracking-wide">Cash Value</th>
                 </tr>
             </thead>
             <tbody>
                 @for(item of sortedCashDeskEntries; track $index){
                 <tr [class]="$index % 2 ? 'bg-gray-50' : 'bg-white' " [formGroupName]="item.key">
-                    <td class="p-2 text-gray-700 text-center">
+                    <td class="p-1 sm:p-2 text-gray-700 text-center">
                         {{ item.multiplier }}
                     </td>
-                    <td class="p-2 text-gray-700">
-                        <mat-form-field class="w-full">
+                    <td class="p-1 sm:p-2 text-gray-700">
+                        <mat-form-field class="w-fit">
                             <mat-label>{{ item.label }}</mat-label>
-                            <input class="w-full" matInput type="number" [placeholder]="item.label!"
+                            <input class="w-fit" matInput type="number" [placeholder]="item.label!"
                                 formControlName="count" (input)="detectCountOfBillCoinInput()" />
                         </mat-form-field>
                     </td>
-                    <td class="p-2 text-gray-700 text-right">
+                    <td class="p-1 sm:p-2 text-gray-700 text-right">
                         {{ onCountOfBillCoinInput(item.key, item.multiplier) | currency }}
                     </td>
                 </tr>
