@@ -1,4 +1,4 @@
-<div class="overflow-auto bg-gray-200 shadow-md">
+<div class="overflow-clip bg-gray-200 shadow-md">
     <table class="w-full table bg-gray-200 border-2 border-xl shadow-lg border-gray-300 rounded-lg">
         <caption class="py-2 text-xl">Reconciliation Results</caption>
         <tbody>
@@ -31,11 +31,60 @@
                 <td class="p-3 text-gray-700 font-semibold">
                     Total Amount
                 </td>
-                <td>
-                    
+                <td class="p-3 text-gray-700">
+                    {{ cashReconciliationStore.cumulativeTotals().totalAmount | currency }}
                 </td>
             </tr>
-            <tr class="bg-white"></tr>
+            <tr class="bg-white">
+                <td class="p-3 text-gray-700 font-semibold">
+                    Difference
+                </td>
+                <td class="p-3 text-gray-700">
+                    {{ cashReconciliationStore.cumulativeTotals().difference | currency }}
+                </td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="p-3 text-gray-700 font-semibold">
+                    Outcome
+                </td>
+                <td class="p-3 text-gray-700">
+                    {{ cashReconciliationStore.cumulativeTotals().outcome }}
+                </td>
+            </tr>
+            <tr class="bg-white">
+                <td class="p-3 text-gray-700 font-semibold">
+                    Comments
+                </td>
+                <td class="p-3 text-gray-700">
+                    <mat-form-field class="w-full">
+                        <mat-label>Comments</mat-label>
+                        <textarea matInput placeholder="Explain discrepencies here"></textarea>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="p-3 text-gray-700 font-semibold">
+                    Signed By
+                </td>
+                <td class="p-3 text-gray-700">
+                    <table>
+                        <thead class="bg-gray-200">
+                            <th class="w-1/5 p-2 text-left text-sm">Initials</th>
+                            <th class="w-4/5 p-2 text-left text-sm">Signature</th>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-gray-50">
+                                <td class="p-2 text-sm">Coffee Specialist</td>
+                                <td class="p-2"></td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="p-2 text-sm">Manager on Duty</td>
+                                <td class="p-2"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

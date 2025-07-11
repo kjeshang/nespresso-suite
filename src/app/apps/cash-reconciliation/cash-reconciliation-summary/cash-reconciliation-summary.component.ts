@@ -5,10 +5,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { CashReconciliationStore } from '../cash-reconciliation.store';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cash-reconciliation-summary',
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule, CommonModule],
   templateUrl: './cash-reconciliation-summary.component.html',
   styleUrl: './cash-reconciliation-summary.component.scss'
 })
