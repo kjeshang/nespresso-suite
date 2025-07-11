@@ -1,1 +1,41 @@
-<p>cash-reconciliation-summary works!</p>
+<div class="overflow-auto bg-gray-200 shadow-md">
+    <table class="w-full table bg-gray-200 border-2 border-xl shadow-lg border-gray-300 rounded-lg">
+        <caption class="py-2 text-xl">Reconciliation Results</caption>
+        <tbody>
+            <tr class="bg-gray-50">
+                <td class="p-3 text-gray-700 font-semibold">
+                    Selected Shift
+                </td>
+                <td class="p-3">
+                    <mat-form-field class="w-full">
+                        <mat-label>Select Shift</mat-label>
+                        <mat-select [formControl]="selectedShiftFormControl" (selectionChange)="onSelectShift()">
+                            <mat-option value="Opening">Opening</mat-option>
+                            <mat-option value="Closing">Closing</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr class="bg-white">
+                <td class="p-3 text-gray-700 font-semibold">
+                    Cash Journal Amount
+                </td>
+                <td class="p-3">
+                    <mat-form-field class="w-full">
+                        <mat-label>Cash Journal Amount</mat-label>
+                        <input matInput type="number" [formControl]="cashJournalAmountFormControl" (input)="onInputCashJournalAmount()" />
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr class="bg-gray-50">
+                <td class="p-3 text-gray-700 font-semibold">
+                    Total Amount
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr class="bg-white"></tr>
+        </tbody>
+    </table>
+</div>

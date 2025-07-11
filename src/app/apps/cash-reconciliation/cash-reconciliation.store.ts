@@ -35,7 +35,7 @@ export const CashReconciliationStore = signalStore(
                 patchState(store, (state: CashReconciliationState) => ({
                     selectedShift: selectedShift,
                     cashJournalAmount: 300,
-                }));
+                }))
             }
             patchState(store, (state: CashReconciliationState) => ({
                 selectedShift: selectedShift,
