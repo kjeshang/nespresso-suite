@@ -43,7 +43,7 @@ export class CashReconciliationTableComponent implements OnInit {
     ).multiply(multiplier).value;
   }
 
-  detectCountOfBillCoinInput(): void {
+  detectCountOfBillCoinInput(resetValue?: number): void {
     const newCashDesk: Partial<
       Record<DenominationKey, CashDesk[DenominationKey]>
     > = {
@@ -60,12 +60,17 @@ export class CashReconciliationTableComponent implements OnInit {
         ).value;
         newCashDesk[key] = {
           ...newCashDesk[key],
-          count: count,
-          amount: amount,
+          count: resetValue ?? count,
+          amount: resetValue ?? amount,
         };
       }
     }
     this.cashReconciliationStore.updateCashDesk(newCashDesk as Partial<CashDesk>);
+  }
+
+  resetCashReconciliationForm(): void {
+    this.cashReconciliationForm.reset();
+    this.detectCountOfBillCoinInput(0);
   }
 
   ngOnInit(): void {

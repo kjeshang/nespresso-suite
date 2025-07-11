@@ -1,7 +1,7 @@
 <app-feature-container>
     <div class="flex flex-row items-center justify-between m-2 p-2">
         <p class="text-lg font-semibold text-center">Credit Card & Debit Card Reconciliation</p>
-        <button class="!bg-black !text-white" mat-flat-button>Reset</button>
+        <button class="!bg-black !text-white" mat-flat-button (click)="onResetClick()">Reset</button>
     </div>
     <div class="m-2 p-2 flex flex-col sm:flex-row justify-between space-x-4 space-y-4">
         <div class="w-full sm:w-1/2">
