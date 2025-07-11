@@ -66,7 +66,6 @@ export class CashReconciliationTableComponent implements OnInit {
       }
     }
     this.cashReconciliationStore.updateCashDesk(newCashDesk as Partial<CashDesk>);
-    this.cashReconciliationStore.cashDesk()['hundreds']?.amount
   }
 
   ngOnInit(): void {
