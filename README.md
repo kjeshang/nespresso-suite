@@ -23,7 +23,7 @@ The purpose of the dashboard is to serve as landing page to navigate to differen
 ### Apps in Software Suite
 
 * Card Reconciliation
-* Cash Reconciliation (coming soon)
+* Cash Reconciliation
 * Cash Denomination Exchange (coming soon)
 * Coffee Flavour Guide (coming soon)
 * Machine Guide (coming soon)
