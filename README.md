@@ -51,6 +51,21 @@ The purpose of this application is to perform Cash Journal Reconciliation for Ph
 
 ![Cash Reconciliation App WireFrame](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/CashReconciliation.png)
 
+## Coffee Flavour Reference App
+
+### Data Model (Not Final)
+
+|Name|Data Type|Description|
+|--|--|--|
+|ID|string|Unique identifier of coffee flavour.|
+|Name|string|Name of coffee flavour.|
+|Type|string|The machine the coffee flavour capsule is compatible with.|
+|Status|string|Coffee flavour is current, not current, seasonal, or limited on the menu.|
+|Category|string|The menu category of the coffee flavour|
+|Headline|string|The defining characteristic of the coffee flavour.|
+|Intensity|number|The overall strength of the coffee flavour.|
+
+
 ## Development server
 
 To start a local development server, run:
