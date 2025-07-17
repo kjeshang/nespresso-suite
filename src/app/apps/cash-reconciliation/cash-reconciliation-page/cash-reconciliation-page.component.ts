@@ -8,14 +8,22 @@ import { CashReconciliationStore } from '../cash-reconciliation.store';
 
 @Component({
   selector: 'app-cash-reconciliation-page',
-  imports: [FeatureContainerComponent, CashReconciliationTableComponent, CashReconciliationSummaryComponent, CashReconciliationDepositComponent, MatButtonModule],
+  imports: [
+    FeatureContainerComponent,
+    CashReconciliationTableComponent,
+    CashReconciliationSummaryComponent,
+    CashReconciliationDepositComponent,
+    MatButtonModule,
+  ],
   templateUrl: './cash-reconciliation-page.component.html',
-  styleUrl: './cash-reconciliation-page.component.scss'
+  styleUrl: './cash-reconciliation-page.component.scss',
 })
 export class CashReconciliationPageComponent {
   cashReconciliationStore = inject(CashReconciliationStore);
-  @ViewChild(CashReconciliationTableComponent) cashReconciliationTableComponent!: CashReconciliationTableComponent;
-  @ViewChild(CashReconciliationSummaryComponent) cashReconciliationSummaryComponent!: CashReconciliationSummaryComponent;
+  @ViewChild(CashReconciliationTableComponent)
+  cashReconciliationTableComponent!: CashReconciliationTableComponent;
+  @ViewChild(CashReconciliationSummaryComponent)
+  cashReconciliationSummaryComponent!: CashReconciliationSummaryComponent;
 
   onResetClick(): void {
     this.cashReconciliationTableComponent.resetCashReconciliationForm();

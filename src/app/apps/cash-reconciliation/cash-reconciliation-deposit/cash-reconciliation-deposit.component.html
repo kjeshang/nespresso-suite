@@ -1,33 +1,45 @@
 <div class="overflow-clip bg-gray-200 shadow-md">
     <table class="w-full table bg-gray-200 border-2 border-xl shadow-lg border-gray-300 rounded-lg">
-        <caption class="py-2 text-xl">Closing Deposit</caption>
+        <caption class="py-2 text-xl">
+            Closing Deposit
+        </caption>
         <thead class="bg-gray-50">
             <tr>
                 <th class="p-1 sm:p-2 text-sm font-semibold tracking-wide">$</th>
-                <th class="p-1 sm:p-2 text-sm font-semibold tracking-wide">Count of Bill/Coin</th>
-                <th class="p-1 sm:p-2 text-sm font-semibold tracking-wide">Cash Value</th>
+                <th class="p-1 sm:p-2 text-sm font-semibold tracking-wide">
+                    Count of Bill/Coin
+                </th>
+                <th class="p-1 sm:p-2 text-sm font-semibold tracking-wide">
+                    Cash Value
+                </th>
             </tr>
         </thead>
         <tbody>
-            @for(item of cashReconciliationStore.deposit().depositBreakdown; track $index){
-                <tr [class]="$index % 2 ? 'bg-gray-50' : 'bg-white' ">
-                    <td class="p-1 sm:p-2 text-gray-700 text-center">{{ item.cashDenomination }}</td>
-                    <td class="p-1 sm:p-2 text-gray-700 text-center">
-                        @if(item.countOfBillCoin){
-                            {{ item.countOfBillCoin }}
-                        }
-                        @else {
-                            0
-                        }
-                    </td>
-                    <td class="p-1 sm:p-2 text-gray-700 text-center">{{ item.cashValue | currency }}</td>
-                </tr>
+            @for(item of cashReconciliationStore.deposit().depositBreakdown; track
+            $index){
+            <tr [class]="$index % 2 ? 'bg-gray-50' : 'bg-white'">
+                <td class="p-1 sm:p-2 text-gray-700 text-center">
+                    {{ item.cashDenomination }}
+                </td>
+                <td class="p-1 sm:p-2 text-gray-700 text-center">
+                    @if(item.countOfBillCoin){
+                    {{ item.countOfBillCoin }}
+                    } @else { 0 }
+                </td>
+                <td class="p-1 sm:p-2 text-gray-700 text-center">
+                    {{ item.cashValue | currency }}
+                </td>
+            </tr>
             }
         </tbody>
         <tfoot>
             <tr>
-                <th class="p-1 sm:p-2 text-gray-700 text-right" colspan="2">End-of-Day Deposit</th>
-                <td class="p-1 sm:p-2 text-gray-700 text-center" colspan="1">{{ cashReconciliationStore.deposit().depositAmount | currency }}</td>
+                <th class="p-1 sm:p-2 text-gray-700 text-right" colspan="2">
+                    End-of-Day Deposit
+                </th>
+                <td class="p-1 sm:p-2 text-gray-700 text-center" colspan="1">
+                    {{ cashReconciliationStore.deposit().depositAmount | currency }}
+                </td>
             </tr>
         </tfoot>
     </table>
