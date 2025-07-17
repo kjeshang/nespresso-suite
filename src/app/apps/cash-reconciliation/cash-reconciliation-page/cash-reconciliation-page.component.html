@@ -11,6 +11,11 @@
             <app-cash-reconciliation-summary />
         </div>
     </div>
+    @if(cashReconciliationStore.selectedShift() === 'Closing'){
+        <div class="m-4 p-4 flex flex-col items-stretch justify-center">
+            <app-cash-reconciliation-deposit />
+        </div>
+    }
     <div class="mt-5 flex items-center justify-center">
         <button class="!bg-black !text-white" mat-flat-button (click)="printPage()">
             Print

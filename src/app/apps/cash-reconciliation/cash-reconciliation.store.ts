@@ -8,8 +8,6 @@ import {
 import { CashDesk } from './cash-reconciliation.models';
 import { CashReconciliationDbService } from './cash-reconciliation.db.service';
 import { computed, inject } from '@angular/core';
-import { isNil } from 'lodash';
-import currency from 'currency.js';
 import { CashReconciliationCalcsService } from './cash-reconciliation.calcs.service';
 
 type CashReconciliationState = {
@@ -63,13 +61,16 @@ export const CashReconciliationStore = signalStore(
   ),
   withComputed(
     (
-      { cashDesk, cashJournalAmount },
+      { cashDesk, cashJournalAmount, selectedShift },
       calcs: CashReconciliationCalcsService = inject(
         CashReconciliationCalcsService
       )
     ) => ({
       cumulativeTotals: computed(() => {
-        return calcs.calculateCumulativeTotals(cashDesk(), cashJournalAmount());
+        return calcs.calculateCumulativeTotals(cashDesk(), cashJournalAmount(), selectedShift());
+      }),
+      deposit: computed(() => {
+        return calcs.setDeposit(cashDesk(), cashJournalAmount(), selectedShift());
       }),
     })
   )
