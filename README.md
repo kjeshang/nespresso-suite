@@ -59,12 +59,40 @@ The purpose of this application is to perform Cash Journal Reconciliation for Ph
 |--|--|--|
 |ID|string|Unique identifier of coffee flavour.|
 |Name|string|Name of coffee flavour.|
-|Type|string|The machine the coffee flavour capsule is compatible with.|
+|Type|string|The machine the coffee flavour capsule is compatible with; i.e., Original & Vertuo.|
 |Status|string|Coffee flavour is current, not current, seasonal, or limited on the menu.|
 |Category|string|The menu category of the coffee flavour|
+|Cup Size|string|The cup sizes that can be brewed from the coffee capsule.|
 |Headline|string|The defining characteristic of the coffee flavour.|
-|Intensity|number|The overall strength of the coffee flavour.|
-
+|Intensity|number or undefined|The overall strength of the coffee flavour.|
+|Price|number|The price of coffee flavour sleeve.|
+|Notes|string|Aroma of the coffee flavour.|
+|Taste|string|Taste of the coffee flavour.|
+|Taste Profile|object: { Acidity?: number, Bitterness?: number, Roastiness?: number, Body?: number, Milky Taste?: number, Bitterness with Milk?: number, Roastiness with Milk?: number, Creamy Texture?: number } or undefined|Taste profile characteristics of the coffee flavour.|
+|Description|string|Coffee flavour taste description.|
+|Origin|string|Coffee flavour origin information.|
+|Roasting|string|Coffee flavour roasting information.|
+|Contents & Allergens|string|Coffee flavour capsule contents and allergens.|
+|Ingredients|string|Coffee flavour ingredients.|
+|Net Weight|string|Weight of the coffee capsules in a sleeve.|
+|Unique Name|string|Unique name of coffee flavour (some names are shared for both original line and vertuo line flavours).|
+|Estimated Intensity|number|Normalized intensity level of coffee flavour (some coffees that are iced or barista creations don't have an intensity level).|
+|Intensity Classification|string|'Blonde', 'Medium', 'Dark'|
+|Acidity Classification|string|'Low', 'Medium', 'Dark'|
+|Bitterness Classification|string|'Low', 'Medium', 'Dark'|
+|Roastiness Classification|string|'Low', 'Medium', 'Dark'|
+|Body Classification|string|'Low', 'Medium', 'Dark'|
+|Milky Taste Classification|string|'Low', 'Medium', 'Dark'|
+|Bitterness with Milk Classification|string|'Low', 'Medium', 'Dark'|
+|Roastiness with Milk Classification|string|'Low', 'Medium', 'Dark'|
+|Creamy Texture Classification|strings|'Low', 'Medium', 'Dark'|
+|Textual Info|string|Cleaned textual data that describe the coffee flavour.|
+|Taste Profile Chart|string|URL of taste profile chart|
+|Words Cloud Chart|string|URL of word cloud.|
+|Feature Results|string|URL of feature results.|
+|Capsule Image|string|URL of capsule image.|
+|Sleeve Image|string|URL of sleeve image.|
+|Top Recommendations|object[]: {Unique Name: string, Type: string, Headline: string, Cup Size: string, Intensity: number, Similarity Score: number}[]|Coffee flavour recommendations.|
 
 ## Development server
 
