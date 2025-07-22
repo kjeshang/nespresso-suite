@@ -1,9 +1,9 @@
 export interface MoneySentOut {
-    [id: string]: DenominationSentOut[];
+    [id: string]: DenominationSentOut;
 }
 
 export interface MoneyBroughtIn {
-    [id: string]: DenominationBroughtIn[];
+    [id: string]: DenominationBroughtIn;
 }
 
 export interface DenominationSentOut {
