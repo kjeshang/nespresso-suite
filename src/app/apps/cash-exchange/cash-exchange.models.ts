@@ -7,6 +7,7 @@ export interface MoneyBroughtIn {
 }
 
 export interface DenominationSentOut {
+    label: string;
     denominationType: 'Bill' | 'Coin';
     denomination: number;
     countOfBillCoin: number;

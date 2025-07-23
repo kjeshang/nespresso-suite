@@ -1,50 +1,95 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CashExchangeStore } from '../cash-exchange.store';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { DenominationSentOut, MoneySentOut } from '../cash-exchange.models';
+import currency from 'currency.js';
 
 @Component({
   selector: 'app-cash-exchange-sent-out',
-  imports: [ReactiveFormsModule, CommonModule, MatFormFieldModule, MatInputModule],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+  ],
   templateUrl: './cash-exchange-sent-out.component.html',
-  styleUrl: './cash-exchange-sent-out.component.scss'
+  styleUrl: './cash-exchange-sent-out.component.scss',
 })
-export class CashExchangeSentOutComponent {
+export class CashExchangeSentOutComponent implements OnInit {
   cashExchangeStore = inject(CashExchangeStore);
   private fb: FormBuilder = inject(FormBuilder);
-  
-  cashSentOutForm: FormGroup = this.fb.group({
+
+  sortedDenominationSentOut: DenominationSentOut[] = [];
+
+  moneySentOutForm: FormGroup = this.fb.group({
     hundreds: this.fb.group({
-      countOfBillCoin: ['']
+      countOfBillCoin: [''],
     }),
     fifties: this.fb.group({
-      countOfBillCoin: ['']
+      countOfBillCoin: [''],
     }),
     twenties: this.fb.group({
-      countOfBillCoin: ['']
+      countOfBillCoin: [''],
     }),
     tens: this.fb.group({
-      countOfBillCoin: ['']
+      countOfBillCoin: [''],
     }),
     fives: this.fb.group({
-      countOfBillCoin: ['']
+      countOfBillCoin: [''],
     }),
     toonies: this.fb.group({
-      countOfBillCoin: ['']
+      countOfBillCoin: [''],
     }),
     loonies: this.fb.group({
-      countOfBillCoin: ['']
+      countOfBillCoin: [''],
     }),
     quarters: this.fb.group({
-      countOfBillCoin: ['']
+      countOfBillCoin: [''],
     }),
     dimes: this.fb.group({
-      countOfBillCoin: ['']
+      countOfBillCoin: [''],
     }),
     nickels: this.fb.group({
-      countOfBillCoin: ['']
+      countOfBillCoin: [''],
     }),
   });
+
+  onCountOfBillCoinInput(formGroupName: string, denomination: number): number {
+    return currency(
+      this.moneySentOutForm.get(formGroupName)?.get('countOfBillCoin')?.value
+    ).multiply(denomination).value;
+  }
+
+  detectCountOfBillCoinInput(resetValue?: number): void {
+    const newMoneySentOut: Partial<MoneySentOut> = {
+      ...this.cashExchangeStore.moneySentOut(),
+    };
+
+    for (const [key, value] of Object.entries(newMoneySentOut)) {
+      if (newMoneySentOut[key]) {
+        const countOfBillCoin: number =
+          this.moneySentOutForm.get('countOfBillCoin')?.value;
+        const cashValue: number = currency(countOfBillCoin).multiply(
+          value!.denomination
+        ).value;
+        newMoneySentOut[key] = {
+          ...value!,
+          countOfBillCoin: resetValue ?? countOfBillCoin,
+          cashValue: resetValue ?? cashValue,
+        };
+      }
+    }
+    this.cashExchangeStore.updateMoneySentOut(newMoneySentOut);
+  }
+
+  ngOnInit(): void {
+    this.sortedDenominationSentOut = Object.entries(
+      this.cashExchangeStore.moneySentOut()
+    )
+      .map(([key, val]) => ({ key, ...val! }))
+      .sort((a, b) => b.denomination - a.denomination);
+  }
 }

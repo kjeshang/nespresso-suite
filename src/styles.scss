@@ -4,7 +4,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-app-cash-reconciliation-table {
+app-cash-reconciliation-table, app-cash-exchange-sent-out {
   @include mat.theme((
     typography: Roboto,
     density: -4,
