@@ -7,7 +7,8 @@ import {
 } from '@ngrx/signals';
 import { MoneyBroughtIn, MoneySentOut } from './cash-exchange.models';
 import { CashExchangeDbService } from './cash-exchange.db.service';
-import { inject } from '@angular/core';
+import { computed, inject } from '@angular/core';
+import { CardExchangeCalcsService } from './cash-exchange.calcs.service';
 
 type CashExchangeState = {
   moneySentOut: Partial<MoneySentOut>;
@@ -44,12 +45,23 @@ export const CashExchangeStore = signalStore(
           moneySentOut: moneySentOut,
         }));
       },
-      async updateMoneyBroughtIn(moneyBroughtIn: Partial<MoneyBroughtIn>): Promise<void> {
+      async updateMoneyBroughtIn(
+        moneyBroughtIn: Partial<MoneyBroughtIn>
+      ): Promise<void> {
         patchState(store, (state: CashExchangeState) => ({
           moneyBroughtIn: moneyBroughtIn,
-        }))
-      }
+        }));
+      },
     })
   ),
-  withComputed(() => ({}))
+  withComputed(
+    (
+      { moneySentOut, moneyBroughtIn },
+      calcs: CardExchangeCalcsService = inject(CardExchangeCalcsService)
+    ) => ({
+      totals: computed(() => {
+        return calcs.calculateTotals(moneySentOut(), moneyBroughtIn());
+      })
+    })
+  )
 );

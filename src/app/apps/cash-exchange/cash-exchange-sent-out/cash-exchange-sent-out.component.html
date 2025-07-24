@@ -32,7 +32,7 @@
         <tfoot>
             <tr>
                 <th colspan="2" class="p-1 sm:p-2 text-gray-700 text-right">Total Amount</th>
-                <td></td>
+                <td class="p-1 sm:p-2 text-gray-700 text-right">{{ cashExchangeStore.totals().moneySentOutAmount | currency }}</td>
             </tr>
         </tfoot>
     </table>
