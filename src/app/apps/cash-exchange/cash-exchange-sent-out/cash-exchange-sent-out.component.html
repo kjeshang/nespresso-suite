@@ -20,10 +20,10 @@
                 </td>
                 <td class="p-1 sm:p-2 text-gray-700">
                     <mat-form-field>
-                        <mat-label>Count of {{ item.denomination }}
+                        <mat-label>Count of {{ item.denomination | currency }}
                             {{ item.denominationType }}s
                         </mat-label>
-                        <input matInput type="number" formControlName="countOfBillCoin" placeholder="Count of {{ item.denomination | currency }} {{ item.denominationType }}s" (input)="detectCountOfBillCoinInput()" />
+                        <input matInput type="number" formControlName="countOfBillCoin" (input)="detectCountOfBillCoinInput()" />
                     </mat-form-field>
                 </td>
                 <td class="p-1 sm:p-2 text-gray-700 text-right">

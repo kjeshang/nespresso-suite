@@ -26,7 +26,7 @@
                     <td class="p-3 text-gray-700 whitespace-nowrap">
                         <mat-form-field class="w-full">
                             <mat-label>{{ item.value?.pos?.label }}</mat-label>
-                            <input matInput class="w-full" type="number" [placeholder]="item.value?.pos?.label!"
+                            <input matInput class="w-full" type="number"
                                 formControlName="posAmount" (input)="onInputUpdateStoreConfiguration()" />
                         </mat-form-field>
                     </td>
@@ -34,7 +34,7 @@
                         <mat-form-field class="w-full">
                             <mat-label>{{ item.value?.register?.label!
                                 }}</mat-label>
-                            <input matInput class="w-full" type="number" [placeholder]="item.value?.register?.label!"
+                            <input matInput class="w-full" type="number"
                                 formControlName="registerAmount" (input)="onInputUpdateStoreConfiguration()" />
                         </mat-form-field>
                     </td>
@@ -42,7 +42,7 @@
                         <mat-form-field class="w-full">
                             <mat-label>{{ item.value?.terminal?.label!
                                 }}</mat-label>
-                            <input matInput class="w-full" type="number" [placeholder]="item.value?.terminal?.label!"
+                            <input matInput class="w-full" type="number"
                                 formControlName="terminalAmount" (input)="onInputUpdateStoreConfiguration()" />
                         </mat-form-field>
                     </td>
