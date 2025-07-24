@@ -64,14 +64,14 @@ export class CashExchangeSentOutComponent implements OnInit {
   }
 
   detectCountOfBillCoinInput(resetValue?: number): void {
-    const newMoneySentOut: Partial<MoneySentOut> = {
+    let newMoneySentOut: Partial<MoneySentOut> = {
       ...this.cashExchangeStore.moneySentOut(),
     };
 
     for (const [key, value] of Object.entries(newMoneySentOut)) {
-      if (newMoneySentOut[key]) {
+      if (newMoneySentOut[key]!) {
         const countOfBillCoin: number =
-          this.moneySentOutForm.get('countOfBillCoin')?.value;
+          this.moneySentOutForm.get(key)?.get('countOfBillCoin')?.value;
         const cashValue: number = currency(countOfBillCoin).multiply(
           value!.denomination
         ).value;
@@ -82,6 +82,7 @@ export class CashExchangeSentOutComponent implements OnInit {
         };
       }
     }
+    console.log(newMoneySentOut);
     this.cashExchangeStore.updateMoneySentOut(newMoneySentOut);
   }
 

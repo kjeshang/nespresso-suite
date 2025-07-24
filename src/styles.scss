@@ -4,6 +4,10 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.mdc-notched-outline__notch {
+  border-right: none;
+}
+
 app-cash-reconciliation-table, app-cash-exchange-sent-out {
   @include mat.theme((
     typography: Roboto,
