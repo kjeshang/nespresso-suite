@@ -44,6 +44,11 @@ export const CashExchangeStore = signalStore(
           moneySentOut: moneySentOut,
         }));
       },
+      async updateMoneyBroughtIn(moneyBroughtIn: Partial<MoneyBroughtIn>): Promise<void> {
+        patchState(store, (state: CashExchangeState) => ({
+          moneyBroughtIn: moneyBroughtIn,
+        }))
+      }
     })
   ),
   withComputed(() => ({}))
