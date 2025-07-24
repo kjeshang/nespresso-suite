@@ -82,7 +82,6 @@ export class CashExchangeSentOutComponent implements OnInit {
         };
       }
     }
-    console.log(newMoneySentOut);
     this.cashExchangeStore.updateMoneySentOut(newMoneySentOut);
   }
 

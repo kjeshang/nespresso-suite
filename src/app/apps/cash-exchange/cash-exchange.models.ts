@@ -15,6 +15,7 @@ export interface DenominationSentOut {
 }
 
 export interface DenominationBroughtIn {
+    label: string;
     denominationType: 'Bill' | 'Coin';
     denomination: number;
     countOfBillRollsOfCoin: number;

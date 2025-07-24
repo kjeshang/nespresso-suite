@@ -3,18 +3,14 @@
         <caption class="py-2 text-xl">Money Sent Out</caption>
         <thead class="bg-gray-50 border-2 border-gray-200">
             <tr>
-                <th class="w-1/6 text-sm font-semibold tracking-wide">Type</th>
-                <th class="w-1/6 text-sm font-semibold tracking-wide">$</th>
-                <th class="w-1/6 text-sm font-semibold tracking-wide">Count of Bill/Coin</th>
-                <th class="w-3/6 text-sm font-semibold tracking-wide">Amount</th>
+                <th class="w-1/4 text-sm font-semibold tracking-wide">$</th>
+                <th class="w-1/4 text-sm font-semibold tracking-wide">Count of Bill/Coin</th>
+                <th class="w-2/4 text-sm font-semibold tracking-wide">Cash Value</th>
             </tr>
         </thead>
         <tbody>
             @for(item of sortedDenominationSentOut; track $index){
             <tr [class]="$index % 2 ? 'bg-gray-50' : 'bg-white'" [formGroupName]="item.label.toString()">
-                <td class="p-1 sm:p-2 text-gray-700 text-center">
-                    {{ item.denominationType }}
-                </td>
                 <td class="p-1 sm:p-2 text-gray-700 text-center">
                     {{ item.denomination | currency }}
                 </td>
@@ -23,7 +19,8 @@
                         <mat-label>Count of {{ item.denomination | currency }}
                             {{ item.denominationType }}s
                         </mat-label>
-                        <input matInput type="number" formControlName="countOfBillCoin" (input)="detectCountOfBillCoinInput()" />
+                        <input matInput type="number" formControlName="countOfBillCoin"
+                            (input)="detectCountOfBillCoinInput()" />
                     </mat-form-field>
                 </td>
                 <td class="p-1 sm:p-2 text-gray-700 text-right">
@@ -32,5 +29,11 @@
             </tr>
             }
         </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2" class="p-1 sm:p-2 text-gray-700 text-right">Total Amount</th>
+                <td></td>
+            </tr>
+        </tfoot>
     </table>
 </form>

@@ -4,7 +4,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CashExchangeStore } from '../cash-exchange.store';
-import { DenominationBroughtIn } from '../cash-exchange.models';
+import { DenominationBroughtIn, MoneyBroughtIn } from '../cash-exchange.models';
+import currency from 'currency.js';
+import { isNil } from 'lodash';
 
 @Component({
   selector: 'app-cash-exchange-brought-in',
@@ -42,6 +44,9 @@ export class CashExchangeBroughtInComponent implements OnInit {
     toonies: this.fb.group({
       countOfBillRollsOfCoin: [''],
     }),
+    loonies: this.fb.group({
+      countOfBillRollsOfCoin: [''],
+    }),
     quarters: this.fb.group({
       countOfBillRollsOfCoin: [''],
     }),
@@ -52,6 +57,54 @@ export class CashExchangeBroughtInComponent implements OnInit {
       countOfBillRollsOfCoin: [''],
     }),
   });
+
+  onCountOfBillCoinRollInput(
+    formGroupName: string,
+    denomination: number,
+    amountPerRoll: number | undefined
+  ): number {
+    if (!isNil(amountPerRoll)) {
+      return currency(
+        this.moneyBroughtIn.get(formGroupName)?.get('countOfBillRollsOfCoin')
+          ?.value
+      ).multiply(amountPerRoll).value;
+    } else {
+      return currency(
+        this.moneyBroughtIn.get(formGroupName)?.get('countOfBillRollsOfCoin')
+          ?.value
+      ).multiply(denomination).value;
+    }
+  }
+
+  detectCountOfBillCoinRollInput(resetValue?: number): void {
+    let newMoneyBroughtIn: Partial<MoneyBroughtIn> = {
+      ...this.cashExchangeStore.moneyBroughtIn(),
+    };
+
+    for (const [key, value] of Object.entries(newMoneyBroughtIn)) {
+      if (newMoneyBroughtIn[key]) {
+        const countOfBillCoinRoll: number = this.moneyBroughtIn
+          .get(key)
+          ?.get('countOfBillRollsOfCoin')?.value;
+        let cashValue: number = 0;
+        if (!isNil(value?.amountPerRoll)) {
+          cashValue = currency(countOfBillCoinRoll).multiply(
+            value.amountPerRoll
+          ).value;
+        } else {
+          cashValue = currency(countOfBillCoinRoll).multiply(
+            value?.denomination!
+          ).value;
+        }
+        newMoneyBroughtIn[key] = {
+          ...value!,
+          countOfBillRollsOfCoin: resetValue ?? countOfBillCoinRoll,
+          cashValue: resetValue ?? cashValue,
+        };
+      }
+      this.cashExchangeStore.updateMoneyBroughtIn(newMoneyBroughtIn);
+    }
+  }
 
   ngOnInit(): void {
     this.sortedDenominationBroughtIn = Object.entries(
