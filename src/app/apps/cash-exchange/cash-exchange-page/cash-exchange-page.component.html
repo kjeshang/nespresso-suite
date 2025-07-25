@@ -4,7 +4,7 @@
             <p class="text-lg font-semibold">
                 Cash Denomination Exchange
             </p>
-            <button class="!bg-black !text-white" mat-flat-button>
+            <button class="!bg-black !text-white" mat-flat-button (click)="onResetClick()">
                 Reset
             </button>
         </div>
@@ -12,8 +12,13 @@
             <app-cash-exchange-sent-out />
             <app-cash-exchange-brought-in />
         </div>
-        <div class="flex items-center justify-center">
-            
+        <div class="my-2 flex items-center justify-center">
+            <div class="p-2 m-2 border-2 border-gray-200 shadow-md rounded">
+                <div class="flex flex-row items-center justify-between space-x-4">
+                    <p class="text-lg font-medium">Difference</p>
+                    <p>{{ cashExchangeStore.totals().difference | currency }}</p>
+                </div>
+            </div>
         </div>
         <div class="mt-5 flex items-center justify-center">
             <button class="!bg-black !text-white" mat-flat-button (click)="printPage()">

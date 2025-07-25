@@ -85,6 +85,11 @@ export class CashExchangeSentOutComponent implements OnInit {
     this.cashExchangeStore.updateMoneySentOut(newMoneySentOut);
   }
 
+  resetMoneySentOutForm(): void {
+    this.moneySentOutForm.reset();
+    this.detectCountOfBillCoinInput(0);
+  }
+
   ngOnInit(): void {
     this.sortedDenominationSentOut = Object.entries(
       this.cashExchangeStore.moneySentOut()

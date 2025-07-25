@@ -106,6 +106,11 @@ export class CashExchangeBroughtInComponent implements OnInit {
     }
   }
 
+  resetMoneyBroughtIn(): void {
+    this.moneyBroughtIn.reset();
+    this.detectCountOfBillCoinRollInput(0);
+  }
+
   ngOnInit(): void {
     this.sortedDenominationBroughtIn = Object.entries(
       this.cashExchangeStore.moneyBroughtIn()
