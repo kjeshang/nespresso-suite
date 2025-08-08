@@ -55,13 +55,13 @@
                 <mxCell id="29" value="Reset Button to clear form fields in table" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="680" y="100" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="Filter options for the following:&lt;div&gt;Machine type: Vertuo, Original (Checkbox group)&lt;/div&gt;&lt;div&gt;Cup Sizes: Coffee, Gran Lungo, Espresso, Double Espresso, Carafe, Lungo (Chips/Multi-select Dropdown)&lt;/div&gt;&lt;div&gt;Status: Current, Not Current, Limited, Seasonal (Chips/Multi-select Dropdown)&lt;/div&gt;&lt;div&gt;Include Decaf Coffee (Radio Button Group)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="30" value="Filter options for the following:&lt;div&gt;Machine type: Vertuo, Original (Checkbox group)&lt;/div&gt;&lt;div&gt;Cup Sizes: Coffee, Gran Lungo, Espresso, Double Espresso, Carafe, Lungo (Chips/Multi-select Dropdown)&lt;/div&gt;&lt;div&gt;Status: Current, Not Current, Limited, Seasonal (Chips/Multi-select Dropdown)&lt;/div&gt;&lt;div&gt;Include Decaf Coffee (Radio Button Group)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="22.5" y="180" width="777.5" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="34" value="Table or list of panels showing a list of coffees that will filter based on above selections, and also have a field to filter by coffee name" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="34" value="Table or list of panels showing a list of coffees that will filter based on above selections, and also have a field to filter by coffee name" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="22.5" y="310" width="377.5" height="560" as="geometry"/>
                 </mxCell>
-                <mxCell id="36" value="Section to show selected coffee information and&amp;nbsp;&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="36" value="Section to show selected coffee information" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="410" y="310" width="390" height="560" as="geometry"/>
                 </mxCell>
             </root>
