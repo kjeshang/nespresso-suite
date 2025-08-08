@@ -4,6 +4,7 @@ import { DashboardPageComponent } from './apps/dashboard/dashboard-page/dashboar
 import { CardReconciliationPageComponent } from './apps/card-reconciliation/card-reconciliation-page/card-reconciliation-page.component';
 import { CashReconciliationPageComponent } from './apps/cash-reconciliation/cash-reconciliation-page/cash-reconciliation-page.component';
 import { CashExchangePageComponent } from './apps/cash-exchange/cash-exchange-page/cash-exchange-page.component';
+import { CoffeePageComponent } from './apps/coffee/coffee-page/coffee-page.component';
 
 export const routes: Routes = [
     {
@@ -18,6 +19,9 @@ export const routes: Routes = [
     {
         path:"cash-exchange", component:CashExchangePageComponent
     },
+    {
+        path:"coffee", component:CoffeePageComponent
+    }
 ];
 
 @NgModule({
