@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FeatureContainerComponent } from '../../../shared/page-components/feature-container/feature-container.component';
-import { CommonModule } from '@angular/common';
 import { CoffeeRecommendationComponent } from '../coffee-recommendation/coffee-recommendation.component';
 
 @Component({
