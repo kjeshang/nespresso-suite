@@ -11,7 +11,7 @@ export class CoffeeDbService {
         const path: string = "https://raw.githubusercontent.com/kjeshang/NespressoMetropolisCoffeeFlavourReferenceGuide/refs/heads/main/output.json";
         const data: Coffee[] = await firstValueFrom(
             this.http.get<Coffee[]>(path)
-        )
+        );
         return data;
     }
 }
