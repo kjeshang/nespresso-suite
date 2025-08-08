@@ -1,4 +1,10 @@
-<div class="flex flex-col gap-y-4">
+@if(coffeeStore.isLoading() === true) {
+    <div class="m-8 flex items-center justify-center">
+        <mat-spinner />
+    </div> 
+}
+@else {
+    <div class="flex flex-col gap-y-4">
         @for(item of coffeeStore.coffeeData(); track $index){
             <div class="px-2">
                 <mat-accordion>
@@ -36,3 +42,4 @@
             </div>
         }
     </div>
+}

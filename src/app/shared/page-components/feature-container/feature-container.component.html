@@ -1,7 +1,9 @@
-<app-nav-bar />
-<div id="print-only" class="flex flex-col min-h-full flex-auto">
-    <div>
-        <ng-content />
+<div class="flex flex-col h-screen">
+    <app-nav-bar />
+    <div id="print-only" class="flex flex-col min-h-full flex-auto">
+        <div class="overflow-y-auto flex-1">
+            <ng-content />
+        </div>
     </div>
+    <app-footer />
 </div>
-<app-footer />

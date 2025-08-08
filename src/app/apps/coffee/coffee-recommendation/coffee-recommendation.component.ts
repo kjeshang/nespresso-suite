@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-coffee-recommendation',
-  imports: [CommonModule, ScrollingModule, MatExpansionModule, MatTabsModule],
+  imports: [CommonModule, ScrollingModule, MatExpansionModule, MatTabsModule, MatProgressSpinnerModule],
   templateUrl: './coffee-recommendation.component.html',
   styleUrl: './coffee-recommendation.component.scss'
 })
