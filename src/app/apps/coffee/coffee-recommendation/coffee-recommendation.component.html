@@ -4,7 +4,7 @@
     </div> 
 }
 @else {
-    <div class="flex flex-col gap-y-4">
+    <div class="flex flex-col h-screen gap-y-4 overflow-y-auto flex-1">
         @for(item of coffeeStore.coffeeData(); track $index){
             <div class="px-2">
                 <mat-accordion>
