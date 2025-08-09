@@ -46,19 +46,25 @@
 
                             </mat-tab>
                             <mat-tab label="The Story">
-                                <div class="py-1 grid grid-cols-3 gap-4">
-                                    <div class="flex flex-col space-y-2">
-                                        <p class="text-lg">Description</p>
-                                        <p>{{ item.description }}</p>
-                                    </div>
-                                    <div class="flex flex-col space-y-2">
-                                        <p class="text-lg">Origin</p>
-                                        <p>{{ item.origin }}</p>
-                                    </div>
-                                    <div class="flex flex-col space-y-2">
-                                        <p class="text-lg">Roasting</p>
-                                        <p>{{ item.roasting }}</p>
-                                    </div>
+                                <div class="py-1 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                    @if(item.description !== ''){
+                                        <div class="flex flex-col space-y-2">
+                                            <p class="text-lg">Description</p>
+                                            <p>{{ item.description }}</p>
+                                        </div>
+                                    }
+                                    @if(item.origin !== ''){
+                                        <div class="flex flex-col space-y-2">
+                                            <p class="text-lg">Origin</p>
+                                            <p>{{ item.origin }}</p>
+                                        </div>
+                                    }
+                                    @if(item.roasting !== ''){
+                                        <div class="flex flex-col space-y-2">
+                                            <p class="text-lg">Roasting</p>
+                                            <p>{{ item.roasting }}</p>
+                                        </div>
+                                    }
                                 </div>
                             </mat-tab>
                             <mat-tab label="Taste Profile"> Content 2 </mat-tab>
