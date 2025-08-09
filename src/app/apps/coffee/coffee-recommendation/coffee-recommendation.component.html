@@ -4,21 +4,48 @@
     </div> 
 }
 @else {
-    <div class="flex flex-col h-screen gap-y-4 overflow-y-auto flex-1">
+    <div class="py-2 flex flex-col h-screen gap-y-4 overflow-y-auto flex-1">
         @for(item of coffeeStore.coffeeData(); track $index){
             <div class="px-2">
                 <mat-accordion>
                     <mat-expansion-panel>
-                        <mat-expansion-panel-header>
+                        <mat-expansion-panel-header class="!h-full !min-h-24">
                             <mat-panel-title>
-                                {{ item.name }}
+                                <div class="flex flex-col">
+                                    <p class="text-xs">{{ item.type }}</p>
+                                    @if(item.name.split(" ").length > 2) {
+                                        <p class="text-xs sm:text-base">{{ item.name }}</p>
+                                    }
+                                    @else {
+                                        <p class="text-sm">{{ item.name }}</p>
+                                    }
+                                </div>
                             </mat-panel-title>
                             <mat-panel-description> 
-                                {{ item.headline }} 
+                                <div class="flex flex-row items-center justify-between space-x-10">
+                                    <div class="flex flex-col items-center justify-center">
+                                        <span class="text-xs">Intensity</span>
+                                        @if(item.intensity === ''){
+                                            <span>N/A</span>
+                                        }
+                                        @else {
+                                            <span>{{ item.intensity }}</span>
+                                        }
+                                    </div>
+                                    @if(item.headline.split(" ").length > 5){
+                                        <p class="text-xs">{{ item.headline }}</p>
+                                    }
+                                    @else {
+                                        <p class="text-sm">{{ item.headline }}</p>
+                                    }
+                                </div> 
                             </mat-panel-description>
                         </mat-expansion-panel-header>
                         <mat-tab-group>
                             <mat-tab label="General Information">
+
+                            </mat-tab>
+                            <mat-tab label="The Story">
                                 <div class="py-1 grid grid-cols-3 gap-4">
                                     <div class="flex flex-col space-y-2">
                                         <p class="text-lg">Description</p>
