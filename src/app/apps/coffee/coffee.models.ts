@@ -34,7 +34,7 @@ export interface Coffee {
     wordCloud: string;
     featureResults: string;
     guide: string;
-    recmendations: Recommendation[];
+    recommendations: Recommendation[];
 }
 
 export interface TasteProfile {
@@ -51,6 +51,7 @@ export interface TasteProfile {
 export interface Recommendation {
     uniqueName: string;
     type: string;
+    headline: string;
     cupSize: string;
     intensity: number | string;
     similarityScore: number;

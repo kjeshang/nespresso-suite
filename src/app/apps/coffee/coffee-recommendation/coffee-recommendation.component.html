@@ -103,7 +103,84 @@
                                     <p>{{ item.taste }}</p>
                                 </div>
                             </mat-tab>
-                            <mat-tab label="Recommendations"> Coming Soon </mat-tab>
+                            <mat-tab label="Recommendations">
+                                <div class="py-1 flex flex-col space-y-2">
+                                    <p class="text-lg">Recommendations</p>
+                                    <table class="hidden sm:table w-full overflow-auto border-2 border-gray-200">
+                                        <thead class="bg-gray-50 border-2 border-gray-200 text-sm">
+                                            <tr>
+                                                <th class="p-2 font-semibold tracking-wide text-left">Unique Name</th>
+                                                <th class="p-2 font-semibold tracking-wide text-left">Headline</th>
+                                                <th class="p-2 font-semibold tracking-wide text-left">Cup Size</th>
+                                                <th class="p-2 font-semibold tracking-wide text-left">Intensity</th>
+                                                <th class="p-2 font-semibold tracking-wide text-left">Similarity Score</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for(subItem of item.recommendations; track $index){
+                                                <tr [class]="$index % 2 ? 'bg-gray-100' : 'bg-white'">
+                                                    <td class="p-1">
+                                                        <div class="flex flex-col">
+                                                            <p class="text-xs">{{ subItem.type }}</p>
+                                                            <p>{{ subItem.uniqueName }}</p>
+                                                        </div>
+                                                    </td>
+                                                    <td class="p-1">{{ subItem.headline }}</td>
+                                                    <td class="p-1">{{ subItem.cupSize }}</td>
+                                                    <td class="p-1">
+                                                        @if(subItem.intensity === ''){
+                                                            N/A
+                                                        }
+                                                        @else {
+                                                            {{ subItem.intensity }}
+                                                        }
+                                                    </td>
+                                                    <td class="p-1">{{ subItem.similarityScore | percent }}</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <table class="table sm:hidden w-full overflow-auto border-2 border-gray-200">
+                                        <thead class="bg-gray-50 border-2 border-gray-200 text-sm">
+                                            <tr>
+                                                <th class="p-2 font-semibold tracking-wide text-left">Coffee</th>
+                                                <th class="p-2 font-semibold tracking-wide text-left">Similarity Score</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for(subItem of item.recommendations; track $index){
+                                                <tr [class]="$index % 2 ? 'bg-gray-100' : 'bg-white'">
+                                                    <td class="p-1">
+                                                        <div class="flex flex-col">
+                                                            <div class="py-2">
+                                                                <p class="text-xs">{{ subItem.type }}</p>
+                                                                <p class="font-medium">{{ subItem.uniqueName }}</p>
+                                                                <p class="italic">{{ subItem.headline }}</p>
+                                                            </div>
+                                                            <ul class="text-sm flex flex-col space-y-2">
+                                                                <li>{{ subItem.cupSize }}</li>
+                                                                <li><span class="font-medium">Intensity:</span>
+                                                                    <span>
+                                                                    @if(subItem.intensity === ''){
+                                                                        N/A
+                                                                    }
+                                                                    @else {
+                                                                        {{ subItem.intensity }}
+                                                                    }
+                                                                    </span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                    <td class="p-1">
+                                                        <span class="relative left-4">{{ subItem.similarityScore | percent }}</span>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </mat-tab>
                         </mat-tab-group>
                     </mat-expansion-panel>
                 </mat-accordion>
