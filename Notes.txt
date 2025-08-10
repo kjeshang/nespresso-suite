@@ -1,0 +1,220 @@
+@if(coffeeStore.isLoading() === true) {
+<div class="m-8 flex items-center justify-center">
+    <mat-spinner />
+</div>
+} @else {
+<div class="py-2 w-full flex min-h-screen overflow-y-auto">
+    <cdk-virtual-scroll-viewport class="my-virtual-scroll-viewport w-full max-w-screen"
+        [itemSize]="coffeeStore.coffeeData().length">
+        @for(item of coffeeStore.coffeeData(); track $index){
+        <div class="py-2 w-full max-w-screen">
+            <mat-accordion class="!w-full">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header class="!h-full !min-h-24">
+                        <mat-panel-title>
+                            <div class="flex flex-col">
+                                <p class="text-xs">{{ item.type }} - {{ item.status }}</p>
+                                <p>{{ item.name }}</p>
+                            </div>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            <div class="flex flex-row items-center justify-between space-x-10">
+                                <div class="flex flex-col items-center justify-center">
+                                    <span class="text-xs">Intensity</span>
+                                    @if(item.intensity === ''){
+                                    <span>N/A</span>
+                                    } @else {
+                                    <span>{{ item.intensity }}</span>
+                                    }
+                                </div>
+                                @if(item.headline.split(" ").length > 5){
+                                <p class="text-sm">{{ item.headline }}</p>
+                                } @else {
+                                <p>{{ item.headline }}</p>
+                                }
+                            </div>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <mat-tab-group>
+                        <mat-tab label="General Information">
+                            <div class="py-1 flex flex-col space-y-2">
+                                <p class="text-lg">General Information</p>
+                                <div class="py-1 grid grid-cols-1 sm:grid-cols-4 gap-4">
+                                    <div class="sm:col-span-1 flex flex-col space-y-2">
+                                        <ul class="flex flex-col space-y-1">
+                                            <li>
+                                                <span class="font-medium">Category:</span>
+                                                {{ item.category }}
+                                            </li>
+                                            <li>
+                                                <span class="font-medium">Cup Size:</span>
+                                                {{ item.cupSize }}
+                                            </li>
+                                            <li>
+                                                <span class="font-medium">Price:</span>
+                                                {{ item.price | currency }}
+                                            </li>
+                                            <li>
+                                                <span class="font-medium">Notes:</span> {{ item.notes }}
+                                            </li>
+                                            <li>
+                                                <span class="font-medium">Estimated Intensity:</span>
+                                                {{ item.estimatedIntensity }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <table
+                                        class="sm:col-span-3 table table-fixed min-w-max w-full overflow-x-auto border-2 border-gray-200">
+                                        <thead class="bg-gray-50 border-2 border-gray-200 text-sm">
+                                            <tr>
+                                                <th class="p-2 w-1/4 font-semibold tracking-wide">
+                                                    Fact
+                                                </th>
+                                                <th class="p-2 w-3/4 fontsemibold tracking-wide">
+                                                    Detail
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-gray-100">
+                                                <td class="p-1 text-center">Contents & Allergens</td>
+                                                <td class="p-1">{{ item.contentsAllergens }}</td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <td class="p-1 text-center">Ingredients</td>
+                                                <td class="p-1">{{ item.ingredients }}</td>
+                                            </tr>
+                                            <tr class="bg-gray-100">
+                                                <td class="p-1 text-center">Net Weight</td>
+                                                <td class="p-1">{{ item.netWeight }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="The Story">
+                            <div class="py-1 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                @if(item.description !== ''){
+                                <div class="flex flex-col space-y-2">
+                                    <p class="text-lg">Description</p>
+                                    <p>{{ item.description }}</p>
+                                </div>
+                                } @if(item.origin !== ''){
+                                <div class="flex flex-col space-y-2">
+                                    <p class="text-lg">Origin</p>
+                                    <p>{{ item.origin }}</p>
+                                </div>
+                                } @if(item.roasting !== ''){
+                                <div class="flex flex-col space-y-2">
+                                    <p class="text-lg">Roasting</p>
+                                    <p>{{ item.roasting }}</p>
+                                </div>
+                                }
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Taste Profile">
+                            <div class="py-1 flex flex-col space-y-2">
+                                <p class="text-lg">Taste Profile</p>
+                                <p>{{ item.taste }}</p>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Recommendations">
+                            <div class="py-1 flex flex-col space-y-2">
+                                <p class="text-lg">Recommendations</p>
+                                <table class="hidden sm:table table-fixed min-w-max w-full overflow-x-auto border-2 border-gray-200">
+                                    <thead class="bg-gray-50 border-2 border-gray-200 text-sm">
+                                        <tr>
+                                            <th class="p-2 font-semibold tracking-wide text-left">
+                                                Unique Name
+                                            </th>
+                                            <th class="p-2 font-semibold tracking-wide text-left">
+                                                Headline
+                                            </th>
+                                            <th class="p-2 font-semibold tracking-wide text-left">
+                                                Cup Size
+                                            </th>
+                                            <th class="p-2 font-semibold tracking-wide text-left">
+                                                Intensity
+                                            </th>
+                                            <th class="p-2 font-semibold tracking-wide text-left">
+                                                Similarity Score
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for(subItem of item.recommendations; track $index){
+                                        <tr [class]="$index % 2 ? 'bg-gray-100' : 'bg-white'">
+                                            <td class="p-1">
+                                                <div class="flex flex-col">
+                                                    <p class="text-xs">{{ subItem.type }}</p>
+                                                    <p>{{ subItem.uniqueName }}</p>
+                                                </div>
+                                            </td>
+                                            <td class="p-1">{{ subItem.headline }}</td>
+                                            <td class="p-1">{{ subItem.cupSize }}</td>
+                                            <td class="p-1">
+                                                @if(subItem.intensity === ''){ N/A } @else {
+                                                {{ subItem.intensity }}
+                                                }
+                                            </td>
+                                            <td class="p-1">
+                                                {{ subItem.similarityScore | percent }}
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                                <table class="table table-fixed min-w-max sm:hidden w-full overflow-auto border-2 border-gray-200">
+                                    <thead class="bg-gray-50 border-2 border-gray-200 text-sm">
+                                        <tr>
+                                            <th class="p-2 font-semibold tracking-wide text-left">
+                                                Coffee
+                                            </th>
+                                            <th class="p-2 font-semibold tracking-wide text-left">
+                                                Similarity Score
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for(subItem of item.recommendations; track $index){
+                                        <tr [class]="$index % 2 ? 'bg-gray-100' : 'bg-white'">
+                                            <td class="p-1">
+                                                <div class="flex flex-col">
+                                                    <div class="py-2">
+                                                        <p class="text-xs">{{ subItem.type }}</p>
+                                                        <p class="font-medium">{{ subItem.uniqueName }}</p>
+                                                        <p class="italic">{{ subItem.headline }}</p>
+                                                    </div>
+                                                    <ul class="text-sm flex flex-col space-y-2">
+                                                        <li>{{ subItem.cupSize }}</li>
+                                                        <li>
+                                                            <span class="font-medium">Intensity:</span>
+                                                            <span>
+                                                                @if(subItem.intensity === ''){ N/A } @else {
+                                                                {{ subItem.intensity }}
+                                                                }
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td class="p-1">
+                                                <span class="relative left-4">{{
+                                                    subItem.similarityScore | percent
+                                                    }}</span>
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        }
+    </cdk-virtual-scroll-viewport>
+</div>
+}
