@@ -49,6 +49,14 @@
                                                 <li><span class="font-medium">Notes:</span> {{ item.notes }}</li>
                                                 <li><span class="font-medium">Estimated Intensity:</span> {{ item.estimatedIntensity }} </li>
                                             </ul>
+                                            <button mat-raised-button type="button">
+                                                <a [href]="item.guide" target="blank">
+                                                    <div class="flex flex-row items-center justify-between space-x-2">
+                                                        <mat-icon>book_2</mat-icon>
+                                                        <span>Coffee Reference Guide</span>
+                                                    </div>
+                                                </a>
+                                            </button>
                                         </div>
                                         <table class="sm:col-span-3 table w-full overflow-auto border-2 border-gray-200">
                                             <thead class="bg-gray-50 border-2 border-gray-200 text-sm">
