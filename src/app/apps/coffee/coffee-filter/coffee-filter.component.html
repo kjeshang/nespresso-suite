@@ -18,7 +18,15 @@
                             }    
                         </mat-select>
                     </mat-form-field>
-                    
+                    <section class="relative bottom-2">
+                        <p class="hidden sm:block relative left-2">Type</p>
+                        <div class="flex flex-row items-center justify-between">
+                            <p class="sm:hidden relative right-2">Type</p>
+                            @for(item of coffeeStore.uniqueTypes(); track $index){
+                                <mat-checkbox [checked]="coffeeFilterForm.get('selectedTypes')?.value.includes(item)" (change)="onCoffeeTypeChange($event, item)">{{ item }}</mat-checkbox>
+                            }
+                        </div>
+                    </section>
                 </div>
             </form>
         </div>

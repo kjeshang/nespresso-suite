@@ -9,6 +9,7 @@ type CoffeeState = {
     isLoading: boolean;
     query: string;
     selectedStatus: string[];
+    selectedTypes: string[];
 }
 
 const initialCoffeeState: CoffeeState = {
@@ -16,6 +17,7 @@ const initialCoffeeState: CoffeeState = {
     isLoading: false,
     query: '',
     selectedStatus: ['Current'],
+    selectedTypes: ['Original','Vertuo'],
 }
 
 export const CoffeeStore = signalStore(
@@ -42,6 +44,11 @@ export const CoffeeStore = signalStore(
                 selectedStatus: selectedStatus,
             }));
         },
+        async updateSelectedTypes(selectedTypes: string[]): Promise<void> {
+            patchState(store, (state: CoffeeState) => ({
+                selectedTypes: selectedTypes,
+            }));
+        },
     })),
     withComputed(
         (
@@ -49,12 +56,14 @@ export const CoffeeStore = signalStore(
                 coffeeData,
                 query,
                 selectedStatus,
+                selectedTypes,
             }
         ) => ({
         filteredCoffeeData: computed(() => {
             let data: Coffee[] = chain(coffeeData())
             .filter((el: Coffee) => el.name.toLowerCase().includes(query().toLowerCase()))
             .filter((el: Coffee) => selectedStatus().includes(el.status))
+            .filter((el: Coffee) => selectedTypes().includes(el.type))
             .value();
             return data;
         }),
@@ -65,6 +74,14 @@ export const CoffeeStore = signalStore(
             .sort()
             .value();
             return uniqueStatus;
+        }),
+        uniqueTypes: computed(() => {
+            const uniqueTypes: string[] = chain(coffeeData())
+            .map((item: Coffee) => item.type)
+            .uniq()
+            .sort()
+            .value();
+            return uniqueTypes;
         }),
     }))
 );
