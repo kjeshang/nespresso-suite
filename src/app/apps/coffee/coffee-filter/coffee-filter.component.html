@@ -1,0 +1,17 @@
+<div class="my-5">
+    <div class="p-3 m-3 border-2 border-gray-200 rounded-md bg-gray-50 shadow-md">
+        <div class="flex flex-col space-y-2">
+            <p class="text-lg font-medium pb-2">
+                Filter Options
+            </p>
+            <form [formGroup]="coffeeFilterForm">
+                <div class="flex flex-row items-center justify-between">
+                    <mat-form-field class="w-full">
+                        <mat-label>Search Name of Coffee</mat-label>
+                        <input formControlName="query" matInput type="text" placeholder="Search Name of Coffee" (input)="onQueryInput()" />
+                    </mat-form-field>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

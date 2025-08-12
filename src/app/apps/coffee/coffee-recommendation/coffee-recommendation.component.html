@@ -5,7 +5,7 @@
 }
 @else {
     <div class="py-2 flex flex-col h-screen gap-y-4 overflow-y-auto flex-1">
-        @for(item of coffeeStore.coffeeData(); track $index){
+        @for(item of coffeeStore.filteredCoffeeData(); track $index){
             <div class="px-2">
                 <mat-accordion>
                     <mat-expansion-panel>
