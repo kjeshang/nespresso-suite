@@ -5,11 +5,20 @@
                 Filter Options
             </p>
             <form [formGroup]="coffeeFilterForm">
-                <div class="flex flex-row items-center justify-between">
+                <div class="flex flex-col sm:flex-row items-center justify-between sm:space-x-4">
                     <mat-form-field class="w-full">
                         <mat-label>Search Name of Coffee</mat-label>
                         <input formControlName="query" matInput type="text" placeholder="Search Name of Coffee" (input)="onQueryInput()" />
                     </mat-form-field>
+                    <mat-form-field class="w-full">
+                        <mat-label>Status</mat-label>
+                        <mat-select formControlName="selectedStatus" multiple (selectionChange)="onStatusSelectChange()">
+                            @for(item of coffeeStore.uniqueStatus(); track $index){
+                                <mat-option [value]="item">{{ item }}</mat-option>
+                            }    
+                        </mat-select>
+                    </mat-form-field>
+                    
                 </div>
             </form>
         </div>
