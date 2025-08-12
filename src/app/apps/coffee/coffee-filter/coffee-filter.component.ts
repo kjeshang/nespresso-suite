@@ -17,12 +17,17 @@ import { MatSelectModule } from '@angular/material/select';
 export class CoffeeFilterComponent {
   private fb: FormBuilder = inject(FormBuilder);
   coffeeStore = inject(CoffeeStore);
+  showFilterOptions: boolean = false;
 
   coffeeFilterForm: FormGroup = this.fb.group({
     query: [''],
     selectedStatus: [this.coffeeStore.selectedStatus()],
     selectedTypes: [this.coffeeStore.selectedTypes()],
   });
+
+  toggleFilterOptions(): void {
+    this.showFilterOptions = !this.showFilterOptions;
+  }
 
   onQueryInput(): void {
     const query: string = this.coffeeFilterForm.get('query')?.value;

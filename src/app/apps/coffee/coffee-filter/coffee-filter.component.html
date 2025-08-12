@@ -1,10 +1,18 @@
 <div class="my-5">
-    <div class="p-3 m-3 border-2 border-gray-200 rounded-md bg-gray-50 shadow-md">
+    <div class="mx-3 flex flex-row items-center justify-between">
+        <p class="text-lg font-semibold">Coffee</p>
+        <button mat-stroked-button type="button" (click)="toggleFilterOptions()">
+            Toggle Options
+        </button>
+    </div>
+    @if(showFilterOptions){
+        <div class="p-3 m-3 border-2 border-gray-200 rounded-md bg-gray-50 shadow-md">
         <div class="flex flex-col space-y-2">
-            <p class="text-lg font-medium pb-2">
+            <p class="text-lg font-medium">
                 Filter Options
             </p>
             <form [formGroup]="coffeeFilterForm">
+                
                 <div class="flex flex-col sm:flex-row items-center justify-between sm:space-x-4">
                     <mat-form-field class="w-full">
                         <mat-label>Search Name of Coffee</mat-label>
@@ -30,5 +38,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div>         
+    }
+    
 </div>
