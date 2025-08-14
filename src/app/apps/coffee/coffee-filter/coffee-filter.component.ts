@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -15,6 +15,8 @@ import { MatSelectModule } from '@angular/material/select';
   styleUrl: './coffee-filter.component.scss'
 })
 export class CoffeeFilterComponent {
+  @Input() lastUpdated!: string;
+
   private fb: FormBuilder = inject(FormBuilder);
   coffeeStore = inject(CoffeeStore);
   showFilterOptions: boolean = false;

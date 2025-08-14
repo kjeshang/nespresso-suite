@@ -12,7 +12,10 @@
                 <p class="text-lg font-medium">
                     Filter Options
                 </p>
-                <p class="text-sm font-normal">Data Last Updated: November 2024</p>
+                <div class="flex flex-col sm:flex-row sm:space-x-1 justify-end text-sm font-normal">
+                    <p>Data Last Updated:</p>
+                    <p class="ml-auto">{{ lastUpdated }}</p>
+                </div>
             </div>
             <form [formGroup]="coffeeFilterForm">
                 <div class="flex flex-col sm:flex-row items-center justify-between sm:space-x-4">

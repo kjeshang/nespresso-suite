@@ -10,5 +10,5 @@ import { CoffeeFilterComponent } from '../coffee-filter/coffee-filter.component'
   styleUrl: './coffee-page.component.scss'
 })
 export class CoffeePageComponent {
-  
+  lastUpdated: string = "November 2024";
 }
