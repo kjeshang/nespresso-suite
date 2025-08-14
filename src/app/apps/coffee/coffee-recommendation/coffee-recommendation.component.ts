@@ -7,13 +7,16 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { CoffeeChartService } from '../coffee.chart.service';
+import { PlotlyBarChartComponent } from '../../../shared/page-components/plotly-bar-chart/plotly-bar-chart.component';
 
 @Component({
   selector: 'app-coffee-recommendation',
-  imports: [CommonModule, ScrollingModule, MatExpansionModule, MatTabsModule, MatProgressSpinnerModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, ScrollingModule, MatExpansionModule, MatTabsModule, MatProgressSpinnerModule, MatButtonModule, MatIconModule, PlotlyBarChartComponent],
   templateUrl: './coffee-recommendation.component.html',
   styleUrl: './coffee-recommendation.component.scss'
 })
 export class CoffeeRecommendationComponent {
   coffeeStore = inject(CoffeeStore);
+  coffeeChartService: CoffeeChartService = inject(CoffeeChartService);
 }

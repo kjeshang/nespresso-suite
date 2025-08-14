@@ -109,6 +109,18 @@
                                 <div class="py-1 flex flex-col space-y-2">
                                     <p class="text-lg">Taste Profile</p>
                                     <p>{{ item.taste }}</p>
+                                    @if(coffeeChartService.getTasteProfileChart(
+                                        item.tasteProfile,
+                                        item.uniqueName + ' Taste Profile',
+                                        400,
+                                        'v')) {
+                                            <app-plotly-bar-chart class="w-full h-fit" [inputData]="coffeeChartService.getTasteProfileChart(
+                                                item.tasteProfile,
+                                                item.uniqueName + ' Taste Profile',
+                                                400,
+                                                'v' 
+                                            )!" />
+                                        }
                                 </div>
                             </mat-tab>
                             <mat-tab label="Recommendations">
