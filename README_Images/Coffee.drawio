@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="RxPv6xupyiPjXx5Fq1Mp" name="Coffee">
-        <mxGraphModel dx="1086" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#CCCCCC" math="0" shadow="0">
+        <mxGraphModel dx="1326" dy="615" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#CCCCCC" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -46,23 +46,43 @@
                 <mxCell id="11" value="GitHub logo that opens tab to project repository" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#FFFFFF;" parent="1" vertex="1">
                     <mxGeometry x="632.5" y="950" width="130" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="27" value="Print button" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="367.5" y="910" width="120" height="60" as="geometry"/>
-                </mxCell>
                 <mxCell id="28" value="Heading" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="20" y="100" width="100" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="Reset Button to clear form fields in table" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="29" value="Toggle filter options" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="680" y="100" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="Filter options for the following:&lt;div&gt;Machine type: Vertuo, Original (Checkbox group)&lt;/div&gt;&lt;div&gt;Cup Sizes: Coffee, Gran Lungo, Espresso, Double Espresso, Carafe, Lungo (Chips/Multi-select Dropdown)&lt;/div&gt;&lt;div&gt;Status: Current, Not Current, Limited, Seasonal (Chips/Multi-select Dropdown)&lt;/div&gt;&lt;div&gt;Include Decaf Coffee (Radio Button Group)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="30" value="Filter options for the following:&lt;div&gt;Name of Coffee,&amp;nbsp;&lt;/div&gt;&lt;div&gt;Status,&lt;/div&gt;&lt;div&gt;Machine Type&lt;/div&gt;&lt;div&gt;The date that the coffee data was last updated&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="22.5" y="180" width="777.5" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="34" value="Table or list of panels showing a list of coffees that will filter based on above selections, and also have a field to filter by coffee name" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="22.5" y="310" width="377.5" height="560" as="geometry"/>
+                <mxCell id="34" value="List of expansion panels showing a list of coffees that will filter based on above selections, and also have a field to filter by coffee name.&lt;div&gt;Expansion panel header &amp;amp; description: Machine Type, Name of Coffee, Intensity, Headline&lt;/div&gt;&lt;div&gt;Expansion panel when expanded: More information grouped in tabs; General Information, The Story, Taste Profile, Recommendations&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="22.5" y="310" width="777.5" height="130" as="geometry"/>
                 </mxCell>
-                <mxCell id="36" value="Section to show selected coffee information" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="410" y="310" width="390" height="560" as="geometry"/>
+                <mxCell id="41" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="36" target="34">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="General Information tab:&lt;div&gt;Category&lt;/div&gt;&lt;div&gt;Cup size&lt;/div&gt;&lt;div&gt;Price&lt;/div&gt;&lt;div&gt;Notes,&lt;/div&gt;&lt;div&gt;Estimated intensity&lt;/div&gt;&lt;div&gt;Link to coffee flavour reference guide&lt;/div&gt;&lt;div&gt;Contents &amp;amp; allergens&lt;/div&gt;&lt;div&gt;Ingredients&lt;/div&gt;&lt;div&gt;Net weight&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="12.5" y="480" width="247.5" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="37" target="34">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="The Story tab:&lt;div&gt;Description&lt;/div&gt;&lt;div&gt;Origin&lt;/div&gt;&lt;div&gt;Roasting&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="565" y="480" width="247.5" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="38">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="410" y="440" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="38" value="Recommendations tab:&lt;div&gt;Table showing unique name of coffee (i.e., machine type &amp;amp; name of coffee), headline, cup size, intensity, and similarity score&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="425" y="700" width="247.5" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="40" target="34">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="Taste Profile tab:&lt;div&gt;Taste description and chart outlining taste profile qualities on a scale of 0 to 5&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="700" width="247.5" height="170" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

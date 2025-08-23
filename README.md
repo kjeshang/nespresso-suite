@@ -44,23 +44,26 @@ The purpose of the dashboard is to serve as landing page to navigate to differen
 ### Card Reconciliation App
 The purpose of this application is to perform Credit Card & Debit Card Cash Journal Reconciliation.
 
-![Card Reconciliation App WireFrame](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/CardReconciliation.png)
+![Card Reconciliation App Wireframe](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/CardReconciliation.png)
 
 ### Cash Reconciliation App
 The purpose of this application is to perform Cash Journal Reconciliation for Physical Cash Transactions.
 
-![Cash Reconciliation App WireFrame](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/CashReconciliation.png)
+![Cash Reconciliation App Wireframe](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/CashReconciliation.png)
 
 ### Cash Denomination Exchange
 
 The purpose of this application is to perform Cash Denomination exchange. Specifically, there are instances in the retail sector where customers may pay for their purchases using large cash denominations. However, it is necessary to have small cash denominations on hand to assist with providing change to customers. When there is an imbalance between large cash denominations & small cash denominations, it is necessary to exchange a portion of the large cash denominations with small cash denominations but is equivalent in cash value.
 
-![Cash Exchange App WireFrame](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/CashExchange.png)
+![Cash Exchange App Wireframe](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/CashExchange.png)
 
 ### Coffee Flavour Reference App
 
-The coffee flavour data will be retrieved from a JSON file located in the following GitHub Repository.
-> [Nespresso Metropolis Coffee Flavour Reference Guide](https://github.com/kjeshang/NespressoMetropolisCoffeeFlavourReferenceGuide)
+The coffee flavour data will be retrieved from a JSON file located in the a GitHub Repository.
+* Repository: [Nespresso Metropolis Coffee Flavour Reference Guide](https://github.com/kjeshang/NespressoMetropolisCoffeeFlavourReferenceGuide)
+* Direct link to JSON file containing coffee data: [Coffee Data](https://github.com/kjeshang/NespressoMetropolisCoffeeFlavourReferenceGuide/blob/main/output.json)
+
+![Coffee App Wireframe](README_Images\Coffee.png)
 
 #### Data Model
 
