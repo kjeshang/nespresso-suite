@@ -63,7 +63,7 @@ The coffee flavour data will be retrieved from a JSON file located in the a GitH
 * Repository: [Nespresso Metropolis Coffee Flavour Reference Guide](https://github.com/kjeshang/NespressoMetropolisCoffeeFlavourReferenceGuide)
 * Direct link to JSON file containing coffee data: [Coffee Data](https://github.com/kjeshang/NespressoMetropolisCoffeeFlavourReferenceGuide/blob/main/output.json)
 
-![Coffee App Wireframe](README_Images\Coffee.png)
+![Coffee App Wireframe](https://raw.githubusercontent.com/kjeshang/nespresso-suite/refs/heads/main/README_Images/Coffee.png)
 
 #### Data Model
 
