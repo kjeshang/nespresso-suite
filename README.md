@@ -34,8 +34,6 @@ The purpose of the dashboard is to serve as landing page to navigate to differen
 * [Coffee Flavour Reference Guides](https://github.com/kjeshang/NespressoMetropolisCoffeeFlavourReferenceGuide) - Potential to be used in Software Suite but information needs to be updated and new coffees need to be added
 * [Old Machine Reference Guides](https://www.dropbox.com/home/Nespresso/Machine%20Guides) - Potential to be used in Software Suite but information needs to be updated
 * [Nespresso Metropolis Training App](https://github.com/kjeshang/NespressoMetropolisTrainingApp)
-* [First Aid Reference Guide](https://www.dropbox.com/scl/fi/cntqfwcxsvakmgaovhey7/First-Aid-Matrix-Guide.pdf?rlkey=fl6ni7rnis5njzug7buubalc8&e=1&dl=0) - Potential to be used in Software Suite
-* [How to taste coffee in the perspective of a Coffee Specialist](https://www.dropbox.com/scl/fi/4gqd527l48fuigeybj0ws/How-to-Taste-Nespresso-Coffee.pdf?rlkey=lzxmbnr2nkfyhaz1hj8u36pox&e=1&dl=0) - Potential to be used in Software Suite
 * [Nespresso Metropolis Training Matrix Summarization](https://github.com/kjeshang/NespressoMetropolisTrainingMatrixSummarization)
 * [Nespresso Metropolis Customer Review Analysis](https://github.com/kjeshang/NespressoMetropolisCustomerReviewAnalysis)
 * [Cash Journal Reconciliation Spreadsheet](https://www.dropbox.com/scl/fo/2euyu10rptqhfo2ano3l2/h?rlkey=vhabf8hkyx4k8bro0y7rdfmep&st=jd6a6mx4&dl=0)
@@ -106,6 +104,16 @@ The coffee flavour data will be retrieved from a JSON file located in the a GitH
 |featureResults|string|URL of feature results.|
 |guide|string|URL of reference guide.|
 |recommendations|object[]: {uniqueName: string, type: string, headline: string, cupSize: string, intensity: number, similarityScore: number}[]|Coffee flavour recommendations.|
+
+### First Aid App
+
+First Aid PDF Guide accessible in app.
+> [First Aid Reference Guide](https://www.dropbox.com/scl/fi/cntqfwcxsvakmgaovhey7/First-Aid-Matrix-Guide.pdf?rlkey=fl6ni7rnis5njzug7buubalc8&e=1&dl=0)
+
+### Tasting App
+
+How to Taste Nespresso Coffee PDF Guide accessible in app.
+> [How to taste coffee in the perspective of a Coffee Specialist](https://www.dropbox.com/scl/fi/4gqd527l48fuigeybj0ws/How-to-Taste-Nespresso-Coffee.pdf?rlkey=lzxmbnr2nkfyhaz1hj8u36pox&e=1&dl=0)
 
 ## Development server
 
