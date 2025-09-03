@@ -6,6 +6,7 @@ import { CashReconciliationPageComponent } from './apps/cash-reconciliation/cash
 import { CashExchangePageComponent } from './apps/cash-exchange/cash-exchange-page/cash-exchange-page.component';
 import { CoffeePageComponent } from './apps/coffee/coffee-page/coffee-page.component';
 import { FirstAidPageComponent } from './apps/first-aid/first-aid-page/first-aid-page.component';
+import { TastingPageComponent } from './apps/tasting/tasting-page/tasting-page.component';
 
 export const routes: Routes = [
     {
@@ -25,6 +26,9 @@ export const routes: Routes = [
     },
     {
         path:"first-aid", component:FirstAidPageComponent
+    },
+    {
+        path:"tasting", component:TastingPageComponent
     },
 ];
 
