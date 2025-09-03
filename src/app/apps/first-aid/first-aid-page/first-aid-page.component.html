@@ -5,14 +5,14 @@
         </p>
         <div class="block sm:hidden">
             <button mat-flat-button class="!bg-black !text-white" type="button">
-                <a [href]="pdfUrl" target="_blank">Click here to view guide</a>
+                <a [href]="dropboxUrl" target="_blank">Click here to view guide</a>
             </button>
         </div>
     </div>
     <div class="hidden sm:block">
         <div class="w-full h-screen relative">
             <iframe 
-                [src]="dropboxUrl"
+                [src]="pdfUrl"
                 class="w-full h-full border-none left-0 top-0 absolute"
                 title="PDF Viewer">
             </iframe>
