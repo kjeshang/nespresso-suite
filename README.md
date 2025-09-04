@@ -25,8 +25,10 @@ The purpose of the dashboard is to serve as landing page to navigate to differen
 * Card Reconciliation
 * Cash Reconciliation
 * Cash Denomination Exchange
-* Coffee Flavour Guide (coming soon)
-* Machine Guide (coming soon)
+* Coffee Flavour Guide 
+* Machine Guide
+* First Aid Guide
+* Coffee Tasting Guide
 
 ### Legacy Apps & Projects
 
