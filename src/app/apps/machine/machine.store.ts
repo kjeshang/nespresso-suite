@@ -1,7 +1,8 @@
-import { patchState, signalStore, withMethods, withState } from "@ngrx/signals";
+import { patchState, signalStore, withComputed, withMethods, withState } from "@ngrx/signals";
 import { Machine } from "./machine.models";
 import { MachineDbService } from "./machine.db.service";
-import { inject } from "@angular/core";
+import { computed, inject } from "@angular/core";
+import { chain } from "lodash";
 
 type MachineState = {
     machineData: Machine[];
@@ -30,6 +31,41 @@ export const MachineStore = signalStore(
                 machineData: machineData,
                 isLoading: false,
             }));
+        },
+        async updateQuery(query: string): Promise<void> {
+            patchState(store, (state: MachineState) => ({
+                query: query,
+            }))
+        },
+        async updateSelectedTypes(selectedTypes: string[]): Promise<void> {
+            patchState(store, (state: MachineState) => ({
+                selectedTypes: selectedTypes,
+            }));
         }
+    })),
+    withComputed(
+        (
+            {
+                machineData,
+                query,
+                selectedTypes,
+            }
+
+        ) => ({
+        filteredMachineData: computed(() => {
+            let data: Machine[] = chain(machineData())
+            .filter((el: Machine) => el.name.toLowerCase().includes(query().toLowerCase()))
+            .filter((el: Machine) => selectedTypes().includes(el.type))
+            .value();
+            return data;
+        }),
+        uniqueTypes: computed(() => {
+            const uniqueTypes: string[] = chain(machineData())
+            .map((item: Machine) => item.type)
+            .uniq()
+            .sort()
+            .value();
+            return uniqueTypes;
+        })
     }))
-)
+);
