@@ -1,0 +1,29 @@
+@if(machineStore.isLoading() === true) {
+<div class="m-8 flex items-center justidy-center">
+    <mat-spinner />
+</div>
+}
+@else {
+<div class="mt-4 mx-4 grid grid-cols-4 gap-4">
+    @for(item of machineStore.machineData(); track $index) {
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            {{ item.type }}
+        </mat-card-header>
+        <mat-card-content>
+            {{ item.name }}
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button type="button">
+                <a [href]="item.link" target="blank">
+                    <div class="flex flex-row items-center justify-between space-x-2">
+                        <mat-icon>book_2</mat-icon>
+                        <span>Machine Reference Guide</span>
+                    </div>
+                </a>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+    }
+</div>
+}
