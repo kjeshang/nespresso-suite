@@ -26,9 +26,9 @@ The purpose of the dashboard is to serve as landing page to navigate to differen
 * Cash Reconciliation
 * Cash Denomination Exchange
 * Coffee Flavour Guide 
-* Machine Guide
 * First Aid Guide
 * Coffee Tasting Guide
+* Machine Guide
 
 ### Legacy Apps & Projects
 
@@ -116,6 +116,10 @@ First Aid PDF Guide accessible in app.
 
 How to Taste Nespresso Coffee PDF Guide accessible in app.
 > [How to taste coffee in the perspective of a Coffee Specialist](https://www.dropbox.com/scl/fi/4gqd527l48fuigeybj0ws/How-to-Taste-Nespresso-Coffee.pdf?rlkey=lzxmbnr2nkfyhaz1hj8u36pox&e=1&dl=0)
+
+## Machine App
+
+Similar layout to the Coffee Flavour Reference App, however, the machine information are displayed in a grid of cards (i.e., 4 cards per row) rather than a scrollable list.
 
 ## Development server
 
