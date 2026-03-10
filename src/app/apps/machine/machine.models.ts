@@ -1,6 +1,6 @@
 export interface Machine {
+    id: number;
     name: string;
-    type: 'machine' | 'accessory';
-    technology: string;
+    type: 'vertuo' | 'original' | 'accessory';
     link: string;
 }
