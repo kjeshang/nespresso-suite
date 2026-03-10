@@ -5,6 +5,7 @@ import { CashReconciliationStore } from './apps/cash-reconciliation/cash-reconci
 import { DashboardStore } from './apps/dashboard/dashboard.store';
 import { CashExchangeStore } from './apps/cash-exchange/cash-exchange.store';
 import { CoffeeStore } from './apps/coffee/coffee.store';
+import { MachineStore } from './apps/machine/machine.store';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class AppComponent {
   cashReconciliationStore = inject(CashReconciliationStore);
   cashExchangeStore = inject(CashExchangeStore);
   coffeeStore = inject(CoffeeStore);
+  machineStore = inject(MachineStore);
 
   ngOnInit(): void {
     this.loadData().then(() => console.log("Data Loaded!"));
@@ -32,5 +34,6 @@ export class AppComponent {
     this.cashExchangeStore.loadMoneySentOut();
     this.cashExchangeStore.loadMoneyBroughtIn();
     this.coffeeStore.loadCoffeeData();
+    this.machineStore.loadMachineData();
   }
 }
