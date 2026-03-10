@@ -1,1 +1,44 @@
-<p>machine-filter works!</p>
+<div class="my-5">
+    <div class="mx-3 flex flex-row items-center justify-between">
+        <p class="text-lg font-semibold">Machine</p>
+        <button class="!bg-black !text-white" mat-flat-button type="button" (click)="toggleFilterOptions()">
+            Toggle Options
+        </button>
+    </div>
+    @if(showFilterOptions) {
+    <div class="p-3 m-3 border-2 border-gray-200 rounded-md bg-gray-50 shadow-md">
+        <div class="flex flex-col space-y-2">
+            <div class="flex flex-row items-center justify-between pb-2">
+                <p class="text-lg font-medium">
+                    Filter Options
+                </p>
+                <div class="flex flex-col sm:flex-row sm:space-x-1 justify-end text-sm font-normal">
+                    <p>Data Last Updated:</p>
+                    <p class="ml-auto"> {{ lastUpdated }}</p>
+                </div>
+            </div>
+            <form [formGroup]="machineFilterForm">
+                <div class="flex flex-col sm:flex-row items-center justify-between sm:space-x-4">
+                    <mat-form-field class="w-full">
+                        <mat-label>Search Name of Machine</mat-label>
+                        <input formControlName="query" matInput type="text" placeholder="Search Name of Machine"
+                            (input)="onQueryInput()" />
+                    </mat-form-field>
+                    <section class="relative bottom-2">
+                        <p class="hidden sm:block relative left-2">Type</p>
+                        <div class="flex flex-row items-center justify-between">
+                            <p class="sm:hidden relative right-2">Type</p>
+                            @for(item of machineStore.uniqueTypes(); track $index) {
+                            <mat-checkbox [checked]="machineFilterForm.get('selectedTypes')?.value.includes(item)"
+                                (change)="onMachineTypeChange($event, item)">
+                                {{ item }}
+                            </mat-checkbox>
+                            }
+                        </div>
+                    </section>
+                </div>
+            </form>
+        </div>
+    </div>
+    }
+</div>
