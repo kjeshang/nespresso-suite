@@ -7,6 +7,7 @@ import { CashExchangePageComponent } from './apps/cash-exchange/cash-exchange-pa
 import { CoffeePageComponent } from './apps/coffee/coffee-page/coffee-page.component';
 import { FirstAidPageComponent } from './apps/first-aid/first-aid-page/first-aid-page.component';
 import { TastingPageComponent } from './apps/tasting/tasting-page/tasting-page.component';
+import { MachinePageComponent } from './apps/machine/machine-page/machine-page.component';
 
 export const routes: Routes = [
     {
@@ -30,6 +31,9 @@ export const routes: Routes = [
     {
         path:"tasting", component:TastingPageComponent
     },
+    {
+        path:"machine", component:MachinePageComponent
+    }
 ];
 
 @NgModule({
