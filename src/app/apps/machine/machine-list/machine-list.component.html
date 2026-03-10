@@ -7,13 +7,13 @@
 <div class="mt-4 mx-4 grid grid-cols-4 gap-4">
     @for(item of machineStore.machineData(); track $index) {
     <mat-card appearance="outlined">
-        <mat-card-header>
-            {{ item.type }}
+        <mat-card-header class="flex justify-center bg-gray-200 text-gray-600 rounded-t-xl">
+            <p class="relative bottom-2">{{ item.type }}</p>
         </mat-card-header>
-        <mat-card-content>
-            {{ item.name }}
+        <mat-card-content class="!flex !justify-center">
+            <p class="pt-2 text-xl font-medium">{{ item.name }}</p>
         </mat-card-content>
-        <mat-card-actions>
+        <mat-card-actions class="flex justify-center">
             <button mat-raised-button type="button">
                 <a [href]="item.link" target="blank">
                     <div class="flex flex-row items-center justify-between space-x-2">
