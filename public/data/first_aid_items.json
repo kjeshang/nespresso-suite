@@ -1,0 +1,96 @@
+[
+    {
+        "id": 1,
+        "itemName": "Would Cleansing Towlettes, Individually Packaged",
+        "details": "14 cm x 19 cm",
+        "type": "Antiseptics and Wipes",
+        "photos": [
+            "data/first_aid_items_images/img-000.png"
+        ]
+    },
+    {
+        "id": 2,
+        "itemName": "Adhesive Dressing, Sterile, Individually Packaged",
+        "details":"Assorted Sizes (Standard Strip, large fingertip, knuckle, large patch)",
+        "type":"Bandages and Dressings",
+        "photos":[
+            "",
+            ""
+        ]
+    },
+    {
+        "id": 3,
+        "itemName": "Gauze, Pad, Sterile, Individually Packaged",
+        "details":"10 cm x 10 cm",
+        "type":"Bandages and Dressings",
+        "photos":[
+            "",
+            ""
+        ]
+    },
+    {
+        "id": 4,
+        "itemName": "Gauze, Roll, Conforming",
+        "details":"7.5 cm x 4 m",
+        "type":"Bandages and Dressings",
+        "photos":[
+            ""
+        ]
+    },
+    {
+        "id": 5,
+        "itemName": "Pressure Dressing with Crepe Ties",
+        "details":"10 cm x 16.5 cm",
+        "type":"Bandages and Dressings",
+        "photos":[
+            "",
+            ""
+        ]
+    },
+    {
+        "id": 6,
+        "itemName": "Quick Straps (a.k.a Fracture Straps or Zap Straps)",
+        "details":"",
+        "type":"Bandages and Dressings",
+        "photos":[
+            ""
+        ]
+    },
+    {
+        "id": 7,
+        "itemName": "Roller, Crepe",
+        "details":"7.5cm x 4.5 m",
+        "type":"Bandages and Dressings",
+        "photos":[
+            ""
+        ]
+    },
+    {
+        "id": 8,
+        "itemName": "Triangular, Cotton, Folded",
+        "details":"1.25 m",
+        "type":"Bandages and Dressings",
+        "photos":[
+            "",
+            ""
+        ]
+    },
+    {
+        "id": 9,
+        "itemName": "Windlass Style Tourniquet",
+        "details":"",
+        "type":"Bandages and Dressings",
+        "photos":[
+            ""
+        ]
+    },
+    {
+        "id": 10,
+        "itemName": "Emergency",
+        "details":"",
+        "type":"Blanket",
+        "photos":[
+            ""
+        ]
+    }
+]
