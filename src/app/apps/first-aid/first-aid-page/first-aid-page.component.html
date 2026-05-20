@@ -9,6 +9,9 @@
             </button>
         </div>
     </div>
+    @for(item of firstAidStore.firstAidItems(); track $index) {
+        {{ item | json }}
+    }
     <div class="hidden sm:block">
         <div class="w-full h-screen relative">
             <iframe 

@@ -3,10 +3,11 @@ import { FeatureContainerComponent } from '../../../shared/page-components/featu
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
 import { FirstAidStore } from '../first-aid.store';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-first-aid-page',
-  imports: [FeatureContainerComponent, MatButtonModule],
+  imports: [FeatureContainerComponent, MatButtonModule, CommonModule],
   templateUrl: './first-aid-page.component.html',
   styleUrl: './first-aid-page.component.scss'
 })

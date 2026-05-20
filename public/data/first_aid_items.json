@@ -14,8 +14,8 @@
         "details":"Assorted Sizes (Standard Strip, large fingertip, knuckle, large patch)",
         "type":"Bandages and Dressings",
         "photos":[
-            "",
-            ""
+            "data/first_aid_items_images/img-001.png",
+            "data/first_aid_items_images/img-002.png"
         ]
     },
     {
@@ -24,8 +24,8 @@
         "details":"10 cm x 10 cm",
         "type":"Bandages and Dressings",
         "photos":[
-            "",
-            ""
+            "data/first_aid_items_images/img-003.png",
+            "data/first_aid_items_images/img-004.png"
         ]
     },
     {
@@ -34,7 +34,7 @@
         "details":"7.5 cm x 4 m",
         "type":"Bandages and Dressings",
         "photos":[
-            ""
+            "data/first_aid_items_images/img-005.png"
         ]
     },
     {
@@ -43,8 +43,8 @@
         "details":"10 cm x 16.5 cm",
         "type":"Bandages and Dressings",
         "photos":[
-            "",
-            ""
+            "data/first_aid_items_images/img-006.png",
+            "data/first_aid_items_images/img-007.png"
         ]
     },
     {
@@ -53,7 +53,7 @@
         "details":"",
         "type":"Bandages and Dressings",
         "photos":[
-            ""
+            "data/first_aid_items_images/img-008.png"
         ]
     },
     {
@@ -62,7 +62,7 @@
         "details":"7.5cm x 4.5 m",
         "type":"Bandages and Dressings",
         "photos":[
-            ""
+            "data/first_aid_items_images/img-009.png"
         ]
     },
     {
@@ -71,8 +71,8 @@
         "details":"1.25 m",
         "type":"Bandages and Dressings",
         "photos":[
-            "",
-            ""
+            "data/first_aid_items_images/img-010.png",
+            "data/first_aid_items_images/img-011.png"
         ]
     },
     {
@@ -81,7 +81,7 @@
         "details":"",
         "type":"Bandages and Dressings",
         "photos":[
-            ""
+            "data/first_aid_items_images/img-012.png"
         ]
     },
     {
@@ -90,7 +90,125 @@
         "details":"",
         "type":"Blanket",
         "photos":[
-            ""
+            "data/first_aid_items_images/img-013.png"
+        ]
+    },
+    {
+        "id": 11,
+        "itemName": "CPR Resuscitation Barrier Device with one-way valve",
+        "details":"",
+        "type":"CPR",
+        "photos":[
+            "data/first_aid_items_images/img-014.png",
+            "data/first_aid_items_images/img-015.png"
+        ]
+    },
+    {
+        "id": 12,
+        "itemName": "Face shields (or safety eyewear)",
+        "details":"11.5 cm",
+        "type": "Eye Safety",
+        "photos": [
+            "data/first_aid_items_images/img-016.png"
+        ]
+    },
+    {
+        "id": 13,
+        "itemName": "Stainless Steel Forceps/Tweezers",
+        "details": "14 cm",
+        "type": "Forceps",
+        "photos":[
+            "data/first_aid_items_images/img-017.png"
+        ]
+    },
+    {
+        "id": 14,
+        "itemName": "Gloves Disposable Non-Latex",
+        "details":"",
+        "type":"Gloves",
+        "photos":[
+            "data/first_aid_items_images/img-018.png"
+        ]
+    },
+    {
+        "id": 15,
+        "itemName": "Medical Mask",
+        "details":"",
+        "type":"Masks",
+        "photos": [
+            "data/first_aid_items_images/img-019.png"
+        ]
+    },
+    {
+        "id": 16,
+        "itemName": "Stainless Steel Bandage Scissors or Universal Scissors",
+        "details":"",
+        "type": "Scissors",
+        "photos": [
+            "data/first_aid_items_images/img-020.png"
+        ]
+    },
+    {
+        "id": 17,
+        "itemName": "Adhesive",
+        "details": "2.5 cm x 45 cm (1 inch wide roll)",
+        "type": "Tape",
+        "photos": [
+            "data/first_aid_items_images/img-021.png"
+        ]
+    },
+    {
+        "id": 18,
+        "itemName": "Waste Bag, Waterproof",
+        "details": "Marked; for Disposal of biohazardous waste",
+        "type": "Waste Disposal",
+        "photos": [
+            "data/first_aid_items_images/img-022.png"
+        ]
+    },
+    {
+        "id": 19,
+        "itemName": "First Aid Record Book",
+        "details":"",
+        "type":"Records and Instructions",
+        "photos":[
+            "data/first_aid_items_images/img-023.png"
+        ]
+    },
+    {
+        "id": 20,
+        "itemName":"Cotton Swabs",
+        "details":"",
+        "type":"Other",
+        "photos":[
+            "data/first_aid_items_images/img-024.png"
+        ]
+    },
+    {
+        "id": 21,
+        "itemName":"Cold Pack",
+        "details":"",
+        "type":"Other",
+        "photos":[
+            "data/first_aid_items_images/img-025.png"
+        ]
+    },
+    {
+        "id": 22,
+        "itemName":"Esmarch Bandage",
+        "details":"",
+        "type":"Other",
+        "photos":[
+            "data/first_aid_items_images/img-026.png"
+        ]
+    },
+    {
+        "id": 23,
+        "itemName":"Pupil Gauge",
+        "details":"",
+        "type":"Other",
+        "photos":[
+            "data/first_aid_items_images/img-027.png"
         ]
     }
 ]
