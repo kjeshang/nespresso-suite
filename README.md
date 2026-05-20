@@ -112,6 +112,20 @@ The coffee flavour data will be retrieved from a JSON file located in the a GitH
 First Aid PDF Guide accessible in app.
 > [First Aid Reference Guide](https://www.dropbox.com/scl/fi/cntqfwcxsvakmgaovhey7/First-Aid-Matrix-Guide.pdf?rlkey=fl6ni7rnis5njzug7buubalc8&e=1&dl=0)
 
+In addition, First Aid items available that follow a similar layout to the Machine App.
+
+The following were Linux Terminal commands used to retrieve the images from the PDF guide, and convert them to an image format that can be better rendered on the deployed web application.
+
+```
+# Extract images from PDF
+mkdir -p extracted_images
+pdfimages -png "First Aid Matrix Guide.pdf" extracted_images/img
+
+# Convert images from PNG to WEBP
+sudo apt install webp
+for f in *.png; do cwebp -q 75 "$f" -o "${f%.*}.webp"; done
+```
+
 ### Tasting App
 
 How to Taste Nespresso Coffee PDF Guide accessible in app.
