@@ -7,6 +7,8 @@ import { CashExchangeStore } from './apps/cash-exchange/cash-exchange.store';
 import { CoffeeStore } from './apps/coffee/coffee.store';
 import { MachineStore } from './apps/machine/machine.store';
 import { FirstAidStore } from './apps/first-aid/first-aid.store';
+import { uniq } from 'lodash';
+import { FirstAidItem } from './apps/first-aid/first-aid.models';
 
 
 @Component({
