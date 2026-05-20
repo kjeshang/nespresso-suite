@@ -5,7 +5,7 @@
         "details": "14 cm x 19 cm",
         "type": "Antiseptics and Wipes",
         "photos": [
-            "data/first_aid_items_images/img-000.png"
+            "data/first_aid_items_images/img-000.webp"
         ]
     },
     {
@@ -14,8 +14,8 @@
         "details":"Assorted Sizes (Standard Strip, large fingertip, knuckle, large patch)",
         "type":"Bandages and Dressings",
         "photos":[
-            "data/first_aid_items_images/img-001.png",
-            "data/first_aid_items_images/img-002.png"
+            "data/first_aid_items_images/img-001.webp",
+            "data/first_aid_items_images/img-002.webp"
         ]
     },
     {
@@ -24,8 +24,8 @@
         "details":"10 cm x 10 cm",
         "type":"Bandages and Dressings",
         "photos":[
-            "data/first_aid_items_images/img-003.png",
-            "data/first_aid_items_images/img-004.png"
+            "data/first_aid_items_images/img-003.webp",
+            "data/first_aid_items_images/img-004.webp"
         ]
     },
     {
@@ -34,7 +34,7 @@
         "details":"7.5 cm x 4 m",
         "type":"Bandages and Dressings",
         "photos":[
-            "data/first_aid_items_images/img-005.png"
+            "data/first_aid_items_images/img-005.webp"
         ]
     },
     {
@@ -43,8 +43,8 @@
         "details":"10 cm x 16.5 cm",
         "type":"Bandages and Dressings",
         "photos":[
-            "data/first_aid_items_images/img-006.png",
-            "data/first_aid_items_images/img-008.png"
+            "data/first_aid_items_images/img-006.webp",
+            "data/first_aid_items_images/img-008.webp"
         ]
     },
     {
@@ -53,7 +53,7 @@
         "details":"",
         "type":"Bandages and Dressings",
         "photos":[
-            "data/first_aid_items_images/img-007.png"
+            "data/first_aid_items_images/img-007.webp"
         ]
     },
     {
@@ -62,7 +62,7 @@
         "details":"7.5cm x 4.5 m",
         "type":"Bandages and Dressings",
         "photos":[
-            "data/first_aid_items_images/img-010.png"
+            "data/first_aid_items_images/img-010.webp"
         ]
     },
     {
@@ -71,8 +71,8 @@
         "details":"1.25 m",
         "type":"Bandages and Dressings",
         "photos":[
-            "data/first_aid_items_images/img-011.png",
-            "data/first_aid_items_images/img-009.png"
+            "data/first_aid_items_images/img-011.webp",
+            "data/first_aid_items_images/img-009.webp"
         ]
     },
     {
@@ -81,7 +81,7 @@
         "details":"",
         "type":"Bandages and Dressings",
         "photos":[
-            "data/first_aid_items_images/img-013.png"
+            "data/first_aid_items_images/img-013.webp"
         ]
     },
     {
@@ -90,7 +90,7 @@
         "details":"",
         "type":"Blanket",
         "photos":[
-            "data/first_aid_items_images/img-012.png"
+            "data/first_aid_items_images/img-012.webp"
         ]
     },
     {
@@ -99,8 +99,8 @@
         "details":"",
         "type":"CPR",
         "photos":[
-            "data/first_aid_items_images/img-014.png",
-            "data/first_aid_items_images/img-016.png"
+            "data/first_aid_items_images/img-014.webp",
+            "data/first_aid_items_images/img-016.webp"
         ]
     },
     {
@@ -109,7 +109,7 @@
         "details":"11.5 cm",
         "type": "Eye Safety",
         "photos": [
-            "data/first_aid_items_images/img-015.png"
+            "data/first_aid_items_images/img-015.webp"
         ]
     },
     {
@@ -118,7 +118,7 @@
         "details": "14 cm",
         "type": "Forceps",
         "photos":[
-            "data/first_aid_items_images/img-017.png"
+            "data/first_aid_items_images/img-017.webp"
         ]
     },
     {
@@ -127,7 +127,7 @@
         "details":"",
         "type":"Gloves",
         "photos":[
-            "data/first_aid_items_images/img-018.png"
+            "data/first_aid_items_images/img-018.webp"
         ]
     },
     {
@@ -136,7 +136,7 @@
         "details":"",
         "type":"Masks",
         "photos": [
-            "data/first_aid_items_images/img-019.png"
+            "data/first_aid_items_images/img-019.webp"
         ]
     },
     {
@@ -145,7 +145,7 @@
         "details":"",
         "type": "Scissors",
         "photos": [
-            "data/first_aid_items_images/img-020.png"
+            "data/first_aid_items_images/img-020.webp"
         ]
     },
     {
@@ -154,7 +154,7 @@
         "details": "2.5 cm x 45 cm (1 inch wide roll)",
         "type": "Tape",
         "photos": [
-            "data/first_aid_items_images/img-021.png"
+            "data/first_aid_items_images/img-021.webp"
         ]
     },
     {
@@ -163,7 +163,7 @@
         "details": "Marked; for Disposal of biohazardous waste",
         "type": "Waste Disposal",
         "photos": [
-            "data/first_aid_items_images/img-022.png"
+            "data/first_aid_items_images/img-022.webp"
         ]
     },
     {
@@ -172,7 +172,7 @@
         "details":"",
         "type":"Records and Instructions",
         "photos":[
-            "data/first_aid_items_images/img-024.png"
+            "data/first_aid_items_images/img-024.webp"
         ]
     },
     {
@@ -181,7 +181,7 @@
         "details":"",
         "type":"Other",
         "photos":[
-            "data/first_aid_items_images/img-023.png"
+            "data/first_aid_items_images/img-023.webp"
         ]
     },
     {
@@ -190,7 +190,7 @@
         "details":"",
         "type":"Other",
         "photos":[
-            "data/first_aid_items_images/img-025.png"
+            "data/first_aid_items_images/img-025.webp"
         ]
     },
     {
@@ -199,7 +199,7 @@
         "details":"",
         "type":"Other",
         "photos":[
-            "data/first_aid_items_images/img-026.png"
+            "data/first_aid_items_images/img-026.webp"
         ]
     },
     {
@@ -208,7 +208,7 @@
         "details":"",
         "type":"Other",
         "photos":[
-            "data/first_aid_items_images/img-027.png"
+            "data/first_aid_items_images/img-027.webp"
         ]
     }
 ]
