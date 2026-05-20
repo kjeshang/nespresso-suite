@@ -1,18 +1,18 @@
 <app-feature-container>
-    <div class="flex flex-col items-center space-y-2">
-        <p class="pt-2 text-lg font-semibold text-center">
-            First Aid Reference Guide
-        </p>
-        <div class="block sm:hidden">
-            <button mat-flat-button class="!bg-black !text-white" type="button">
-                <a [href]="dropboxUrl" target="_blank">Click here to view guide</a>
-            </button>
+    <div class="m-1 p-1 flex flex-col space-y-2">
+        <div class="flex flex-row items-center justify-between space-y-2">
+            <p class="pt-2 text-lg font-semibold text-center">
+                First Aid Reference Guide
+            </p>
+            <div class="block">
+                <button mat-flat-button class="!bg-black !text-white" type="button">
+                    <a [href]="dropboxUrl" target="_blank">View PDF Guide</a>
+                </button>
+            </div>
         </div>
+        <app-first-aid-list />
     </div>
-    @for(item of firstAidStore.firstAidItems(); track $index) {
-        {{ item | json }}
-    }
-    <div class="hidden sm:block">
+    <!-- <div class="hidden sm:block">
         <div class="w-full h-screen relative">
             <iframe 
                 [src]="pdfUrl"
@@ -20,6 +20,5 @@
                 title="PDF Viewer">
             </iframe>
         </div>
-    </div>
+    </div> -->
 </app-feature-container>
-

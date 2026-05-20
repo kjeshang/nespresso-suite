@@ -5,10 +5,12 @@ import { inject } from "@angular/core";
 
 type FirstAidState = {
     firstAidItems: FirstAidItem[];
+    isLoading: boolean;
 }
 
 const initialFirstAidState: FirstAidState = {
-    firstAidItems: []
+    firstAidItems: [],
+    isLoading: false,
 }
 
 export const FirstAidStore = signalStore(
@@ -16,10 +18,14 @@ export const FirstAidStore = signalStore(
     withState(initialFirstAidState),
     withMethods((store, db: FirstAidDbService = inject(FirstAidDbService)) => ({
         async loadFirstAidItems(): Promise<void> {
+            patchState(store, (state: FirstAidState) => ({
+                isLoading: true,
+            }));
             const firstAidItems: FirstAidItem[] = await db.getFirstAidItems();
             patchState(store, (state: FirstAidState) => ({
                 firstAidItems: firstAidItems,
-            }))
+                isLoading: false,
+            }));
         }
     })),
 );

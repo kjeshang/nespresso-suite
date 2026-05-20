@@ -4,10 +4,11 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
 import { FirstAidStore } from '../first-aid.store';
 import { CommonModule } from '@angular/common';
+import { FirstAidListComponent } from '../first-aid-list/first-aid-list.component';
 
 @Component({
   selector: 'app-first-aid-page',
-  imports: [FeatureContainerComponent, MatButtonModule, CommonModule],
+  imports: [FeatureContainerComponent, MatButtonModule, FirstAidListComponent],
   templateUrl: './first-aid-page.component.html',
   styleUrl: './first-aid-page.component.scss'
 })
