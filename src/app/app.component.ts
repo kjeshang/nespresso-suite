@@ -1,12 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CardReconciliationStore } from './apps/card-reconciliation/card-reconciliation.store';
-import { CashReconciliationStore } from './apps/cash-reconciliation/cash-reconciliation.store';
-import { DashboardStore } from './apps/dashboard/dashboard.store';
-import { CashExchangeStore } from './apps/cash-exchange/cash-exchange.store';
-import { CoffeeStore } from './apps/coffee/coffee.store';
-import { MachineStore } from './apps/machine/machine.store';
-import { FirstAidStore } from './apps/first-aid/first-aid.store';
 
 
 @Component({
@@ -17,26 +10,4 @@ import { FirstAidStore } from './apps/first-aid/first-aid.store';
 })
 export class AppComponent {
   title = 'nespresso-suite';
-  // cardReconciliationStore = inject(CardReconciliationStore);
-  // dashboardStore = inject(DashboardStore);
-  // cashReconciliationStore = inject(CashReconciliationStore);
-  // cashExchangeStore = inject(CashExchangeStore);
-  // coffeeStore = inject(CoffeeStore);
-  // machineStore = inject(MachineStore);
-  // firstAidStore = inject(FirstAidStore);
-
-  // ngOnInit(): void {
-  //   this.loadData().then(() => console.log("Data Loaded!"));
-  // }
-
-  // async loadData(): Promise<void> {
-  //   this.cardReconciliationStore.loadStoreConfiguration();
-  //   this.dashboardStore.loadLegacyApps();
-  //   this.cashReconciliationStore.loadCashDesk();
-  //   this.cashExchangeStore.loadMoneySentOut();
-  //   this.cashExchangeStore.loadMoneyBroughtIn();
-  //   this.coffeeStore.loadCoffeeData();
-  //   this.machineStore.loadMachineData();
-  //   this.firstAidStore.loadFirstAidItems();
-  // }
 }
