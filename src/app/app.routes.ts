@@ -18,46 +18,62 @@ import { CardReconciliationResolver } from './apps/card-reconciliation/card-reco
 
 export const routes: Routes = [
     {
-        path:"", component:DashboardPageComponent,
+        path:"", 
+        // component:DashboardPageComponent,
+        loadComponent: () => import('./apps/dashboard/dashboard-page/dashboard-page.component').then((m) => m.DashboardPageComponent),
         resolve: {
             data: DashboardResolver
         }
     },
     {
-        path:"card-reconciliation", component:CardReconciliationPageComponent,
+        path:"card-reconciliation", 
+        // component:CardReconciliationPageComponent,
+        loadComponent: () => import('./apps/card-reconciliation/card-reconciliation-page/card-reconciliation-page.component').then((m) => m.CardReconciliationPageComponent),
         resolve: {
             setup: CardReconciliationResolver
         }
     },
     {
-        path:"cash-reconciliation", component:CashReconciliationPageComponent,
+        path:"cash-reconciliation", 
+        // component:CashReconciliationPageComponent,
+        loadComponent: () => import('./apps/cash-reconciliation/cash-reconciliation-page/cash-reconciliation-page.component').then((m) => m.CashReconciliationPageComponent),
         resolve: {
             setup: CashReconciliationResolver
         }
     },
     {
-        path:"cash-exchange", component:CashExchangePageComponent,
+        path:"cash-exchange", 
+        // component:CashExchangePageComponent,
+        loadComponent: () => import('./apps/cash-exchange/cash-exchange-page/cash-exchange-page.component').then((m) => m.CashExchangePageComponent),
         resolve: {
             setup: CashExchangeResolver
         }
     },
     {
-        path:"coffee", component:CoffeePageComponent,
+        path:"coffee", 
+        // component:CoffeePageComponent,
+        loadComponent: () => import('./apps/coffee/coffee-page/coffee-page.component').then((m) => m.CoffeePageComponent),
         resolve: {
             data: CoffeeResolver
         }
     },
     {
-        path:"first-aid", component:FirstAidPageComponent,
+        path:"first-aid", 
+        // component:FirstAidPageComponent,
+        loadComponent: () => import('./apps/first-aid/first-aid-page/first-aid-page.component').then((m) => m.FirstAidPageComponent),
         resolve: {
             data: FirstAidResolver
         }
     },
     {
-        path:"tasting", component:TastingPageComponent
+        path:"tasting", 
+        // component:TastingPageComponent,
+        loadComponent: () => import('./apps/tasting/tasting-page/tasting-page.component').then((m) => m.TastingPageComponent),
     },
     {
-        path:"machine", component:MachinePageComponent,
+        path:"machine", 
+        // component:MachinePageComponent,
+        loadComponent: () => import('./apps/machine/machine-page/machine-page.component').then((m) => m.MachinePageComponent),
         resolve: {
             data: MachineResolver
         }
