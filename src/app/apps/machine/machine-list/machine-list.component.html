@@ -14,13 +14,19 @@
             <p class="pt-2 text-xl font-medium">{{ item.name }}</p>
         </mat-card-content>
         <mat-card-actions class="flex justify-center">
-            <button mat-raised-button type="button">
+            <!-- <button mat-raised-button type="button">
                 <a [href]="item.link" target="blank">
                     <div class="flex flex-row items-center justify-between space-x-2">
                         <mat-icon>book_2</mat-icon>
                         <span>Machine Reference Guide</span>
                     </div>
                 </a>
+            </button> -->
+            <button mat-raised-button type="button" (click)="openDialogWindow(item.type, item.name, item.link)">
+                <div class="flex flex-row items-center justify-between space-x-2">
+                    <mat-icon>book_2</mat-icon>
+                    <span>Machine Reference Guide</span>
+                </div>
             </button>
         </mat-card-actions>
     </mat-card>

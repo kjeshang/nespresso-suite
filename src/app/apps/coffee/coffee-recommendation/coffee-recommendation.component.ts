@@ -30,8 +30,8 @@ export class CoffeeRecommendationComponent {
    */
   openDialogWindow(type: string, name: string, guide: string): void {
     // https://github.com/kjeshang/NespressoMetropolisCoffeeFlavourReferenceGuide/tree/main//Guides/OL1_Ispirazione%20Napoli_Current.pdf 
-    // console.log(guide.split("main//"))
     // console.log(guide);
+    // console.log(guide.split("main//"))
     const pdfPath: string = guide.split("main//")[1];
     const link: string = `https://kjeshang.github.io/NespressoMetropolisCoffeeFlavourReferenceGuide/${pdfPath}`;
     const dialogData: DialogWindowInformation = {
